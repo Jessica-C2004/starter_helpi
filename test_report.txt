@@ -15,21 +15,25 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
+          [36m<img[39m
+            [33malt[39m=[32m"thestarterHelpilogo"[39m
+            [33mclass[39m=[32m"App-logo"[39m
+            [33msrc[39m=[32m"thestarterhelpilogo.png"[39m
+          [36m/>[39m
+          [0m [0m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
             [36m<div[39m
-              [33mclass[39m=[32m"Pages"[39m
-            [36m/>[39m
-            [36m<div[39m
               [33mclass[39m=[32m"Page-buttons-div"[39m
             [36m>[39m
-              [36m<img[39m
-                [33malt[39m=[32m"thestarterHelpilogo"[39m
-                [33mclass[39m=[32m"App-logo"[39m
-                [33msrc[39m=[32m"thestarterhelpilogo.png"[39m
-              [36m/>[39m
-              [0m [0m
+              [36m<button[39m
+                [33mclass[39m=[32m"Page-button btn btn-primary"[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mHome Page[0m
+              [36m</button>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"Page-button btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
@@ -42,14 +46,11 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [0mDetailed Questions[0m
               [36m</button>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"Page-button btn btn-primary"[39m
-                [33mdisabled[39m=[32m""[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mHome Page[0m
-              [36m</button>[39m
             [36m</div>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Pages-div"[39m
+          [36m>[39m
             [36m<div[39m
               [33mclass[39m=[32m"Pages"[39m
             [36m>[39m
@@ -85,7 +86,7 @@ FAIL src/App.test.tsx
                 [36m</center>[39m
               [36m</div>[39m
             [36m</div>[39m
-          [36m</header>[39m
+          [36m</div>[39m
           [36m<form[39m
             [33mclass[39m=[32m""[39m
           [36m>[39m
@@ -136,9 +137,9 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   27.77 |       50 |   18.18 |   27.77 |                   
- src                 |   27.27 |       50 |    12.5 |   27.27 |                   
-  App.tsx            |    40.9 |    64.28 |   16.66 |    40.9 | 14,25-49          
+All files            |   27.77 |    41.66 |   18.18 |   27.77 |                   
+ src                 |   27.27 |    41.66 |    12.5 |   27.27 |                   
+  App.tsx            |    40.9 |     62.5 |   16.66 |    40.9 | 14,25-49          
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/components      |   33.33 |      100 |   33.33 |   33.33 |                   
@@ -149,7 +150,7 @@ All files            |   27.77 |       50 |   18.18 |   27.77 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.848 s
+Time:        2.912 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
