@@ -30,8 +30,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 10vh; 
-  align-items: left;
+  height: 20vh; 
+  align-items: center;
 }
 
 .Pages-div {
@@ -43,7 +43,7 @@
   background-color: #AFBEA2;
   border-radius: 15px;
   width: 150px;
-  height: inherit - 6vh;
+  height: inherit - 8vh;
   text-align: center;
   margin-bottom: 3vh;
   margin-top: 3vh;
