@@ -64,13 +64,13 @@ function App() {
 
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="thestarterHelpilogo" /> {/* Updated alt text */}
+      <img src={logo} className="App-logo" alt="theCareerHelpilogo" /> {/* Updated alt text */}
       <header className="App-header">
         <div className="Page-buttons-div">
           <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
           <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
           <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
-          <Button className="Page-button" onClick={showBasicReport} disabled={basicReportVisible}>Temp: Basic Report</Button>
+          <Button className="Page-button" onClick={showBasicReport} disabled={basicReportVisible}>Temp: Basic Report</Button> {/* in here temp until BasicPage can change to it */}
         </div>
       </header>
 
