@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
+import { BasicReport } from './components/BasicReportPage';
 import logo from "./logoandimages/thecareerhelpilogo.png"
 
 
@@ -20,6 +21,7 @@ function App() {
   const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
   const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
   const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
+  const [basicReportVisible, setBasicReportVisible] = useState<boolean>(false);//to show the basic report
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -36,18 +38,28 @@ function App() {
     setHomePageVisible(true);
     setBasicVisible(false);
     setDetailedVisible(false);
+    setBasicReportVisible(false);
   }
 
   function showBasic() {
     setHomePageVisible(false);
     setBasicVisible(true);
     setDetailedVisible(false);
+    setBasicReportVisible(false);
   }
 
   function showDetailed() {
     setHomePageVisible(false);
     setBasicVisible(false);
     setDetailedVisible(true);
+    setBasicReportVisible(false);
+  }
+
+  function showBasicReport() {
+    setHomePageVisible(false);
+    setBasicVisible(false);
+    setDetailedVisible(false);
+    setBasicReportVisible(true);
   }
 
   return (
@@ -58,6 +70,7 @@ function App() {
           <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
           <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
           <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
+          <Button className="Page-button" onClick={showBasicReport} disabled={basicReportVisible}>Temp: Basic Report</Button>
         </div>
       </header>
 
@@ -67,6 +80,8 @@ function App() {
         {basicVisible && <BasicQuestion key={key} />}
 
         {detailedVisible && <DetailedQuestions key={key} />}
+
+        {basicReportVisible && <BasicReport key={key} />}
       </div>
 
       <Form>

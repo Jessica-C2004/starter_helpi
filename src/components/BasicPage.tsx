@@ -80,8 +80,8 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                 <Button variant="primary" onClick={handleNext} disabled={currentQuestionIndex === questions.length - 1}>
                     Next
                 </Button>
-                
             </div>
+            <Button className="results-button" disabled={currentQuestionIndex !== questions.length - 1}>Get Results</Button>
         </div>
     );
 }
