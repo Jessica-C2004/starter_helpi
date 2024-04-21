@@ -31,10 +31,10 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     ];
     const options = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"];
     const questionsLength = questions.length;
-   
+
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    // Initialize answers state as an array filled with null values (indicating no answer selected)
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
+    const [showQuestions, setShowQuestions] = useState(false);
 
     const handleOptionChange = (questionIndex: number, optionIndex: number): void => {
         const updatedAnswers = [...answers];
@@ -43,44 +43,86 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     };
 
     const handleNext = () => {
-        if(currentQuestionIndex < questions.length - 1) {
+        if (currentQuestionIndex < questionsLength - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
 
     const handlePrevious = () => {
-        if(currentQuestionIndex > 0) {
+        if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
     };
 
+    const handleStart = () => {
+        setShowQuestions(true);
+    };
+
+    const handleSubmit = () => {
+        alert('Submission complete!');
+        };
+
+    const handleRestart = () => {
+        setAnswers(Array(questions.length).fill(null));
+        setCurrentQuestionIndex(0);
+        setShowQuestions(false);
+    };
+
+    // Checking if all questions are answered
+    const allQuestionsAnswered = answers.every(answer => answer !== null);
+
     return (
         <div className="Pages">
-            <h1>Basic Career Questions</h1>
-            <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={currentQuestionIndex}/>
-            <div>
-                <h2>Question {currentQuestionIndex + 1}</h2>
-                <p>{questions[currentQuestionIndex]}</p>
-                {options.map((option, optionIndex) => (
-                    <Form.Check
-                        key={`${currentQuestionIndex}-${optionIndex}`}
-                        type="radio"
-                        name={`question${currentQuestionIndex}`}
-                        label={option}
-                        id={`question${currentQuestionIndex}-option${optionIndex}`}
-                        checked={answers[currentQuestionIndex] === optionIndex}
-                        onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
-                    />
-                ))}
-            </div>
-            <div className="navigation-buttons">
-                <Button variant="secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
-                    Previous
-                </Button>
-                <Button variant="primary" onClick={handleNext} disabled={currentQuestionIndex === questions.length - 1}>
-                    Next
-                </Button>
-            </div>
+            {!showQuestions && (
+                <div>
+                    <h1>Welcome to the Career Questionnaire</h1>
+                    <p>Click start to begin answering questions about your career preferences and goals.</p>
+                    <Button variant="primary" onClick={handleStart}>Start</Button>
+                </div>
+            )}
+            {showQuestions && (
+                <div>
+                    <h1>Basic Career Questions</h1>
+                    <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={currentQuestionIndex}/>
+                    <div>
+                        <h2>Question {currentQuestionIndex + 1}</h2>
+                        <p>{questions[currentQuestionIndex]}</p>
+                        {options.map((option, optionIndex) => (
+                            <div 
+                                className={`radio-option ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
+                                key={`${currentQuestionIndex}-${optionIndex}`}
+                            >
+                                <Form.Check
+                                    type="radio"
+                                    id={`question${currentQuestionIndex}-option${optionIndex}`}
+                                    name={`question${currentQuestionIndex}`}
+                                    label={option}
+                                    checked={answers[currentQuestionIndex] === optionIndex}
+                                    onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="navigation-buttons">
+                        <Button variant="secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+                            Previous
+                        </Button>
+                        {currentQuestionIndex < questionsLength - 1 && (
+                            <Button variant="primary" onClick={handleNext}>
+                                Next
+                            </Button>
+                        )}
+                        {currentQuestionIndex === questionsLength - 1 && (
+                            <Button variant="primary" onClick={handleSubmit} disabled={!allQuestionsAnswered}>
+                                Submit
+                            </Button>
+                        )}
+                        <Button variant="info" onClick={handleRestart}>
+                            Restart
+                        </Button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
