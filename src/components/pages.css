@@ -50,4 +50,28 @@ text-align: center;
   border-radius: 5px;
   margin-bottom: 1px;
   transition: background-color 0.3s ease;
+  width: 70%;
+  height: 90%;
+  background-color: #AFBEA2;
+  outline: 1px solid black;
+  border-radius: 10px;
+}
+
+.Description-header {
+  background-color: #AFBEA2;
+  width: 350px;
+  height: 35px;
+  text-align: center;
+  outline: 1px solid black;
+  border-radius: 60px;
+}
+
+.Question-instructions {
+  width: 40%;
+  height: 60%;
+  text-align: center;
+}
+.Page-title {
+  height: 85px;
+  font-size: calc(30px + 2vmin);
 }
