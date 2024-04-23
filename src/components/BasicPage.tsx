@@ -68,6 +68,9 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(false);
     };
 
+    // Calculating the number of questions answered
+    const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
+
     // Checking if all questions are answered
     const allQuestionsAnswered = answers.every(answer => answer !== null);
 
@@ -83,7 +86,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
             {showQuestions && (
                 <div>
                     <h1>Basic Career Questions</h1>
-                    <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={currentQuestionIndex}/>
+                    <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
                     <div>
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
