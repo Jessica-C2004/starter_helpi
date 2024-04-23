@@ -157,6 +157,8 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     };
 
 
+    const numberQuestionsAnswered = answers.filter(answer => answer.trim() !== '').length;
+
     const canSubmit = answers.every(answer => answer.trim() !== '');
 
     if (!hasStarted) {
@@ -172,7 +174,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     return (
         <div className="Pages">
             <h1>Detailed Career Questions</h1>
-            <QuestionProgressBar totalQuestions={questions.length} completedQuestions={currentQuestionIndex + 1} />
+            <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
             <Form onSubmit={handleSubmit}>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
