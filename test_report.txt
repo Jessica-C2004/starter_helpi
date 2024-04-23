@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (44 ms)
+  ✕ renders learn react link (68 ms)
 
   ● renders learn react link
 
@@ -62,28 +62,38 @@ FAIL src/App.test.tsx
               [36m<div[39m
                 [33mclass[39m=[32m"Default-box container"[39m
               [36m>[39m
-                [36m<center>[39m
-                  [36m<h4[39m
-                    [33mclass[39m=[32m"Description-header"[39m
-                  [36m>[39m
-                    [0mBasic Questions[0m
-                  [36m</h4>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"row"[39m
+                [36m>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"Description"[39m
+                    [33mclass[39m=[32m"col"[39m
                   [36m>[39m
-                    [0mThe basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz![0m
+                    [36m<h4[39m
+                      [33mclass[39m=[32m"Description-header"[39m
+                    [36m>[39m
+                      [0mBasic Questions[0m
+                    [36m</h4>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"Description"[39m
+                    [36m>[39m
+                      [0mThe basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz![0m
+                    [36m</div>[39m
                   [36m</div>[39m
-                  [36m<h4[39m
-                    [33mclass[39m=[32m"Description-header"[39m
-                  [36m>[39m
-                    [0mDetailed Questions[0m
-                  [36m</h4>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"Description"[39m
+                    [33mclass[39m=[32m"col"[39m
                   [36m>[39m
-                    [0mThe detailed questions quiz is targeted towards narrowing down your optimal field of study. If you would like recommendations for specific careers within your field of interest, take this quiz![0m
+                    [36m<h4[39m
+                      [33mclass[39m=[32m"Description-header"[39m
+                    [36m>[39m
+                      [0mDetailed Questions[0m
+                    [36m</h4>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"Description"[39m
+                    [36m>[39m
+                      [0mThe detailed questions quiz is targeted towards narrowing down your optimal field of study. If you would like recommendations for specific careers within your field of interest, take this quiz![0m
+                    [36m</div>[39m
                   [36m</div>[39m
-                [36m</center>[39m
+                [36m</div>[39m
               [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
@@ -137,22 +147,24 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   19.23 |    31.25 |    12.5 |   19.23 |                   
+All files            |       9 |    11.36 |    5.71 |    9.43 |                   
  src                 |   27.27 |    41.66 |    12.5 |   27.27 |                   
   App.tsx            |    40.9 |     62.5 |   16.66 |    40.9 | 15,26-50          
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    5.26 |        0 |    12.5 |    5.26 |                   
-  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-78              
-  detailedPage.tsx   |       0 |      100 |       0 |       0 | 5                 
+ src/components      |    1.28 |        0 |     3.7 |    1.36 |                   
+  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-103             
+  detailedPage.tsx   |       0 |        0 |       0 |       0 | 8-209             
   homePage.tsx       |     100 |      100 |     100 |     100 |                   
+  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
  src/interfaces      |       0 |        0 |       0 |       0 |                   
   AIKeyInterface.tsx |       0 |        0 |       0 |       0 |                   
+  Progress.tsx       |       0 |        0 |       0 |       0 |                   
 ---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.957 s
+Time:        3.111 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
