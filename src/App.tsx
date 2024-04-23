@@ -22,7 +22,7 @@ function App() {
   const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
   const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
   const [basicReportVisible, setBasicReportVisible] = useState<boolean>(false);//to show the basic report
-  
+
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -62,6 +62,7 @@ function App() {
     setBasicReportVisible(true);
   }
 
+
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="theCareerHelpilogo" /> {/* Updated alt text */}
@@ -70,7 +71,6 @@ function App() {
           <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
           <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
           <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
-          <Button className="Page-button" onClick={showBasicReport} disabled={basicReportVisible}>Temp: Basic Report</Button> {/* in here temp until BasicPage can change to it */}
         </div>
       </header>
 
