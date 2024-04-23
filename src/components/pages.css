@@ -46,15 +46,14 @@ text-align: center;
 }
 
 .radio-option {
-  padding: 10px;
   border-radius: 5px;
   margin-bottom: 1px;
   transition: background-color 0.3s ease;
-  width: 70%;
+  width: 50vw;
   height: 90%;
   background-color: #AFBEA2;
   outline: 1px solid black;
-  border-radius: 10px;
+
 }
 
 .Description-header {
@@ -74,4 +73,13 @@ text-align: center;
 .Page-title {
   height: 85px;
   font-size: calc(30px + 2vmin);
+}
+
+.Questions-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: calc(10px + 2vmin);
 }

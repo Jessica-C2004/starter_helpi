@@ -86,7 +86,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                 <div>
                     <h1>Basic Career Questions</h1>
                     <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
-                    <div>
+                    <div className="Questions-div">
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
                         {options.map((option, optionIndex) => (

@@ -176,7 +176,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
             <h1>Detailed Career Questions</h1>
             <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
             <Form onSubmit={handleSubmit}>
-                <div>
+                <div className= "Questions-div">
                     <h2>Question {currentQuestionIndex + 1}</h2>
                     <p>{questions[currentQuestionIndex].question}</p>
                     {questions[currentQuestionIndex].options.map((option, index) => (
