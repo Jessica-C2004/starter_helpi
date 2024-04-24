@@ -3,20 +3,22 @@
 }
 
 .App-logo {
-  height: 15vh;
+  height: 50%;
+  width: 100%;
   pointer-events: none;
   margin: 5px;
   object-position: left;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  top: -40px;
 }
 
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    /*animation: App-logo-spin infinite 20s linear;*/
+    /*animation: App-logo-spin infinite 20s linear;
   }
 }
+*/
 
 .App-header {
   background-color: #51624F;
@@ -36,14 +38,14 @@
 
 .Pages-div {
   background-color: #9CB4AC;
-  height: 90vh;
+  height: 99vh;
 }
 
 .Page-button {
   background-color: #AFBEA2;
   border-radius: 15px;
-  width: 150px;
-  height: inherit - 6vh;
+  width: 170px;
+  height: 40px;
   text-align: center;
   margin-bottom: 3vh;
   margin-top: 3vh;
