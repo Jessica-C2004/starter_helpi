@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
-import { BasicReport } from './components/BasicReportPage';
+import { Report } from './components/ReportPage';
 import logo from "./logoandimages/thecareerhelpilogo.png"
 
 
@@ -18,10 +18,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
-  const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
-  const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
-  const [basicReportVisible, setBasicReportVisible] = useState<boolean>(false);//to show the basic report
+  const [currPage, setCurrPage] = useState('HomePage');
 
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -34,32 +31,21 @@ function App() {
     setKey(event.target.value);
   }
 
-  function showHomePage() {
-    setHomePageVisible(true);
-    setBasicVisible(false);
-    setDetailedVisible(false);
-    setBasicReportVisible(false);
+  function renderPage() {
+    switch(currPage) {
+      case "HomePage":
+        return <HomePage key={key}></HomePage>
+      case "BasicPage":
+        return <BasicQuestion key={key} onSubmit={handleQuestionSumit}></BasicQuestion>
+      case "DetailedPage":
+        return <DetailedQuestions key={key}></DetailedQuestions>
+      case "Report":
+        return <Report key={key}></Report>
+    }
   }
 
-  function showBasic() {
-    setHomePageVisible(false);
-    setBasicVisible(true);
-    setDetailedVisible(false);
-    setBasicReportVisible(false);
-  }
-
-  function showDetailed() {
-    setHomePageVisible(false);
-    setBasicVisible(false);
-    setDetailedVisible(true);
-    setBasicReportVisible(false);
-  }
-
-  function showBasicReport() {
-    setHomePageVisible(false);
-    setBasicVisible(false);
-    setDetailedVisible(false);
-    setBasicReportVisible(true);
+  function handleQuestionSumit() {
+    setCurrPage("ReportPage");
   }
 
 
@@ -67,21 +53,16 @@ function App() {
     <div className="App">
       <img src={logo} className="App-logo" alt="theCareerHelpilogo" /> {/* Updated alt text */}
       <header className="App-header">
+
         <div className="Page-buttons-div">
-          <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
-          <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
-          <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
+          <Button className="Page-button" onClick={() => setCurrPage("HomePage")} disabled={currPage === "HomePage"}>Home Page</Button>
+          <Button className="Page-button" onClick={() => setCurrPage("BasicPage")} disabled={currPage === "BasicPage"}>Basic Questions</Button>
+          <Button className="Page-button" onClick={() => setCurrPage("DetailedPage")} disabled={currPage === "DetailedPage"}>Detailed Questions</Button>
         </div>
       </header>
 
       <div className="Pages-div">
-        {homePageVisible && <HomePage key={key} />}
-
-        {basicVisible && <BasicQuestion key={key} />}
-
-        {detailedVisible && <DetailedQuestions key={key} />}
-
-        {basicReportVisible && <BasicReport key={key} />}
+        {renderPage()};
       </div>
 
       <Form>
