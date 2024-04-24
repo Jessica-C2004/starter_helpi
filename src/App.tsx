@@ -36,7 +36,7 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>
       case "BasicPage":
-        return <BasicQuestion key={key} onSubmit={handleQuestionSumit}></BasicQuestion>
+        return <BasicQuestion key={key} onQuestionSubmit={handleQuestionSumit}></BasicQuestion>
       case "DetailedPage":
         return <DetailedQuestions key={key}></DetailedQuestions>
       case "Report":
@@ -63,6 +63,10 @@ function App() {
 
       <div className="Pages-div">
         {renderPage()};
+      </div>
+
+      <div>
+        {currPage === "BasicPage" && (<BasicQuestion key={key} onQuestionSubmit={handleQuestionSumit}></BasicQuestion>)}
       </div>
 
       <Form>
