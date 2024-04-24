@@ -4,7 +4,6 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
-import logo from "./logoandimages/thecareerhelpilogo.png"
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -52,7 +51,6 @@ function App() {
 
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="thestarterHelpilogo" /> {/* Updated alt text */}
       <header className="App-header">
         <div className="Page-buttons-div">
           <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
