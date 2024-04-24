@@ -4,8 +4,6 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
-import { Report } from './components/ReportPage';
-import logo from "./logoandimages/thecareerhelpilogo.png"
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -31,27 +29,9 @@ function App() {
     setKey(event.target.value);
   }
 
-  function renderPage() {
-    switch(currPage) {
-      case "HomePage":
-        return <HomePage key={key}></HomePage>
-      case "BasicPage":
-        return <BasicQuestion key={key} onQuestionSubmit={handleQuestionSumit}></BasicQuestion>
-      case "DetailedPage":
-        return <DetailedQuestions key={key}></DetailedQuestions>
-      case "Report":
-        return <Report key={key}></Report>
-    }
-  }
-
-  function handleQuestionSumit() {
-    setCurrPage("ReportPage");
-  }
-
 
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="theCareerHelpilogo" /> {/* Updated alt text */}
       <header className="App-header">
 
         <div className="Page-buttons-div">
@@ -60,14 +40,6 @@ function App() {
           <Button className="Page-button" onClick={() => setCurrPage("DetailedPage")} disabled={currPage === "DetailedPage"}>Detailed Questions</Button>
         </div>
       </header>
-
-      <div className="Pages-div">
-        {renderPage()};
-      </div>
-
-      <div>
-        {currPage === "BasicPage" && (<BasicQuestion key={key} onQuestionSubmit={handleQuestionSumit}></BasicQuestion>)}
-      </div>
 
       <Form>
         <Form.Label>API Key:</Form.Label>

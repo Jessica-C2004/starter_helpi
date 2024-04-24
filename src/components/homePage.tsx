@@ -1,6 +1,7 @@
 import "./pages.css"
 import {Col, Container, Row } from "react-bootstrap";
 import { AIKey } from "../interfaces/AIKeyInterface";
+import logo from "../logoandimages/thecareerhelpilogo.png";
 
 export function HomePage(key: AIKey): JSX.Element {
     return <div className="Pages">
@@ -15,6 +16,9 @@ export function HomePage(key: AIKey): JSX.Element {
                         potential ideal career path. For a brief recommendation for 
                         careers, take this quiz!
                     </div>
+                    </Col>
+                    <Col>
+                     <div> <img src={logo} className="App-logo" alt="thestarterHelpilogo" /></div>
                     </Col>
                     <Col>
                     <h4 className="Description-header">Detailed Questions</h4>
