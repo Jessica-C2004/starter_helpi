@@ -4,9 +4,8 @@ import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
-export function BasicQuestion(key: AIKey, { onQuestionSubmit }): JSX.Element {
 
-
+export function BasicQuestion(key: AIKey): JSX.Element {
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",
@@ -60,7 +59,6 @@ export function BasicQuestion(key: AIKey, { onQuestionSubmit }): JSX.Element {
 
     const handleSubmit = () => {
         alert('Submission complete!');
-        onQuestionSubmit();
         };
 
     const handleRestart = () => {

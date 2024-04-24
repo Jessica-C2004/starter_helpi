@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
+import { Report} from './components/ReportPage';
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -16,8 +17,11 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [currPage, setCurrPage] = useState('HomePage');
-
+  /*const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
+  const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
+  const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
+*/
+  const [currPage, setCurrPage] = useState<string>("HomePage");
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -29,17 +33,51 @@ function App() {
     setKey(event.target.value);
   }
 
+  function Render() {
+    switch(currPage) {
+      case "HomePage":
+        return <HomePage key={key}></HomePage>;
+      case "BasicPage":
+        return <BasicQuestion key={key}></BasicQuestion>;
+      case "DetailedPage":
+        return <DetailedQuestions key={key}></DetailedQuestions>;
+      case "Report":
+        return <Report key={key}></Report>;
+    }
+  }
+  /*
+  function showHomePage() {
+    setHomePageVisible(true);
+    setBasicVisible(false);
+    setDetailedVisible(false);
+  }
+
+  function showBasic() {
+    setHomePageVisible(false);
+    setBasicVisible(true);
+    setDetailedVisible(false);
+  }
+
+  function showDetailed() {
+    setHomePageVisible(false);
+    setBasicVisible(false);
+    setDetailedVisible(true);
+  }
+  */
 
   return (
     <div className="App">
       <header className="App-header">
-
         <div className="Page-buttons-div">
           <Button className="Page-button" onClick={() => setCurrPage("HomePage")} disabled={currPage === "HomePage"}>Home Page</Button>
           <Button className="Page-button" onClick={() => setCurrPage("BasicPage")} disabled={currPage === "BasicPage"}>Basic Questions</Button>
           <Button className="Page-button" onClick={() => setCurrPage("DetailedPage")} disabled={currPage === "DetailedPage"}>Detailed Questions</Button>
         </div>
       </header>
+
+      <div className="Pages-div">
+        {Render()};
+      </div>
 
       <Form>
         <Form.Label>API Key:</Form.Label>
