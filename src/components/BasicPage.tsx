@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import "./pages.css";
-import { AIKey } from "../interfaces/AIKeyInterface";
+//import { AIKey } from "../interfaces/AIKeyInterface";
+import { BasicQuestionProps } from '../interfaces/BasicQuestionPropInterface';
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
+import { BindingOrAssignmentElementRestIndicator } from 'typescript';
 
-interface BasicQuestionProps {
-    showReport: () => void;
-}
-
-
-export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionProps ): JSX.Element {
+export default function BasicQuestion(key: BasicQuestionProps, {showReportFunc = () => {}}: BasicQuestionProps ): JSX.Element {
 
     const questions = [
         "I enjoy solving complex problems.",
@@ -120,7 +117,7 @@ export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionPro
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReport}>
+                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReportFunc}>
                                 Submit
                             </Button>
                         )}
