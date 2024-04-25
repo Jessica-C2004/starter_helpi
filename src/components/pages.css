@@ -11,12 +11,13 @@
 .Description {
 display: flex;
 flex-direction: column;
-width: 100%;
-height: 100%;
+width: 40%;
+height: 30%;
 background-color: #AFBEA2;
 outline: 1px solid black;
 border-radius: 10px;
 }
+
 
 .Question-instructions {
 width: 40%;
@@ -25,11 +26,11 @@ text-align: center;
 }
 
 /* pages.css */
-.radio-option {
+/*.radio-option {
   padding: 8px;
   border-radius: 5px;
   margin-bottom: 5px;
-}
+}*/
 
 .radio-option.selected {
   background-color: white; /* Make the background white for selected options */
@@ -66,10 +67,6 @@ text-align: center;
   text-align: center;
 }
 .Page-title {
-  height: 85px;
+  height: 125px;
   font-size: calc(30px + 2vmin);
-}
-
-.Default-box {
-  position: relative;
 }
