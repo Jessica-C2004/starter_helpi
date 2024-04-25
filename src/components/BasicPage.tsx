@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./pages.css";
 import { AIKey } from "../interfaces/AIKeyInterface";
-import { Progress } from "../interfaces/Progress";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 

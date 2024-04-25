@@ -5,6 +5,12 @@ import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import logo from "./logoandimages/thecareerhelpilogo.png"
+import {Navbar} from "./components/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -53,21 +59,34 @@ function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="thestarterHelpilogo" /> {/* Updated alt text */}
-      <header className="App-header">
-        <div className="Page-buttons-div">
+      <header className="Pages-div">
+        <Router>
+              <Navbar />
+              <Routes>
+                  <Route path="/" element={<HomePage key={key}/>} />
+                  <Route path="/home" element={<HomePage key={key}/>} />
+                  <Route path="/basic-Questions" element={<BasicQuestion key={key}/>} />
+                  <Route
+                      path="/detailed-Questions"
+                      element={<DetailedQuestions key={key}/>}
+                  />
+                  {/* <Route path="/report" element={<Report />} /> */}
+              </Routes>
+          </Router>
+        {/* <div className="Page-buttons-div">
           <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
           <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
           <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
-        </div>
+        </div> */}
       </header>
 
-      <div className="Pages-div">
+      {/* <div className="Pages-div">
         {homePageVisible && <HomePage key={key} />}
 
         {basicVisible && <BasicQuestion key={key} />}
 
         {detailedVisible && <DetailedQuestions key={key} />}
-      </div>
+      </div> */}
 
       <Form>
         <Form.Label>API Key:</Form.Label>
