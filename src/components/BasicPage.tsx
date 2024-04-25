@@ -5,7 +5,8 @@ import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
 
-export function BasicQuestion(key: AIKey, { onSubmit } ): JSX.Element {
+const BasicQuestion = (key: AIKey, { showReport } ) => {
+
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",
@@ -56,11 +57,6 @@ export function BasicQuestion(key: AIKey, { onSubmit } ): JSX.Element {
     const handleStart = () => {
         setShowQuestions(true);
     };
-
-    const handleSubmit = () => {
-        onSubmit();
-        alert('Submission complete!');
-        };
 
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
@@ -116,7 +112,7 @@ export function BasicQuestion(key: AIKey, { onSubmit } ): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" onClick={handleSubmit} disabled={!allQuestionsAnswered}>
+                            <Button variant="primary" onClick={ () =>  showReport() } disabled={!allQuestionsAnswered}>
                                 Submit
                             </Button>
                         )}
@@ -129,3 +125,5 @@ export function BasicQuestion(key: AIKey, { onSubmit } ): JSX.Element {
         </div>
     );
 }
+
+export default BasicQuestion;

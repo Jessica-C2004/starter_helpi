@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
-import { BasicQuestion } from './components/BasicPage';
+import BasicQuestion from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import { Report} from './components/ReportPage';
 
@@ -17,11 +17,11 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  /*const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
+  const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
   const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
   const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
-*/
   const [currPage, setCurrPage] = useState<string>("HomePage");
+  const [reportVisible, setReportVisible] = useState<boolean>(false);
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -38,9 +38,9 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
-        return <BasicQuestion key={key} { onSubmit }></BasicQuestion>;
+        return <BasicQuestion key={key} showReport={ showReport }></BasicQuestion>;
       case "DetailedPage":
-        return <DetailedQuestions key={key}></DetailedQuestions>;
+        return <DetailedQuestions key={key} showReport={ showReport }></DetailedQuestions>;
       case "Report":
         return <Report key={key}></Report>;
     }
@@ -64,6 +64,13 @@ function App() {
     setDetailedVisible(true);
   }
   */
+
+  function showReport() {
+    setBasicVisible(false);
+    setDetailedVisible(false);
+    setReportVisible(true);
+    alert('Submission complete!');
+  }
 
   return (
     <div className="App">
