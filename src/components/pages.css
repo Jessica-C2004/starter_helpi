@@ -11,9 +11,8 @@
 .Description {
 display: flex;
 flex-direction: column;
-align-items: center;
-width: 90%;
-height: 70%;
+width: 100%;
+height: 100%;
 background-color: #AFBEA2;
 outline: 1px solid black;
 border-radius: 10px;
@@ -43,8 +42,9 @@ text-align: center;
   border-radius: 5px;
   margin-bottom: 1px;
   transition: background-color 0.3s ease;
-  width: 70%;
-  height: 90%;
+  align-items: center;
+  width: 90%;
+  height: 60%;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
@@ -57,6 +57,8 @@ text-align: center;
   text-align: center;
   outline: 1px solid black;
   border-radius: 60px;
+  left: 10px;
+  position: relative;
 }
 
 .Question-instructions {
@@ -67,7 +69,4 @@ text-align: center;
 .Page-title {
   height: 125px;
   font-size: calc(30px + 2vmin);
-}
-.Default-box {
-  position: relative;
 }
