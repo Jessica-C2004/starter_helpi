@@ -38,6 +38,7 @@ function App() {
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
         return <BasicQuestion key={key} showReportFunc = { showReport } ></BasicQuestion>;
+
       case "DetailedPage":
         return <DetailedQuestions key={key}></DetailedQuestions>;
       case "Report":
@@ -64,10 +65,11 @@ function App() {
   }
   */
 
-  const showReport = ()=>{
+  const showReport = () => {
     setBasicVisible(false);
     setDetailedVisible(false);
     setReportVisible(true);
+    alert('Submission complete!');
   }
 
   return (

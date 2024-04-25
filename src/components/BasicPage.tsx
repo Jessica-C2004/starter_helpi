@@ -65,10 +65,6 @@ export default function BasicQuestion(key: BasicQuestionProps, {showReportFunc =
         setShowQuestions(false);
     };
 
-    const handleSubmit = () => {
-        alert('Submission complete!');
-    }
-
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
 
