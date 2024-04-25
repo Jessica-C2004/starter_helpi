@@ -68,10 +68,6 @@ export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionPro
         setShowQuestions(false);
     };
 
-    const handleSubmit = () => {
-        alert('Submission complete!');
-    }
-
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
 
@@ -120,7 +116,7 @@ export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionPro
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReport}>
+                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={() => showReport()}>
                                 Submit
                             </Button>
                         )}
