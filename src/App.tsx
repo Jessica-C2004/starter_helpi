@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
-import BasicQuestion from './components/BasicPage';
+import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import { Report } from './components/ReportPage';
 
@@ -14,12 +14,8 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+export function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
-  const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
-  const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
-  const [reportVisible, setReportVisible] = useState<boolean>(false);
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -30,6 +26,11 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
+  const[homePageVisible, setHomePageVisible] = useState<boolean>(true);
+  const[basicVisible, setBasicVisible] = useState<boolean>(false);
+  const[detailedVisible, setDetailedVisible] = useState<boolean>(false);
+  const[reportVisible, setReportVisible] = useState<boolean>(false);
 
   function showHomePage() {
     setHomePageVisible(true);
@@ -53,6 +54,7 @@ function App() {
   }
 
   function showReport() {
+    console.log("quiz finished");
     alert('Submission complete!');
     setBasicVisible(false);
     setDetailedVisible(false);
@@ -93,4 +95,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

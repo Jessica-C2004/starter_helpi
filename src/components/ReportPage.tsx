@@ -2,8 +2,12 @@ import "./pages.css";
 import { AIKey } from '../interfaces/AIKeyInterface';
 import { Col, Container, Row, Image} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
+import { useState } from "react";
 
 export function Report(key: AIKey): JSX.Element {
+
+    const [reportVisible, setReportVisible] = useState<boolean>(false);
+
     return <div className="Pages" id="Basic Questions Report Page">
         <h1>Your Suggested Career is...</h1>
         <Container>

@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import "./pages.css";
 import { AIKey } from "../interfaces/AIKeyInterface";
-import { BasicQuestionProps } from '../interfaces/BasicQuestionPropInterface';
+import { PagesProps } from '../interfaces/PagesProps';
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
-export default function BasicQuestion(key: BasicQuestionProps, {showReportFunc = () => {}}: BasicQuestionProps ): JSX.Element {
+export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ): JSX.Element {
 
+    const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
+
+    if (console.log(showReportFunc) === undefined) {
+        console.log("fail");
+    };
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",

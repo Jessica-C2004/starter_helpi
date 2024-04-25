@@ -2,8 +2,12 @@ import "./pages.css"
 import {Col, Container, Row } from "react-bootstrap";
 import { AIKey } from "../interfaces/AIKeyInterface";
 import logo from "../logoandimages/thecareerhelpilogo.png";
+import { useState } from "react";
 
 export function HomePage(key: AIKey): JSX.Element {
+
+    const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
+
     return <div className="Pages">
         <h3 className="Page-title">Welcome to The Career Helpi!</h3>
             <Container className="Default-box">

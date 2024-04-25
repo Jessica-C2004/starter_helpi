@@ -111,6 +111,11 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
     const [hasStarted, setHasStarted] = useState(false);
+    const [detailedVisible, setDetailedVisible] = useState<boolean>(false);
+
+    function showDetailed() {
+        setDetailedVisible(true);
+      }
 
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];

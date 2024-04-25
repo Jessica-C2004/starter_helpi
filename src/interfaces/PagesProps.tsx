@@ -1,4 +1,4 @@
-export interface BasicQuestionProps {
+export interface PagesProps {
     key: string;
     showReportFunc: () => void;
 }
