@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
-import { BasicQuestion } from './components/basicPage';
+import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
-import logo from "./logoandimages/thecareerhelpilogo.png"
-import {Navbar} from "./components/navbar";
+import {Navbar} from "./components/Navbar";
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,7 +36,6 @@ function App() {
 
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="thestarterHelpilogo" /> {/* Updated alt text */}
       <header className="Pages-div">
         <Router>
               <Navbar />

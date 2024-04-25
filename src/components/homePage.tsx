@@ -3,6 +3,7 @@ import {Col, Container, Row } from "react-bootstrap";
 import { AIKey } from "../interfaces/AIKeyInterface";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
+import logo from "../logoandimages/thecareerhelpilogo.png";
 
 
 export function HomePage(key: AIKey): JSX.Element {
@@ -22,6 +23,9 @@ export function HomePage(key: AIKey): JSX.Element {
                         potential ideal career path. For a brief recommendation for 
                         careers, take this quiz!
                     </div>
+                    </Col>
+                    <Col>
+                        <div> <img src={logo} className="App-logo" alt="thestarterHelpilogo" /></div>
                     </Col>
                     <Col>
                     <NavMenu>
