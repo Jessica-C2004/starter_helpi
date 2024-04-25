@@ -4,8 +4,12 @@ import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
+interface BasicQuestionProps {
+    showReport: () => void;
+}
 
-export default function BasicQuestion(key: AIKey ): JSX.Element {
+
+export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionProps ): JSX.Element {
 
     const questions = [
         "I enjoy solving complex problems.",
@@ -116,7 +120,7 @@ export default function BasicQuestion(key: AIKey ): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={handleSubmit}>
+                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReport}>
                                 Submit
                             </Button>
                         )}

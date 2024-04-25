@@ -38,7 +38,7 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
-        return <BasicQuestion key={key}></BasicQuestion>;
+        return <BasicQuestion key={key} showReport={ showReport }></BasicQuestion>;
       case "DetailedPage":
         return <DetailedQuestions key={key}></DetailedQuestions>;
       case "Report":
