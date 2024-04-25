@@ -111,6 +111,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
     const [hasStarted, setHasStarted] = useState(false);
+    const [hasFinished, setHasFinished] = useState(false);
 
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];
@@ -128,6 +129,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
         setAnswers(Array(questions.length).fill(''));
         setOtherText('');
     };
+    const handleFinish = () => setHasFinished(true);
 
     const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
@@ -167,6 +169,13 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                 <h1>Welcome to the Detailed Career Assessment</h1>
                 <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
                 <Button variant="primary" onClick={handleStart}>Start</Button>
+            </div>
+        );
+    }
+    if (hasFinished) {
+        return (
+            <div className="Pages">
+                <h1>Congratulations! Please wait while your career results are being generated! </h1>
             </div>
         );
     }
@@ -210,7 +219,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <Button type="submit" variant="success" disabled={!canSubmit}>
+                        <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
                             Submit
                         </Button>
                     )}
