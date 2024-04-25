@@ -4,7 +4,6 @@ import { AIKey } from "../interfaces/AIKeyInterface";
 import { BasicQuestionProps } from '../interfaces/BasicQuestionPropInterface';
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
-import { BindingOrAssignmentElementRestIndicator } from 'typescript';
 
 export default function BasicQuestion(key: BasicQuestionProps, {showReportFunc = () => {}}: BasicQuestionProps ): JSX.Element {
 
