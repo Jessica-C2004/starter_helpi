@@ -38,7 +38,7 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
-        return <BasicQuestion key={key} {...() => setCurrPage("Report")}></BasicQuestion>;
+        return <BasicQuestion key={key} { onSubmit }></BasicQuestion>;
       case "DetailedPage":
         return <DetailedQuestions key={key}></DetailedQuestions>;
       case "Report":

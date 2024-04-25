@@ -5,7 +5,7 @@ import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
 
-export function BasicQuestion(key: AIKey, { onSubmit}: ): JSX.Element {
+export function BasicQuestion(key: AIKey, { onSubmit } ): JSX.Element {
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",
