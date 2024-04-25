@@ -19,7 +19,6 @@ function App() {
   const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
   const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
   const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
-  const [currPage, setCurrPage] = useState<string>("HomePage");
   const [reportVisible, setReportVisible] = useState<boolean>(false);
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -32,58 +31,53 @@ function App() {
     setKey(event.target.value);
   }
 
-  function Render() {
-    switch(currPage) {
-      case "HomePage":
-        return <HomePage key={key}></HomePage>;
-      case "BasicPage":
-        return <BasicQuestion key={key} showReportFunc = { showReport } ></BasicQuestion>;
-
-      case "DetailedPage":
-        return <DetailedQuestions key={key}></DetailedQuestions>;
-      case "Report":
-        return <Report key={key}></Report>;
-    }
-  }
-  /*
   function showHomePage() {
     setHomePageVisible(true);
     setBasicVisible(false);
     setDetailedVisible(false);
+    setReportVisible(false);
   }
 
   function showBasic() {
     setHomePageVisible(false);
     setBasicVisible(true);
     setDetailedVisible(false);
+    setReportVisible(false);
   }
 
   function showDetailed() {
     setHomePageVisible(false);
     setBasicVisible(false);
     setDetailedVisible(true);
+    setReportVisible(false);
   }
-  */
 
-  const showReport = () => {
+  function showReport() {
+    alert('Submission complete!');
     setBasicVisible(false);
     setDetailedVisible(false);
+    setHomePageVisible(false);
     setReportVisible(true);
-    alert('Submission complete!');
   }
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="Page-buttons-div">
-          <Button className="Page-button" onClick={() => setCurrPage("HomePage")} disabled={currPage === "HomePage"}>Home Page</Button>
-          <Button className="Page-button" onClick={() => setCurrPage("BasicPage")} disabled={currPage === "BasicPage"}>Basic Questions</Button>
-          <Button className="Page-button" onClick={() => setCurrPage("DetailedPage")} disabled={currPage === "DetailedPage"}>Detailed Questions</Button>
+          <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
+          <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
+          <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
         </div>
       </header>
 
       <div className="Pages-div">
-        {Render()};
+        {homePageVisible && <HomePage key={key} />}
+
+        {basicVisible && <BasicQuestion key={key} showReportFunc = { showReport }/>}
+
+        {detailedVisible && <DetailedQuestions key={key} />}
+
+        {reportVisible && <Report key={key} />}
       </div>
 
       <Form>
