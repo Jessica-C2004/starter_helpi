@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import "./pages.css";
 import { AIKey } from '../interfaces/AIKeyInterface';
 import { Col, Container, Row, Image} from 'react-bootstrap';
