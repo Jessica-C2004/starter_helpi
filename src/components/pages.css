@@ -19,16 +19,6 @@ outline: 1px solid black;
 border-radius: 10px;
 }
 
-.Description-header {
-background-color: #AFBEA2;
-width: 350px;
-height: 35px;
-text-align: center;
-outline: 1px solid black;
-border-radius: 10px;
-left: 10px;
-position: relative;
-}
 
 .Question-instructions {
 width: 40%;
