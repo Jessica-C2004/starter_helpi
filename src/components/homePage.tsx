@@ -12,7 +12,7 @@ export function HomePage(key: AIKey): JSX.Element {
                 <Row>
                     <Col>
                     <NavMenu>
-                        <NavLink to='/basic-Questions' className="Description-header">
+                        <NavLink to='/basic-Questions'>
                             Basic Questions
                         </NavLink>
                     </NavMenu>
@@ -25,7 +25,7 @@ export function HomePage(key: AIKey): JSX.Element {
                     </Col>
                     <Col>
                     <NavMenu>
-                        <NavLink to='/detailed-Questions' className="Description-header">
+                        <NavLink to='/detailed-Questions'>
                             Detailed Questions
                         </NavLink>
                     </NavMenu>
@@ -39,16 +39,17 @@ export function HomePage(key: AIKey): JSX.Element {
 }
 
 const NavLink = styled(Link)`
-    color: #808080;
-    display: flex;
-    align-items: center;
+    background-color: #AFBEA2;
+    color: #000000;
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    outline: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
     text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    cursor: pointer;
-    &.active {
-        color: #4d4dff;
-    }
+    font-size: 1.6rem;
+
 `;
  
 const NavMenu = styled.div`

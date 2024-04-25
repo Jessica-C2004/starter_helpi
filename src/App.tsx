@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
-import { BasicQuestion } from './components/BasicPage';
+import { BasicQuestion } from './components/basicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import logo from "./logoandimages/thecareerhelpilogo.png"
-import {Navbar} from "./components/Navbar";
+import {Navbar} from "./components/navbar";
 import {
   BrowserRouter as Router,
   Routes,
@@ -23,9 +23,6 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
-  const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
-  const [detailedVisible, setDetailedVisible] = useState<boolean>(false); //to show the detailed questions
   
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
@@ -36,24 +33,6 @@ function App() {
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
-  }
-
-  function showHomePage() {
-    setHomePageVisible(true);
-    setBasicVisible(false);
-    setDetailedVisible(false);
-  }
-
-  function showBasic() {
-    setHomePageVisible(false);
-    setBasicVisible(true);
-    setDetailedVisible(false);
-  }
-
-  function showDetailed() {
-    setHomePageVisible(false);
-    setBasicVisible(false);
-    setDetailedVisible(true);
   }
 
   return (
