@@ -153,14 +153,14 @@ FAIL src/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |       9 |    11.36 |    5.71 |    9.43 |                   
+All files            |     8.4 |    10.41 |    5.55 |    8.92 |                   
  src                 |   27.27 |    41.66 |    12.5 |   27.27 |                   
   App.tsx            |    40.9 |     62.5 |   16.66 |    40.9 | 14,25-49          
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    1.28 |        0 |     3.7 |    1.36 |                   
-  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-103             
-  detailedPage.tsx   |       0 |        0 |       0 |       0 | 8-209             
+ src/components      |    1.16 |        0 |    3.57 |    1.26 |                   
+  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-114             
+  detailedPage.tsx   |       0 |        0 |       0 |       0 | 8-218             
   homePage.tsx       |     100 |      100 |     100 |     100 |                   
   progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
  src/interfaces      |       0 |        0 |       0 |       0 |                   
@@ -170,7 +170,7 @@ All files            |       9 |    11.36 |    5.71 |    9.43 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.143 s
+Time:        3.089 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
