@@ -73,21 +73,7 @@ function App() {
                   {/* <Route path="/report" element={<Report />} /> */}
               </Routes>
           </Router>
-        {/* <div className="Page-buttons-div">
-          <Button className="Page-button" onClick={showHomePage} disabled={homePageVisible}>Home Page</Button>
-          <Button className="Page-button" onClick={showBasic} disabled={basicVisible}>Basic Questions</Button>
-          <Button className="Page-button" onClick={showDetailed} disabled={detailedVisible}>Detailed Questions</Button>
-        </div> */}
       </header>
-
-      {/* <div className="Pages-div">
-        {homePageVisible && <HomePage key={key} />}
-
-        {basicVisible && <BasicQuestion key={key} />}
-
-        {detailedVisible && <DetailedQuestions key={key} />}
-      </div> */}
-
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
