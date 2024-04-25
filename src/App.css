@@ -3,20 +3,22 @@
 }
 
 .App-logo {
-  height: 15vh;
+  height: 50%;
+  width: 100%;
   pointer-events: none;
   margin: 5px;
   object-position: left;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  top: -40px;
 }
 
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    /*animation: App-logo-spin infinite 20s linear;*/
+    /*animation: App-logo-spin infinite 20s linear;
   }
 }
+*/
 
 .App-header {
   background-color: #51624F;

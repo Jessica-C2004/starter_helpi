@@ -111,6 +111,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
     const [hasStarted, setHasStarted] = useState(false);
+    const [hasFinished, setHasFinished] = useState(false);
 
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];
@@ -128,6 +129,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
         setAnswers(Array(questions.length).fill(''));
         setOtherText('');
     };
+    const handleFinish = () => setHasFinished(true);
 
     const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
@@ -157,6 +159,8 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     };
 
 
+    const numberQuestionsAnswered = answers.filter(answer => answer.trim() !== '').length;
+
     const canSubmit = answers.every(answer => answer.trim() !== '');
 
     if (!hasStarted) {
@@ -168,11 +172,18 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
             </div>
         );
     }
+    if (hasFinished) {
+        return (
+            <div className="Pages">
+                <h1>Congratulations! Please wait while your career results are being generated! </h1>
+            </div>
+        );
+    }
 
     return (
         <div className="Pages">
             <h1>Detailed Career Questions</h1>
-            <QuestionProgressBar totalQuestions={questions.length} completedQuestions={currentQuestionIndex + 1} />
+            <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
             <Form onSubmit={handleSubmit}>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
@@ -208,7 +219,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <Button type="submit" variant="success" disabled={!canSubmit}>
+                        <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
                             Submit
                         </Button>
                     )}
