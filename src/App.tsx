@@ -38,9 +38,9 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
-        return <BasicQuestion key={key} showReport={ showReport }></BasicQuestion>;
+        return <BasicQuestion key={key}></BasicQuestion>;
       case "DetailedPage":
-        return <DetailedQuestions key={key} showReport={ showReport }></DetailedQuestions>;
+        return <DetailedQuestions key={key}></DetailedQuestions>;
       case "Report":
         return <Report key={key}></Report>;
     }
@@ -69,7 +69,6 @@ function App() {
     setBasicVisible(false);
     setDetailedVisible(false);
     setReportVisible(true);
-    alert('Submission complete!');
   }
 
   return (

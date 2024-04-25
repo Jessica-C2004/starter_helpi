@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
 
-export function DetailedQuestions(key: AIKey, { showReport }): JSX.Element {
+export function DetailedQuestions(key: AIKey): JSX.Element {
     const questions = [
         {
             question: "What type of work environment do you thrive in?",
@@ -210,7 +210,7 @@ export function DetailedQuestions(key: AIKey, { showReport }): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <Button type="submit" variant="success" disabled={!canSubmit} onClick={ () => showReport() }>
+                        <Button type="submit" variant="success" disabled={!canSubmit}>
                             Submit
                         </Button>
                     )}
