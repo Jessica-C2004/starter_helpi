@@ -11,8 +11,9 @@
 .Description {
 display: flex;
 flex-direction: column;
-width: 40%;
-height: 30%;
+align-items: center;
+width: 90%;
+height: 70%;
 background-color: #AFBEA2;
 outline: 1px solid black;
 border-radius: 10px;
@@ -25,6 +26,8 @@ height: 35px;
 text-align: center;
 outline: 1px solid black;
 border-radius: 10px;
+left: 10px;
+position: relative;
 }
 
 .Question-instructions {
@@ -72,6 +75,9 @@ text-align: center;
   text-align: center;
 }
 .Page-title {
-  height: 85px;
+  height: 125px;
   font-size: calc(30px + 2vmin);
+}
+.Default-box {
+  position: relative;
 }
