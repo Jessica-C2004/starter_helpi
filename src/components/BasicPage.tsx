@@ -9,7 +9,7 @@ interface BasicQuestionProps {
 }
 
 
-export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionProps ): JSX.Element {
+export function BasicQuestion(key: AIKey, {showReport}: BasicQuestionProps ): JSX.Element {
 
     const questions = [
         "I enjoy solving complex problems.",
@@ -116,7 +116,7 @@ export default function BasicQuestion(key: AIKey, {showReport}: BasicQuestionPro
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={() => showReport()}>
+                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReport}>
                                 Submit
                             </Button>
                         )}

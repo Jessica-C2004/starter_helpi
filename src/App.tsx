@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
-import BasicQuestion from './components/BasicPage';
+import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import { Report} from './components/ReportPage';
 
@@ -38,7 +38,7 @@ function App() {
       case "HomePage":
         return <HomePage key={key}></HomePage>;
       case "BasicPage":
-        return <BasicQuestion key={key} {...showReport} ></BasicQuestion>;
+        return <BasicQuestion key={key} showReport={showReport} ></BasicQuestion>;
       case "DetailedPage":
         return <DetailedQuestions key={key}></DetailedQuestions>;
       case "Report":
@@ -65,7 +65,7 @@ function App() {
   }
   */
 
-  function showReport() {
+  const showReport = () => {
     setBasicVisible(false);
     setDetailedVisible(false);
     setReportVisible(true);
