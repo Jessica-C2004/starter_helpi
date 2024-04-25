@@ -37,11 +37,11 @@ text-align: center;
 }
 
 /* pages.css */
-.radio-option {
+/*.radio-option {
   padding: 8px;
   border-radius: 5px;
   margin-bottom: 5px;
-}
+}*/
 
 .radio-option.selected {
   background-color: white; /* Make the background white for selected options */

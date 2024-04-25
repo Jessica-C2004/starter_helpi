@@ -58,9 +58,9 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(true);
     };
 
-    const handleSubmit = () => {
+    /*const handleSubmit = () => {
         alert('Submission complete!');
-        };
+        };*/
     
     const handleFinish = () => setHasFinished(true);
 
