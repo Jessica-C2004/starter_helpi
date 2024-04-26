@@ -5,13 +5,7 @@ import { PagesProps } from '../interfaces/PagesProps';
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
-export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ): JSX.Element {
-
-    const [basicVisible, setBasicVisible] = useState<boolean>(false); //to show the basic questions
-
-    if (console.log(showReportFunc) === undefined) {
-        console.log("fail");
-    };
+export function BasicQuestion(key: AIKey): JSX.Element {
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",
@@ -34,13 +28,30 @@ export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ):
         "Job stability is more important to me than job flexibility.",
         "Traveling frequently for work is appealing to me."
     ];
+    /*options for every question to set up Likert Scale*/
     const options = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"];
     const questionsLength = questions.length;
 
+    /*
+        currentQuestionIndex - tracks which question user is on, initialized at 0 to start at first question
+        setCurrentQuestionIndex - used to update which question user is on
+        
+        answers - tracks answer user chooses for the question asked, initialized null and updated when user clicks options button
+        setAnswers - used to update array containing answers to contain which option user chose
+
+        showQuestions - tracks questions visibility, initialized at false and updated when user clicks "start" button
+        setShowQuestions - used to toggle question visibility between false (invisible) and true (visible)
+    */
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [showQuestions, setShowQuestions] = useState(false);
 
+    /*
+        @description - updates the answers list if user chooses new option after the first one they chose
+        @param
+            questionIndex: number question user is changing their answer of
+            optionIndex: the new option chosen by the user
+    */
     const handleOptionChange = (questionIndex: number, optionIndex: number): void => {
         const updatedAnswers = [...answers];
         updatedAnswers[questionIndex] = optionIndex;
@@ -62,6 +73,10 @@ export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ):
     const handleStart = () => {
         setShowQuestions(true);
     };
+
+    const handleSubmit = () => {
+        alert('Submission complete!');
+        };
 
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
@@ -117,7 +132,7 @@ export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ):
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" disabled={!allQuestionsAnswered} onClick={showReportFunc}>
+                            <Button variant="primary" onClick={handleSubmit} disabled={!allQuestionsAnswered}>
                                 Submit
                             </Button>
                         )}
@@ -130,4 +145,3 @@ export function BasicQuestion(key: PagesProps, { showReportFunc }: PagesProps ):
         </div>
     );
 }
-
