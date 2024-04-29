@@ -45,6 +45,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [showQuestions, setShowQuestions] = useState(false);
+    const [hasFinished, setHasFinished] = useState(false);
 
     /*
         @description - updates the answers list if user chooses new option after the first one they chose
@@ -80,15 +81,25 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(true);
     };
 
-    const handleSubmit = () => {
+    /*const handleSubmit = () => {
         alert('Submission complete!');
-        };
+        };*/
+    
+    const handleFinish = () => setHasFinished(true);
 
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowQuestions(false);
     };
+
+    if (hasFinished) {
+        return (
+            <div className="Pages">
+                <h1>Congratulations! Please wait while your career results are being generated! </h1>
+            </div>
+        );
+    }
 
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
@@ -138,7 +149,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" onClick={handleSubmit} disabled={!allQuestionsAnswered}>
+                            <Button variant="primary" onClick={handleFinish} disabled={!allQuestionsAnswered}>
                                 Submit
                             </Button>
                         )}

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
-
 export const Navbar = () => {
     return (
         <>
@@ -27,25 +26,29 @@ export const Navbar = () => {
 };
 
 const Nav = styled.nav`
-    background: #ffb3ff;
-    height: 85px;
+    background: #51624F;
+    min-height: 10vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0.2rem calc((100vw - 1000px) / 2);
     z-index: 12;
 `;
  
 const NavLink = styled(Link)`
-    color: #808080;
-    display: flex;
-    align-items: center;
+    background-color: #AFBEA2;
+    color: #000000;
     text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    cursor: pointer;
     &.active {
         color: #4d4dff;
     }
+    border-radius: 15px;
+    width: 150px;
+    height: inherit - 6vh;
+    text-align: center;
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    margin-left: 10px;
+    margin-right: 10px;
 `;
  
 const NavMenu = styled.div`

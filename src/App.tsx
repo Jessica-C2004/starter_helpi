@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
-import { Report } from './components/ReportPage';import {Navbar} from "./components/Navbar";
+import {Navbar} from "./components/Navbar";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,6 +22,7 @@ if (prevKey !== null) {
 
 export function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
+  
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -31,41 +32,6 @@ export function App() {
   //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
-  }
-
-  const[homePageVisible, setHomePageVisible] = useState<boolean>(true);
-  const[basicVisible, setBasicVisible] = useState<boolean>(false);
-  const[detailedVisible, setDetailedVisible] = useState<boolean>(false);
-  const[reportVisible, setReportVisible] = useState<boolean>(false);
-
-  function showHomePage() {
-    setHomePageVisible(true);
-    setBasicVisible(false);
-    setDetailedVisible(false);
-    setReportVisible(false);
-  }
-
-  function showBasic() {
-    setHomePageVisible(false);
-    setBasicVisible(true);
-    setDetailedVisible(false);
-    setReportVisible(false);
-  }
-
-  function showDetailed() {
-    setHomePageVisible(false);
-    setBasicVisible(false);
-    setDetailedVisible(true);
-    setReportVisible(false);
-  }
-
-  function showReport() {
-    console.log("quiz finished");
-    alert('Submission complete!');
-    setBasicVisible(false);
-    setDetailedVisible(false);
-    setHomePageVisible(false);
-    setReportVisible(true);
   }
 
   return (
