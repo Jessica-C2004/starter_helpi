@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (58 ms)
+  ✕ renders learn react link (59 ms)
 
   ● renders learn react link
 
@@ -159,29 +159,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   12.28 |     2.38 |    8.82 |   13.08 |                   
- src                 |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx            |      60 |       50 |   33.33 |      60 | 21,29-35          
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |     8.6 |        0 |    6.89 |     9.3 |                   
-  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-114             
-  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
-  detailedPage.tsx   |       0 |        0 |       0 |       0 | 8-218             
-  homePage.tsx       |     100 |      100 |     100 |     100 |                   
-  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
- src/interfaces      |       0 |        0 |       0 |       0 |                   
-  AIKeyInterface.tsx |       0 |        0 |       0 |       0 |                   
-  Progress.tsx       |       0 |        0 |       0 |       0 |                   
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.227 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -194,3 +171,28 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   12.06 |     2.38 |    8.57 |   12.84 |                   
+ src                 |   28.57 |    16.66 |      20 |   28.57 |                   
+  App.tsx            |      60 |       50 |   33.33 |      60 | 20,28-34          
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/components      |    8.42 |        0 |    6.66 |    9.09 |                   
+  BasicPage.tsx      |       0 |        0 |       0 |       0 | 9-143             
+  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
+  ReportPage.tsx     |       0 |      100 |       0 |       0 | 9-11              
+  detailedPage.tsx   |       0 |        0 |       0 |       0 | 8-218             
+  homePage.tsx       |     100 |      100 |     100 |     100 |                   
+  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
+ src/interfaces      |       0 |        0 |       0 |       0 |                   
+  AIKeyInterface.tsx |       0 |        0 |       0 |       0 |                   
+  PagesProps.tsx     |       0 |        0 |       0 |       0 |                   
+  Progress.tsx       |       0 |        0 |       0 |       0 |                   
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.284 s
+Ran all test suites.
