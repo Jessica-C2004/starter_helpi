@@ -57,19 +57,25 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         updatedAnswers[questionIndex] = optionIndex;
         setAnswers(updatedAnswers);
     };
-
+    /*
+        @description - switches to the next question in the array if it is not the last question
+    */
     const handleNext = () => {
         if (currentQuestionIndex < questionsLength - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
-
+    /*
+        @description - switches to previous question in array if it s not the first question
+    */
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
     };
-
+    /*
+        @description - when used it begins the quiz and allows user to see questions 
+    */
     const handleStart = () => {
         setShowQuestions(true);
     };
