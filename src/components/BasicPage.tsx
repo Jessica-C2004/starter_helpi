@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import "./pages.css";
 import { AIKey } from "../interfaces/AIKeyInterface";
-import { PagesProps } from '../interfaces/PagesProps';
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 
@@ -81,18 +80,21 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(true);
     };
 
-    /*const handleSubmit = () => {
-        alert('Submission complete!');
-        };*/
-    
+    /*  sets page to the finished submission page */
     const handleFinish = () => setHasFinished(true);
 
+    /*
+        @description - resets the answers array to be empty, sets the visible question to the first one in question array, and goes back to the start stage
+    */
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowQuestions(false);
     };
 
+    /*
+        once hasFinished is true, changes the page to show the submission page
+    */
     if (hasFinished) {
         return (
             <div className="Pages">
@@ -109,6 +111,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
 
     return (
         <div className="Pages">
+            {/* start page */}
             {!showQuestions && (
                 <div>
                     <h1>Welcome to the Career Questionnaire</h1>
@@ -116,6 +119,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                     <Button variant="primary" onClick={handleStart}>Start</Button>
                 </div>
             )}
+            { /* questions part of page */ }
             {showQuestions && (
                 <div>
                     <h1>Basic Career Questions</h1>
@@ -123,6 +127,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                     <div>
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
+                        { /* sets up the answer option buttons for each questions */ }
                         {options.map((option, optionIndex) => (
                             <div 
                                 className={`radio-option ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
@@ -140,6 +145,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                         ))}
                     </div>
                     <div className="navigation-buttons">
+                        { /* buttons to handle going to previous question, next question, restart, and to submit (only if at last question and every one is answered) */}
                         <Button variant="secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
                             Previous
                         </Button>
