@@ -6,9 +6,8 @@ import { NavLink as Link } from "react-router-dom";
 import logo from "../logoandimages/thecareerhelpilogo.png";
 
 
-export function HomePage(key: AIKey): JSX.Element {
 
-    const [homePageVisible, setHomePageVisible] = useState<boolean>(true); //to show the home page
+export function HomePage(key: AIKey): JSX.Element {
 
     return <div className="Pages">
         <h3 className="Page-title">Welcome to The Career Helpi!</h3>
@@ -45,6 +44,7 @@ export function HomePage(key: AIKey): JSX.Element {
     </div>;
 }
 
+//handles the styling of the NavLinks to Basic Page and Description Page
 const NavLink = styled(Link)`
     background-color: #AFBEA2;
     color: #000000;
