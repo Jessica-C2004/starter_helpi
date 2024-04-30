@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
+//creates the header buttons that allows navigation between the pages
 export const Navbar = () => {
     return (
         <>
