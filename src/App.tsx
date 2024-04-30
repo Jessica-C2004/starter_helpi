@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HomePage } from './components/homePage';
 import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
+import { Report } from './components/ReportPage';
 import {Navbar} from "./components/Navbar";
 import {
   BrowserRouter as Router,
@@ -48,7 +49,7 @@ function App() {
                       path="/detailed-Questions"
                       element={<DetailedQuestions key={key}/>}
                   />
-                  {/* <Route path="/report" element={<Report />} /> */}
+                  <Route path="/report" element={<Report key={key}/>} />
               </Routes>
           </Router>
       </header>

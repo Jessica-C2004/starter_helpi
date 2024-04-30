@@ -3,6 +3,9 @@ import "./pages.css";
 import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
+import styled from "styled-components";
+import { NavLink as Link } from "react-router-dom";
+
 
 
 export function BasicQuestion(key: AIKey): JSX.Element {
@@ -57,10 +60,6 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     const handleStart = () => {
         setShowQuestions(true);
     };
-
-    /*const handleSubmit = () => {
-        alert('Submission complete!');
-        };*/
     
     const handleFinish = () => setHasFinished(true);
 
@@ -73,7 +72,11 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     if (hasFinished) {
         return (
             <div className="Pages">
-                <h1>Congratulations! Please wait while your career results are being generated! </h1>
+                <NavMenu>
+                        <NavLink to='/report'>
+                            Click Here to access your report!
+                        </NavLink>
+                </NavMenu>
             </div>
         );
     }
@@ -126,9 +129,11 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" onClick={handleFinish} disabled={!allQuestionsAnswered}>
-                                Submit
-                            </Button>
+                            <NavLink to='/report'>
+                                <Button variant="primary" onClick={handleFinish} disabled={!allQuestionsAnswered}>
+                                    Submit
+                                </Button>
+                            </NavLink>
                         )}
                         <Button variant="info" onClick={handleRestart}>
                             Restart
@@ -139,3 +144,32 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         </div>
     );
 }
+
+
+const NavLink = styled(Link)`
+    background-color: #AFBEA2;
+    color: #000000;
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    outline: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+
+`;
+ 
+const NavMenu = styled.div`
+    display: flex;
+    align-items: center;
+    margin-right: -24px;
+    /* Second Nav */
+    /* margin-right: 24px; */
+    /* Third Nav */
+    /* width: 100vw;
+white-space: nowrap; */
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+`;
