@@ -28,29 +28,9 @@
   color: white;
 }
 
-.Page-buttons-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 10vh; 
-  align-items: left;
-}
-
 .Pages-div {
   background-color: #9CB4AC;
-  height: 99vh;
-}
-
-.Page-button {
-  background-color: #AFBEA2;
-  border-radius: 15px;
-  width: 170px;
-  height: 40px;
-  text-align: center;
-  margin-bottom: 3vh;
-  margin-top: 3vh;
-  margin-left: 10px;
-  margin-right: 10px;
+  height: 100vh;
 }
 
 .Button-color {
