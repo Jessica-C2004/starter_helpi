@@ -37,7 +37,6 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [showQuestions, setShowQuestions] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
 
     const handleOptionChange = (questionIndex: number, optionIndex: number): void => {
         const updatedAnswers = [...answers];
@@ -61,25 +60,11 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(true);
     };
     
-    const handleFinish = () => setHasFinished(true);
-
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowQuestions(false);
     };
-
-    if (hasFinished) {
-        return (
-            <div className="Pages">
-                <NavMenu>
-                        <NavLink to='/report'>
-                            Click Here to access your report!
-                        </NavLink>
-                </NavMenu>
-            </div>
-        );
-    }
 
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
@@ -130,7 +115,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
                             <NavLink to='/report'>
-                                <Button variant="primary" onClick={handleFinish} disabled={!allQuestionsAnswered}>
+                                <Button variant="primary" disabled={!allQuestionsAnswered}>
                                     Submit
                                 </Button>
                             </NavLink>
@@ -158,18 +143,4 @@ const NavLink = styled(Link)`
     text-decoration: none;
     font-size: 1.6rem;
 
-`;
- 
-const NavMenu = styled.div`
-    display: flex;
-    align-items: center;
-    margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-white-space: nowrap; */
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
 `;
