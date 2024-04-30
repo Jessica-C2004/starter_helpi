@@ -3,6 +3,9 @@ import "./pages.css";
 import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
+import styled from "styled-components";
+import { NavLink as Link } from "react-router-dom";
+
 
 export function BasicQuestion(key: AIKey): JSX.Element {
     //questions asked in the basic quiz
@@ -45,7 +48,6 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [showQuestions, setShowQuestions] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
 
     /*
         @description - updates the answers list if user chooses new option after the first one they chose
@@ -80,29 +82,12 @@ export function BasicQuestion(key: AIKey): JSX.Element {
     const handleStart = () => {
         setShowQuestions(true);
     };
-
-    /*  sets page to the finished submission page */
-    const handleFinish = () => setHasFinished(true);
-
-    /*
-        @description - resets the answers array to be empty, sets the visible question to the first one in question array, and goes back to the start stage
-    */
+    
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowQuestions(false);
     };
-
-    /*
-        once hasFinished is true, changes the page to show the submission page
-    */
-    if (hasFinished) {
-        return (
-            <div className="Pages">
-                <h1>Congratulations! Please wait while your career results are being generated! </h1>
-            </div>
-        );
-    }
 
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
@@ -156,9 +141,11 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <Button variant="primary" onClick={handleFinish} disabled={!allQuestionsAnswered}>
-                                Submit
-                            </Button>
+                            <NavLink to='/report'>
+                                <Button variant="primary" disabled={!allQuestionsAnswered}>
+                                    Submit
+                                </Button>
+                            </NavLink>
                         )}
                         <Button variant="info" onClick={handleRestart}>
                             Restart
@@ -169,3 +156,18 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         </div>
     );
 }
+
+
+const NavLink = styled(Link)`
+    background-color: #AFBEA2;
+    color: #000000;
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    outline: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+
+`;

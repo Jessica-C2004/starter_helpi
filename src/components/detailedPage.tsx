@@ -3,6 +3,9 @@ import { AIKey } from "../interfaces/AIKeyInterface";
 import { Button, Form } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
+import { NavLink as Link } from "react-router-dom";
+import styled from "styled-components";
+
 
 export function DetailedQuestions(key: AIKey): JSX.Element {
     const questions = [
@@ -219,9 +222,11 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
-                            Submit
-                        </Button>
+                        <NavLink to='/report'>
+                            <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
+                                Submit
+                            </Button>
+                        </NavLink>
                     )}
                     <Button variant="info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
                 </div>
@@ -229,3 +234,17 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
         </div>
     );
 }
+
+const NavLink = styled(Link)`
+    background-color: #AFBEA2;
+    color: #000000;
+    width: 350px;
+    height: 35px;
+    text-align: center;
+    outline: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+
+`;
