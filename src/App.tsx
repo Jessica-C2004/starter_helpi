@@ -13,7 +13,6 @@ import {
 } from "react-router-dom";
 
 
-
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
@@ -22,7 +21,7 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
-function App() {
+export function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
   //sets the local storage item to the api key the user inputed
@@ -66,4 +65,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

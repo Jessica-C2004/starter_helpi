@@ -7,8 +7,8 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 
-
 export function BasicQuestion(key: AIKey): JSX.Element {
+    //questions asked in the basic quiz
     const questions = [
         "I enjoy solving complex problems.",
         "Working with technology is exciting to me.",
@@ -31,31 +31,54 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         "Job stability is more important to me than job flexibility.",
         "Traveling frequently for work is appealing to me."
     ];
+    /*options for every question to set up Likert Scale*/
     const options = ["Strongly Agree", "Agree", "Neutral", "Disagree", "Strongly Disagree"];
     const questionsLength = questions.length;
 
+    /*
+        currentQuestionIndex - tracks which question user is on, initialized at 0 to start at first question
+        setCurrentQuestionIndex - used to update which question user is on
+        
+        answers - tracks answer user chooses for the question asked, initialized null and updated when user clicks options button
+        setAnswers - used to update array containing answers to contain which option user chose
+
+        showQuestions - tracks questions visibility, initialized at false and updated when user clicks "start" button
+        setShowQuestions - used to toggle question visibility between false (invisible) and true (visible)
+    */
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(null));
     const [showQuestions, setShowQuestions] = useState(false);
 
+    /*
+        @description - updates the answers list if user chooses new option after the first one they chose
+        @param
+            questionIndex: number question user is changing their answer of
+            optionIndex: the new option chosen by the user
+    */
     const handleOptionChange = (questionIndex: number, optionIndex: number): void => {
         const updatedAnswers = [...answers];
         updatedAnswers[questionIndex] = optionIndex;
         setAnswers(updatedAnswers);
     };
-
+    /*
+        @description - switches to the next question in the array if it is not the last question
+    */
     const handleNext = () => {
         if (currentQuestionIndex < questionsLength - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
     };
-
+    /*
+        @description - switches to previous question in array if it s not the first question
+    */
     const handlePrevious = () => {
         if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
     };
-
+    /*
+        @description - when used it begins the quiz and allows user to see questions 
+    */
     const handleStart = () => {
         setShowQuestions(true);
     };
@@ -74,6 +97,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
 
     return (
         <div className="Pages">
+            {/* start page */}
             {!showQuestions && (
                 <div>
                     <h1>Welcome to the Career Questionnaire</h1>
@@ -81,6 +105,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                     <Button variant="primary" onClick={handleStart}>Start</Button>
                 </div>
             )}
+            { /* questions part of page */ }
             {showQuestions && (
                 <div>
                     <h1>Basic Career Questions</h1>
@@ -88,6 +113,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                     <div>
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
+                        { /* sets up the answer option buttons for each questions */ }
                         {options.map((option, optionIndex) => (
                             <div 
                                 className={`radio-option ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
@@ -105,6 +131,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                         ))}
                     </div>
                     <div className="navigation-buttons">
+                        { /* buttons to handle going to previous question, next question, restart, and to submit (only if at last question and every one is answered) */}
                         <Button variant="secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
                             Previous
                         </Button>
