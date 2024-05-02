@@ -42,13 +42,14 @@ export function App() {
               <Navbar />
               <Routes>
                   <Route path="/" element={<HomePage key={key}/>} />
-                  <Route path="/home" element={<HomePage key={key}/>} />
-                  <Route path="/basic-Questions" element={<BasicQuestion key={key}/>} />
+                  <Route path="starter_helpi/" element={<HomePage key={key}/>} />
+                  <Route path="starter_helpi/home" element={<HomePage key={key}/>} />
+                  <Route path="starter_helpi/basic-Questions" element={<BasicQuestion key={key}/>} />
                   <Route
-                      path="/detailed-Questions"
+                      path="starter_helpi/detailed-Questions"
                       element={<DetailedQuestions key={key}/>}
                   />
-                  <Route path="/report" element={<Report key={key}/>} />
+                  <Route path="starter_helpi/report" element={<Report key={key}/>} />
               </Routes>
           </Router>
       </header>
