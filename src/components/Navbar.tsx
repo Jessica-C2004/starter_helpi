@@ -8,13 +8,13 @@ export const Navbar = () => {
         <>
             <Nav>
                 <NavMenu>
-                    <NavLink to="/home">
+                    <NavLink to="starter_helpi/home">
                         Home
                     </NavLink>
-                    <NavLink to="/basic-Questions">
+                    <NavLink to="starter_helpi/basic-Questions">
                         Basic Questions
                     </NavLink>
-                    <NavLink to="/detailed-Questions">
+                    <NavLink to="starter_helpi/detailed-Questions">
                         Detailed Questions
                     </NavLink>
                 </NavMenu>

@@ -222,7 +222,7 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <NavLink to='/report'>
+                        <NavLink to='starter_helpi/report'>
                             <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
                                 Submit
                             </Button>
