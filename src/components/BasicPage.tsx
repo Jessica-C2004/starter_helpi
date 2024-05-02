@@ -141,7 +141,7 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <NavLink to='starter_helpi//report'>
+                            <NavLink to='starter_helpi/report'>
                                 <Button variant="primary" disabled={!allQuestionsAnswered}>
                                     Submit
                                 </Button>
