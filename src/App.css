@@ -30,7 +30,14 @@
 
 .Pages-div {
   background-color: #9CB4AC;
-  height: 100vh;
+  height: 99vh;
+}
+.Page-buttons-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 10vh;
+  align-items: left;
 }
 
 .Button-color {
