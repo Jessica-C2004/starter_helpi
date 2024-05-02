@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.077edc36.css",
+    "main.css": "/starter_helpi/static/css/main.c85f2aa5.css",
     "main.js": "/starter_helpi/static/js/main.0561535e.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/thecareerhelpilogo.png": "/starter_helpi/static/media/thecareerhelpilogo.8b60adac5092d4ce7f50.png",
     "index.html": "/starter_helpi/index.html",
-    "main.077edc36.css.map": "/starter_helpi/static/css/main.077edc36.css.map",
+    "main.c85f2aa5.css.map": "/starter_helpi/static/css/main.c85f2aa5.css.map",
     "main.0561535e.js.map": "/starter_helpi/static/js/main.0561535e.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.077edc36.css",
+    "static/css/main.c85f2aa5.css",
     "static/js/main.0561535e.js"
   ]
 }
