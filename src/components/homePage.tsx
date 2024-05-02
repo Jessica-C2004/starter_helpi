@@ -15,7 +15,7 @@ export function HomePage(key: AIKey): JSX.Element {
                 <Row>
                     <Col>
                     <NavMenu>
-                        <NavLink to='/basic-Questions'>
+                        <NavLink to='starter_helpi/basic-Questions'>
                             Basic Questions
                         </NavLink>
                     </NavMenu>
@@ -31,7 +31,7 @@ export function HomePage(key: AIKey): JSX.Element {
                     </Col>
                     <Col>
                     <NavMenu>
-                        <NavLink to='/detailed-Questions'>
+                        <NavLink to='starter_helpi/detailed-Questions'>
                             Detailed Questions
                         </NavLink>
                     </NavMenu>
