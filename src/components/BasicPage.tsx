@@ -145,7 +145,7 @@ export function BasicQuestion(): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <NavLink to='/report'>
+                            <NavLink to='/starter_helpi/report'>
                                 <Button variant="primary" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>

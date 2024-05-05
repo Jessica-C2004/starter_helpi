@@ -213,7 +213,7 @@ export function DetailedQuestions(): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <NavLink to='/report'>
+                        <NavLink to='/starter_helpi/report'>
                             <Button type="submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                 Submit
                             </Button>
