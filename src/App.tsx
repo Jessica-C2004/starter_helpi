@@ -11,6 +11,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+//import * as openai from 'openai';
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
