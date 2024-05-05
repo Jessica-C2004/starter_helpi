@@ -1,13 +1,12 @@
 import "./pages.css"
 import {Col, Container, Row } from "react-bootstrap";
-import { AIKey } from "../interfaces/AIKeyInterface";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import logo from "../logoandimages/thecareerhelpilogo.png";
 
 
 
-export function HomePage(key: AIKey): JSX.Element {
+export function HomePage(): JSX.Element {
 
     return <div className="Pages">
         <h3 className="Page-title">Welcome to The Career Helpi!</h3>

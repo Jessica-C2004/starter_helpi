@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import "./pages.css";
-import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 
-export function BasicQuestion(key: AIKey): JSX.Element {
+export function BasicQuestion(): JSX.Element {
     //questions asked in the basic quiz
     const questions = [
         "I enjoy solving complex problems.",

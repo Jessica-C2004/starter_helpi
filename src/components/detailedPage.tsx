@@ -1,5 +1,4 @@
 import "./pages.css";
-import { AIKey } from "../interfaces/AIKeyInterface";
 import { Button, Form } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
@@ -7,7 +6,7 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 
-export function DetailedQuestions(key: AIKey): JSX.Element {
+export function DetailedQuestions(): JSX.Element {
     const questions = [
         {
             question: "What type of work environment do you thrive in?",
