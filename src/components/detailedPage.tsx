@@ -156,8 +156,9 @@ export function DetailedQuestions(): JSX.Element {
         });
     };
 
-    const handleSubmit = () => {
-        alert('Submission complete!'); // Placeholder for submission logic
+    const saveAnswers = () => {
+        localStorage.setItem("questions", JSON.stringify(questions));
+        localStorage.setItem("answers", JSON.stringify(answers));
     };
 
 
@@ -186,7 +187,7 @@ export function DetailedQuestions(): JSX.Element {
         <div className="Pages">
             <h1>Detailed Career Questions</h1>
             <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
                     <p>{questions[currentQuestionIndex].question}</p>
@@ -222,7 +223,7 @@ export function DetailedQuestions(): JSX.Element {
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
                         <NavLink to='/report'>
-                            <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
+                            <Button type="submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                 Submit
                             </Button>
                         </NavLink>

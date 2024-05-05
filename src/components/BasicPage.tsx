@@ -88,6 +88,11 @@ export function BasicQuestion(): JSX.Element {
         setShowQuestions(false);
     };
 
+    const saveAnswers = () => {
+        localStorage.setItem("questions", JSON.stringify(questions));
+        localStorage.setItem("answers", JSON.stringify(answers));
+    }
+
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
 
@@ -141,7 +146,7 @@ export function BasicQuestion(): JSX.Element {
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
                             <NavLink to='/report'>
-                                <Button variant="primary" disabled={!allQuestionsAnswered}>
+                                <Button variant="primary" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>
                             </NavLink>

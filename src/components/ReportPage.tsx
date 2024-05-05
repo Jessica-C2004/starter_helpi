@@ -34,18 +34,22 @@ async function generateCareer() {
         console.log("No key found");
         return;
     }
-    console.log('API Key: ', key)
-    console.log('API Key: ', key)
-    const openai = new OpenAI({ apiKey: key , dangerouslyAllowBrowser: true});
-    const completion = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo', // gpt-3.5-turbo, gpt-4
-        max_tokens: 128,
-        messages: [
-            { role: 'system', content: "" },
-            { role: 'user', content: "Please respond with all the letters in the alphabet" }
-        ]
-    });
-    let content = completion.choices[0]?.message?.content?.trim() ?? '';
-    console.log('OpenAI Output: \n', content);
 
+    const questions = localStorage.getItem("questions");
+    const answers = localStorage.getItem("answers");
+
+    console.log("Questions: ", questions);
+    console.log("Answers: ", answers);
+
+    // const openai = new OpenAI({ apiKey: key , dangerouslyAllowBrowser: true});
+    // const completion = await openai.chat.completions.create({
+    //     model: 'gpt-3.5-turbo', // gpt-3.5-turbo, gpt-4
+    //     max_tokens: 128,
+    //     messages: [
+    //         { role: 'system', content: "" },
+    //         { role: 'user', content: "Please respond with all the letters in the alphabet" }
+    //     ]
+    // });
+    // let content = completion.choices[0]?.message?.content?.trim() ?? '';
+    // console.log('OpenAI Output: \n', content);
 }
