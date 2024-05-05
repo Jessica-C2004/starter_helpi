@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import "./pages.css";
-import { AIKey } from "../interfaces/AIKeyInterface";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 
-export function BasicQuestion(key: AIKey): JSX.Element {
+export function BasicQuestion(): JSX.Element {
     //questions asked in the basic quiz
     const questions = [
         "I enjoy solving complex problems.",
@@ -89,6 +88,11 @@ export function BasicQuestion(key: AIKey): JSX.Element {
         setShowQuestions(false);
     };
 
+    const saveAnswers = () => {
+        localStorage.setItem("questions", JSON.stringify(questions));
+        localStorage.setItem("answers", JSON.stringify(answers));
+    }
+
     // Calculating the number of questions answered
     const numberQuestionsAnswered = answers.filter(answer => answer !== null).length;
 
@@ -141,8 +145,8 @@ export function BasicQuestion(key: AIKey): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <NavLink to='starter_helpi/report'>
-                                <Button variant="primary" disabled={!allQuestionsAnswered}>
+                            <NavLink to='/report'>
+                                <Button variant="primary" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>
                             </NavLink>

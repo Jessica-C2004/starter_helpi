@@ -1,5 +1,4 @@
 import "./pages.css";
-import { AIKey } from "../interfaces/AIKeyInterface";
 import { Button, Form } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
@@ -7,7 +6,7 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 
-export function DetailedQuestions(key: AIKey): JSX.Element {
+export function DetailedQuestions(): JSX.Element {
     const questions = [
         {
             question: "What type of work environment do you thrive in?",
@@ -114,7 +113,6 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
     const [hasStarted, setHasStarted] = useState(false);
-    const [hasFinished, setHasFinished] = useState(false);
 
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];
@@ -132,7 +130,6 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
         setAnswers(Array(questions.length).fill(''));
         setOtherText('');
     };
-    const handleFinish = () => setHasFinished(true);
 
     const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
@@ -157,8 +154,9 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
         });
     };
 
-    const handleSubmit = () => {
-        alert('Submission complete!'); // Placeholder for submission logic
+    const saveAnswers = () => {
+        localStorage.setItem("questions", JSON.stringify(questions));
+        localStorage.setItem("answers", JSON.stringify(answers));
     };
 
 
@@ -175,19 +173,12 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
             </div>
         );
     }
-    if (hasFinished) {
-        return (
-            <div className="Pages">
-                <h1>Congratulations! Please wait while your career results are being generated! </h1>
-            </div>
-        );
-    }
 
     return (
         <div className="Pages">
             <h1>Detailed Career Questions</h1>
             <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
                     <p>{questions[currentQuestionIndex].question}</p>
@@ -222,8 +213,8 @@ export function DetailedQuestions(key: AIKey): JSX.Element {
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
-                        <NavLink to='starter_helpi/report'>
-                            <Button type="submit" variant="success" onClick={handleFinish} disabled={!canSubmit}>
+                        <NavLink to='/report'>
+                            <Button type="submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                 Submit
                             </Button>
                         </NavLink>
