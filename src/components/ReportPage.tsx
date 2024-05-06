@@ -35,10 +35,10 @@ export function Report(): JSX.Element {
 
     console.log(localStorage.getItem("MYKEY"))
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
-
+    console.log(generateCareer())
     return <div className="Pages">
         <h1>Your Suggested Career is...</h1>
-        {/*<Button onClick={() => generateCareer()}>Generate Report</Button>*/}
+        <Button onClick={() => generateCareer()}>Generate Report</Button>
         <Container>
             <Row>
                 <Col>
