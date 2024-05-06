@@ -20,7 +20,7 @@ async function generateCareer() {
     const openai = new OpenAI({ apiKey: key , dangerouslyAllowBrowser: true});
     const completion = await openai.chat.completions.create({
          model: 'gpt-3.5-turbo', // gpt-3.5-turbo, gpt-4
-         max_tokens: 128,
+         max_tokens: 730,
          messages: [
              { role: 'system', content: "" },
              { role: 'user', content: "Please respond with all the letters in the alphabet" }
@@ -38,7 +38,7 @@ export function Report(): JSX.Element {
 
     return <div className="Pages">
         <h1>Your Suggested Career is...</h1>
-        <Button onClick={() => generateCareer()}>Generate Report</Button>
+        {/*<Button onClick={() => generateCareer()}>Generate Report</Button>*/}
         <Container>
             <Row>
                 <Col>
