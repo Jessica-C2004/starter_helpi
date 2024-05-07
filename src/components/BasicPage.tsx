@@ -90,7 +90,7 @@ export function BasicQuestion(): JSX.Element {
 
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions));
-        localStorage.setItem("answers", JSON.stringify(answers));
+        localStorage.setItem("answers", JSON.stringify(answers.map(answer => options[answer])));
     }
 
     // Calculating the number of questions answered
