@@ -22,7 +22,7 @@ async function generateCareer() {
 
     const openai = new OpenAI({ apiKey: key , dangerouslyAllowBrowser: true});
     const completion = await openai.chat.completions.create({
-         model: 'gpt-3.5-turbo', // gpt-3.5-turbo, gpt-4
+         model: 'gpt-4', // gpt-3.5-turbo, gpt-4
          max_tokens: 750,
          messages: [ 
              { role: 'system', content: `Ai tool to generate a career based on a user's results to questions. 
@@ -64,7 +64,7 @@ export function Report(): JSX.Element {
     const resultDescription = localStorage.getItem("resultDescription");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
-        <h1>Your Suggested Career is...</h1>
+        <h1 className="ReportHeader">Your Suggested Career is...</h1>
         <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
         <Container>
             <Row>
