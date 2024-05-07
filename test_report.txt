@@ -159,31 +159,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   14.28 |      2.5 |    8.82 |   15.09 |                   
- src                 |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx            |      60 |       50 |   33.33 |      60 | 21,29-35          
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |   10.98 |        0 |    6.89 |   11.76 |                   
-  BasicPage.tsx      |    3.33 |        0 |       0 |    3.57 | 12-128            
-  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
-  ReportPage.tsx     |       0 |      100 |       0 |       0 | 11                
-  detailedPage.tsx   |       2 |        0 |       0 |    2.17 | 11-221            
-  homePage.tsx       |     100 |      100 |     100 |     100 |                   
-  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
- src/interfaces      |       0 |        0 |       0 |       0 |                   
-  AIKeyInterface.tsx |       0 |        0 |       0 |       0 |                   
-  PagesProps.tsx     |       0 |        0 |       0 |       0 |                   
-  Progress.tsx       |       0 |        0 |       0 |       0 |                   
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.242 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -196,3 +171,27 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |   11.67 |     2.27 |    7.89 |    12.3 |                   
+ src                 |   28.57 |    16.66 |      20 |   28.57 |                   
+  App.tsx            |      60 |       50 |   33.33 |      60 | 21,29-35          
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/components      |    8.62 |        0 |    6.06 |    9.17 |                   
+  BasicPage.tsx      |    2.94 |        0 |       0 |    3.22 | 11-132            
+  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
+  ReportPage.tsx     |       0 |        0 |       0 |       0 | 7-66              
+  detailedPage.tsx   |    2.12 |        0 |       0 |    2.32 | 10-212            
+  homePage.tsx       |     100 |      100 |     100 |     100 |                   
+  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
+ src/interfaces      |       0 |        0 |       0 |       0 |                   
+  PagesProps.tsx     |       0 |        0 |       0 |       0 |                   
+  Progress.tsx       |       0 |        0 |       0 |       0 |                   
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.303 s
+Ran all test suites.
