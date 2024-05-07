@@ -10,6 +10,8 @@ async function generateCareer() {
         localStorage.setItem("resultCareer", "No API Key found");
         localStorage.setItem("resultDescription", "No API Key found");
         return;
+    } else {
+        console.log("Key found: ", key);
     }
 
     const questions = localStorage.getItem("questions");
@@ -57,7 +59,6 @@ async function generateCareer() {
 
 
 export function Report(): JSX.Element {
-
     const results = localStorage.getItem("results");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
