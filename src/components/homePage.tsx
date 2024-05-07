@@ -14,7 +14,7 @@ export function HomePage(): JSX.Element {
                 <Row>
                     <Col>
                     <NavMenu>
-                        <NavLink to='starter_helpi/basic-Questions'>
+                        <NavLink to='/starter_helpi/basic-Questions'>
                             Basic Questions
                         </NavLink>
                     </NavMenu>
@@ -30,7 +30,7 @@ export function HomePage(): JSX.Element {
                     </Col>
                     <Col>
                     <NavMenu>
-                        <NavLink to='starter_helpi/detailed-Questions'>
+                        <NavLink to='/starter_helpi/detailed-Questions'>
                             Detailed Questions
                         </NavLink>
                     </NavMenu>
