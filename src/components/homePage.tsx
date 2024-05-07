@@ -19,10 +19,7 @@ export function HomePage(): JSX.Element {
                         </NavLink>
                     </NavMenu>
                     <div className="Description">
-                        The basic questions will ask you more simple, easier
-                        questions that will give you a quick idea about your
-                        potential ideal career path. For a brief recommendation for 
-                        careers, take this quiz!
+                        The basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz!
                     </div>
                     </Col>
                     <Col>

@@ -41,15 +41,14 @@ export function App() {
         <Router>
               <Navbar />
               <Routes>
-                  <Route path="/" element={<HomePage key={key}/>} />
-                  <Route path="starter_helpi/" element={<HomePage key={key}/>} />
-                  <Route path="starter_helpi/home" element={<HomePage key={key}/>} />
-                  <Route path="starter_helpi/basic-Questions" element={<BasicQuestion key={key}/>} />
-                  <Route
-                      path="starter_helpi/detailed-Questions"
-                      element={<DetailedQuestions key={key}/>}
-                  />
-                  <Route path="starter_helpi/report" element={<Report key={key}/>} />
+                  <Route path="/" element={<HomePage/>} />
+                  <Route path="starter_helpi/" element={<HomePage/>} />
+                  <Route path="starter_helpi/home" element={<HomePage/>} />
+                  <Route path="starter_helpi/basic-Questions" element={<BasicQuestion/>} />
+                  <Route path="starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
+                  <Route path="starter_helpi/report" element={<Report/>} />
+                  <Route path="starter_helpi/home/starter_helpi/basic-Questions" element={<BasicQuestion/>} />
+                  <Route path="starter_helpi/home/starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
               </Routes>
           </Router>
       </header>
