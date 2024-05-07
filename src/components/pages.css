@@ -11,8 +11,9 @@
 .Description {
 display: flex;
 flex-direction: column;
-width: 100%;
-height: 100%;
+align-items: center;
+width: 90%;
+height: 70%;
 background-color: #AFBEA2;
 outline: 1px solid black;
 border-radius: 10px;
@@ -56,7 +57,7 @@ text-align: center;
   height: 35px;
   text-align: center;
   outline: 1px solid black;
-  border-radius: 60px;
+  border-radius: 10px;
   left: 10px;
   position: relative;
 }
@@ -69,4 +70,7 @@ text-align: center;
 .Page-title {
   height: 125px;
   font-size: calc(30px + 2vmin);
+}
+.Default-box {
+  position: relative;
 }
