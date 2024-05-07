@@ -20,24 +20,26 @@ async function generateCareer() {
     const openai = new OpenAI({ apiKey: key , dangerouslyAllowBrowser: true});
     const completion = await openai.chat.completions.create({
          model: 'gpt-3.5-turbo', // gpt-3.5-turbo, gpt-4
-         max_tokens: 1000,
+         max_tokens: 750,
          messages: [
              { role: 'system', content: "" },
-             { role: 'user', content: "questions: " + questions + " corresponding answers: " + answers }
+             { role: 'user', content: "given these questions: " + questions + " and corresponding answers: " + answers + " , what career should I do and why?"}
          ]
      });
      let content = completion.choices[0]?.message?.content?.trim() ?? '';
      console.log('OpenAI Output: \n', content);
+     localStorage.setItem("results", JSON.stringify(content));
 }
 
 
 export function Report(): JSX.Element {
 
     console.log(localStorage.getItem("MYKEY"));
+    const results = localStorage.getItem("results");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
         <h1>Your Suggested Career is...</h1>
-        <Button onClick={() => generateCareer()}>Generate Report</Button>
+        <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
         <Container>
             <Row>
                 <Col>
@@ -46,7 +48,9 @@ export function Report(): JSX.Element {
                 </div>
                 </Col>
                 <Col>
-                    <div> Report text here: <br></br></div>
+                    <div className="results">
+                        <p>{results}</p>
+                    </div>
                 </Col>
             </Row>
         </Container>
