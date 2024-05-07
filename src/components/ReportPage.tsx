@@ -2,11 +2,8 @@ import "./pages.css";
 import { Col, Container, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
 import { OpenAI } from 'openai';
-// import { useState } from "react";
 
 export function Report(): JSX.Element {
-
-    // const [reportVisible, setReportVisible] = useState<boolean>(false);
 
     return <div className="Pages" id="Basic Questions Report Page">
         <h1>Your Suggested Career is...</h1>

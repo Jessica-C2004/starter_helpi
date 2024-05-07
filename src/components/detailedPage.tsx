@@ -155,7 +155,7 @@ export function DetailedQuestions(): JSX.Element {
     };
 
     const saveAnswers = () => {
-        localStorage.setItem("questions", JSON.stringify(questions));
+        localStorage.setItem("questions", JSON.stringify(questions.map(question => question.question)));
         localStorage.setItem("answers", JSON.stringify(answers));
     };
 
