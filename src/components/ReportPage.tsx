@@ -2,6 +2,7 @@ import "./pages.css";
 import { Col, Container, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
 import { OpenAI } from 'openai';
+import { useState } from "react";
 // import { useState } from "react";
 
 async function generateCareer() {
@@ -23,20 +24,19 @@ async function generateCareer() {
          max_tokens: 750,
          messages: [
              { role: 'system', content: "" },
-             { role: 'user', content: "given these questions: " + questions + " and corresponding answers: " + answers + " , what career should I do and why?"}
+             { role: 'user', content: "given these questions: " + questions + " and corresponding answers: " + answers + " , what career should I do and why? Have career and reasons why on different lines in a numbered bullet point format"}
          ]
      });
      let content = completion.choices[0]?.message?.content?.trim() ?? '';
      console.log('OpenAI Output: \n', content);
-     localStorage.setItem("results", JSON.stringify(content));
+     localStorage.setItem("results", content);
 }
 
 
 export function Report(): JSX.Element {
-
     console.log(localStorage.getItem("MYKEY"));
-    const results = localStorage.getItem("results");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
+    const results = localStorage.getItem("results");
     return <div className="Pages">
         <h1>Your Suggested Career is...</h1>
         <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
