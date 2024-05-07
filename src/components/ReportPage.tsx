@@ -58,7 +58,6 @@ async function generateCareer() {
 
 export function Report(): JSX.Element {
 
-    console.log(localStorage.getItem("MYKEY"));
     const results = localStorage.getItem("results");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
