@@ -7,6 +7,8 @@ async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
     if (key === null) {
         console.log("No key found");
+        localStorage.setItem("resultCareer", "No API Key found");
+        localStorage.setItem("resultDescription", "No API Key found");
         return;
     }
 
@@ -41,7 +43,16 @@ async function generateCareer() {
      });
      let content = completion.choices[0]?.message?.content?.trim() ?? '';
      console.log('OpenAI Output: \n', content);
-     localStorage.setItem("results", JSON.stringify(content));
+     if (content === '') {
+        console.log('Response is empty.');
+        content = `No career found
+        No description found`;
+     } else {
+        console.log('Response: ', content);
+     }
+     let results = content.split("/\r?\n/");
+     localStorage.setItem("resultCareer", results[0]);
+     localStorage.setItem("resultDescription", results[1]);
 }
 
 
