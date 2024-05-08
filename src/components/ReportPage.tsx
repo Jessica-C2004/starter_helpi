@@ -28,8 +28,8 @@ async function generateCareer() {
              { role: 'system', content: `Ai tool to generate a career based on a user's results to questions. 
 
              Rules:
-             - Generate a career title
-             - Generate a short description of the career
+             - Generate 2 career titles
+             - Generate a short description for each career
              - The description of the career must be less than 200 words
              - Respond with only the career and the description
              - There should be no other text other than the chosen career and the description
@@ -39,7 +39,11 @@ async function generateCareer() {
              
              An example of the output is:
              Computer Science
-             A computer science career is about crafting the future through technology. It involves coding, problem-solving, and innovation across various domains like software development, AI, cybersecurity, and data analysis. Computer scientists design algorithms, build systems, and tackle complex challenges using programming languages like Python, Java, and C++. With technology ever-evolving, the field offers endless opportunities for growth and impact, spanning industries from tech to healthcare and finance.`},
+             A computer science career is about crafting the future through technology. It involves coding, problem-solving, and innovation across various domains like software development, AI, cybersecurity, and data analysis. Computer scientists design algorithms, build systems, and tackle complex challenges using programming languages like Python, Java, and C++. With technology ever-evolving, the field offers endless opportunities for growth and impact, spanning industries from tech to healthcare and finance.
+            
+             Data Analyst
+             A Data analyst career involves working with large datasets to extract valuable insights and inform decision-making processes within an organization. Knowledge in statistics and computer science is recommended. 
+            `},
              { role: 'user', content: "Questions: " + questions + " Answers: " + answers}
          ]
      });
@@ -53,15 +57,21 @@ async function generateCareer() {
         console.log('Response: ', content);
      }
      let results = content.split("\n");
-     localStorage.setItem("resultCareer", results[0]);
-     console.log(localStorage.getItem("resultCareer"));
-     localStorage.setItem("resultDescription", results[1]);
+     localStorage.setItem("resultCareer1", results[0]);
+     console.log(localStorage.getItem("resultCareer1") + "career1");
+     localStorage.setItem("resultDescription1", results[1]);
+     localStorage.setItem("resultCareer2", results[3]);
+     console.log(localStorage.getItem("resultCareer2") + "career2");
+     localStorage.setItem("resultDescription2", results[4]);
+     console.log(localStorage.getItem("resultDescription2") + "careerDescription2");
 }
 
 
 export function Report(): JSX.Element {
-    const resultCareer = localStorage.getItem("resultCareer");
-    const resultDescription = localStorage.getItem("resultDescription");
+    const resultCareer1 = localStorage.getItem("resultCareer1");
+    const resultDescription1 = localStorage.getItem("resultDescription1");
+    const resultCareer2 = localStorage.getItem("resultCareer2");
+    const resultDescription2 = localStorage.getItem("resultDescription2");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
         <h1 className="ReportHeader">Your Suggested Career is...</h1>
@@ -69,14 +79,15 @@ export function Report(): JSX.Element {
         <Container>
             <Row>
                 <Col>
-                <div>
-                    <Image src={logo} alt="career-picture" thumbnail></Image>
+                <div className="results">
+                    {resultCareer2} <br></br>
+                    {resultDescription2}
                 </div>
                 </Col>
                 <Col>
                     <div className="results">
-                        {resultCareer} <br></br>
-                        {resultDescription}
+                        {resultCareer1} <br></br>
+                        {resultDescription1}
                     </div>
                 </Col>
             </Row>
