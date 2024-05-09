@@ -1,5 +1,5 @@
 import "./pages.css";
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
 import { NavLink as Link } from "react-router-dom";
@@ -179,6 +179,7 @@ export function DetailedQuestions(): JSX.Element {
             <h1>Detailed Career Questions</h1>
             <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
             <Form>
+            <Container>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
                     <p>{questions[currentQuestionIndex].question}</p>
@@ -205,6 +206,7 @@ export function DetailedQuestions(): JSX.Element {
                         />
                     )}
                 </div>
+                </Container>
                 <div className="navigation-buttons">
                     <Button variant="secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
                         Previous

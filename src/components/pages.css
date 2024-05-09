@@ -74,3 +74,40 @@ text-align: center;
 .Default-box {
   position: relative;
 }
+.confetti {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  /*object-position: 200px -20px;*/
+}
+.confetti-two {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  /*object-position: -100px -30px;*/
+  transform: scaleX(-1);
+  z-index: 10;
+}
+.Report-title {
+  position: relative;
+  /*height: 220px;*/
+  object-position: 300px -10px;
+  font-size: calc(30px + 1vmin);
+}
+.cowboy {
+  position: relative;
+  height: 250px;
+  width: 700px;
+}
+.row {
+  height: 280px;
+}
+.Previous-button {
+  padding: 8px;
+}
+.navigation-buttons {
+  padding: 20px;
+}
+.button.btn.btn-secondary {
+  padding: 10px;
+}

@@ -2,6 +2,7 @@ import "./pages.css";
 import { Col, Container, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
 import { OpenAI } from 'openai';
+import celebration from "../logoandimages/Confetti Star (1).png"
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
@@ -62,13 +63,21 @@ export function Report(): JSX.Element {
     const results = localStorage.getItem("results");
     // const [reportVisible, setReportVisible] = useState<boolean>(false);
     return <div className="Pages">
-        <h1>Your Suggested Career is...</h1>
-        <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
-        <Container>
+        <Row>
+            <Col>
+            <img src={celebration} className="confetti-two" alt="Celebration confetti" /></Col>
+            <Col>
+            <h3 className="Report-title">Your Suggested Career is...</h3>
+            <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
+            </Col>
+            <Col>
+                <img src={celebration} className="confetti" alt="Celebration confetti" />
+            </Col> 
+            </Row>
             <Row>
                 <Col>
                 <div>
-                    <Image src={logo} alt="career-picture" thumbnail></Image>
+                    <Image src={logo} className="cowboy" alt="career-picture" thumbnail></Image>
                 </div>
                 </Col>
                 <Col>
@@ -76,7 +85,7 @@ export function Report(): JSX.Element {
                         <p>{results}</p>
                     </div>
                 </Col>
+                <Col></Col>
             </Row>
-        </Container>
     </div>;
 }
