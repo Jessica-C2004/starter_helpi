@@ -3,19 +3,19 @@ import { Col, Container, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
-import { createLoopVariable } from "typescript";
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
     if (key === null) {
         console.log("No key found");
-        localStorage.setItem("resultCareer", "No API Key found");
-        localStorage.setItem("resultDescription", "No API Key found");
+        localStorage.setItem("resultCareer1", "No API Key found");
+        localStorage.setItem("resultDescription1", "No API Key found");
+        localStorage.setItem("resultCareer2", "No API Key found");
+        localStorage.setItem("resultDescription2", "No API Key found");
         return;
     } else {
         console.log("Key found: ", key);
     }
-
     const questions = localStorage.getItem("questions");
     const answers = localStorage.getItem("answers");
 
@@ -58,7 +58,16 @@ async function generateCareer() {
      } else {
         console.log('Response: ', content);
      }
+
+     //clearing results
+     localStorage.removeItem("resultsCareer1");
+     localStorage.removeItem("resultsDescription1");
+
+     localStorage.removeItem("resultsCareer2");
+     localStorage.removeItem("resultsDescription2");
+
      let results = content.split("\n");
+     
      //first career outputed
      localStorage.setItem("resultCareer1", results[0]);
      localStorage.setItem("resultDescription1", results[1]);
