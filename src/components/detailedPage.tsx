@@ -228,16 +228,4 @@ export function DetailedQuestions(): JSX.Element {
     );
 }
 
-const NavLink = styled(Link)`
-    background-color: #AFBEA2;
-    color: #000000;
-    width: 350px;
-    height: 35px;
-    text-align: center;
-    outline: 1px solid black;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    font-size: 1.6rem;
-
-`;
+const NavLink = styled(Link)``;
