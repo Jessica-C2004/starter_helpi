@@ -145,7 +145,7 @@ export function BasicQuestion(): JSX.Element {
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <NavLink className="navlink" to='/starter_helpi/report'>
+                            <NavLink to='/starter_helpi/report'>
                                 <Button variant="primary" className="button-submit" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>
@@ -162,16 +162,4 @@ export function BasicQuestion(): JSX.Element {
 }
 
 
-const NavLink = styled(Link)`
-    background-color: #AFBEA2;
-    color: #000000;
-    width: 350px;
-    height: 35px;
-    text-align: center;
-    outline: 1px solid black;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    font-size: 1.6rem;
-
-`;
+const NavLink = styled(Link)``;
