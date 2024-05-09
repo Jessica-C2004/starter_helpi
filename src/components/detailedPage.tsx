@@ -207,21 +207,21 @@ export function DetailedQuestions(): JSX.Element {
                     )}
                 </div>
                 </Container>
-                <div className="navigation-buttons">
-                    <Button variant="secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
+                <div>
+                    <Button variant="secondary" className="button-secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
                         Previous
                     </Button>
-                    <Button variant="primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex === questions.length - 1}>
+                    <Button variant="primary" className="button-primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex === questions.length - 1}>
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
                         <NavLink to='/starter_helpi/report'>
-                            <Button type="submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
+                            <Button type="submit" className="button-submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                 Submit
                             </Button>
                         </NavLink>
                     )}
-                    <Button variant="info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
+                    <Button variant="info" className="button-info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
                 </div>
             </Form>
         </div>

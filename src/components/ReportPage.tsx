@@ -1,6 +1,6 @@
 import "./pages.css";
 import { Col, Container, Row, Image, Button} from 'react-bootstrap';
-import logo from "../logoandimages/cowboy.jpg";
+import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import celebration from "../logoandimages/Confetti Star (1).png"
 import { useState } from "react";
@@ -110,7 +110,7 @@ export function Report(): JSX.Element {
             <Col>
             <img src={celebration} className="confetti-two" alt="Celebration confetti" /></Col>
             <Col>
-            <h3 className="Report-title" className="ReportHeader">Your Suggested Career is...</h3>
+            <h3 className="Report-title">Your Suggested Career is...</h3>
             <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
             </Col>
             <Col>

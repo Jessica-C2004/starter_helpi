@@ -136,22 +136,22 @@ export function BasicQuestion(): JSX.Element {
                     </div>
                     <div className="navigation-buttons">
                         { /* buttons to handle going to previous question, next question, restart, and to submit (only if at last question and every one is answered) */}
-                        <Button variant="secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+                        <Button variant="secondary" className= "button-secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
                             Previous
                         </Button>
                         {currentQuestionIndex < questionsLength - 1 && (
-                            <Button variant="primary" onClick={handleNext}>
+                            <Button variant="primary" className="button-primary" onClick={handleNext}>
                                 Next
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
-                            <NavLink to='/starter_helpi/report'>
-                                <Button variant="primary" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
+                            <NavLink className="navlink" to='/starter_helpi/report'>
+                                <Button variant="primary" className="button-submit" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>
                             </NavLink>
                         )}
-                        <Button variant="info" onClick={handleRestart}>
+                        <Button variant="info" className="button-info" onClick={handleRestart}>
                             Restart
                         </Button>
                     </div>
