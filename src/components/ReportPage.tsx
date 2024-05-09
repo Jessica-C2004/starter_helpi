@@ -3,6 +3,7 @@ import { Col, Container, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/cowboy.jpg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
+import { createLoopVariable } from "typescript";
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
@@ -43,8 +44,7 @@ async function generateCareer() {
              A computer science career is about crafting the future through technology. It involves coding, problem-solving, and innovation across various domains like software development, AI, cybersecurity, and data analysis. Computer scientists design algorithms, build systems, and tackle complex challenges using programming languages like Python, Java, and C++. With technology ever-evolving, the field offers endless opportunities for growth and impact, spanning industries from tech to healthcare and finance.
 
              Data Analyst
-             
-A data analyst is a professional who collects, organizes, and analyzes data to extract valuable insights. They use statistical techniques and data visualization tools to identify trends, patterns, and correlations, helping businesses make informed decisions.
+             A data analyst is a professional who collects, organizes, and analyzes data to extract valuable insights. They use statistical techniques and data visualization tools to identify trends, patterns, and correlations, helping businesses make informed decisions.
             `},
              { role: 'user', content: "Questions: " + questions + " Answers: " + answers}
          ]
@@ -61,13 +61,20 @@ A data analyst is a professional who collects, organizes, and analyzes data to e
      let results = content.split("\n");
      //first career outputed
      localStorage.setItem("resultCareer1", results[0]);
-     localStorage.setItem("resultDescription1", results[2]);
+     localStorage.setItem("resultDescription1", results[1]);
 
      //second career outputed
      localStorage.setItem("resultCareer2", results[3]);
      localStorage.setItem("resultDescription2", results[4]);
-     console.log(localStorage.getItem("resultCareer1") + " career title");
-     console.log(localStorage.getItem("resultDescription1") + " career description");
+
+     window.location.reload();
+
+     /*leaving rn for future debugging
+     console.log(localStorage.getItem("resultCareer1") + " career1 title");
+     console.log(localStorage.getItem("resultDescription1") + " career1 description");
+     console.log(localStorage.getItem("resultCareer2") + " career2 title");
+     console.log(localStorage.getItem("resultDescription2") + " career2 descrip");
+     */
 }
 
 
@@ -94,14 +101,12 @@ export function Report(): JSX.Element {
         <Container>
             <Row>
                 <Col>
-                <Button onClick={flipDescrip1}>{resultCareer1}</Button>
+                <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
                 {descrip1 && <div className="results">{resultDescription1}</div>}
                 </Col>
                 <Col>
-                    <div className="results">
-                        {resultCareer2} <br></br>
-                        {resultDescription2}
-                    </div>
+                    <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
+                    {descrip2 && <div className="results">{resultDescription2}</div>}
                 </Col>
             </Row>
         </Container>
