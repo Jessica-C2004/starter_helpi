@@ -1,7 +1,8 @@
 import "./pages.css";
 import { Col, Container, Row, Image, Button} from 'react-bootstrap';
-import logo from "../logoandimages/cowboy.jpg";
+import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
+import celebration from "../logoandimages/Confetti Star (1).png"
 import { useState } from "react";
 
 async function generateCareer() {
@@ -105,19 +106,28 @@ export function Report(): JSX.Element {
     }
     
     return <div className="Pages">
-        <h1 className="ReportHeader">Your Suggested Career is...</h1>
-        <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
-        <Container>
+        <Row>
+            <Col>
+            <img src={celebration} className="confetti-two" alt="Celebration confetti" /></Col>
+            <Col>
+            <h3 className="Report-title">Your Suggested Career is...</h3>
+            <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
+            </Col>
+            <Col>
+                <img src={celebration} className="confetti" alt="Celebration confetti" />
+            </Col> 
+            </Row>
             <Row>
                 <Col>
-                <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
-                {descrip1 && <div className="results">{resultDescription1}</div>}
+                <div>
+                    <Image src={logo} className="cowboy" alt="career-picture" thumbnail></Image>
+                </div>
                 </Col>
                 <Col>
                     <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
                 </Col>
+                <Col></Col>
             </Row>
-        </Container>
     </div>;
 }

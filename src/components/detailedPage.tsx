@@ -1,5 +1,5 @@
 import "./pages.css";
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
 import { NavLink as Link } from "react-router-dom";
@@ -179,6 +179,7 @@ export function DetailedQuestions(): JSX.Element {
             <h1>Detailed Career Questions</h1>
             <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
             <Form>
+            <Container>
                 <div>
                     <h2>Question {currentQuestionIndex + 1}</h2>
                     <p>{questions[currentQuestionIndex].question}</p>
@@ -205,21 +206,22 @@ export function DetailedQuestions(): JSX.Element {
                         />
                     )}
                 </div>
-                <div className="navigation-buttons">
-                    <Button variant="secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
+                </Container>
+                <div>
+                    <Button variant="secondary" className="button-secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
                         Previous
                     </Button>
-                    <Button variant="primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex === questions.length - 1}>
+                    <Button variant="primary" className="button-primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex === questions.length - 1}>
                         Next
                     </Button>
                     {currentQuestionIndex === questions.length - 1 && (
                         <NavLink to='/starter_helpi/report'>
-                            <Button type="submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
+                            <Button type="submit" className="button-submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                 Submit
                             </Button>
                         </NavLink>
                     )}
-                    <Button variant="info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
+                    <Button variant="info" className="button-info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
                 </div>
             </Form>
         </div>

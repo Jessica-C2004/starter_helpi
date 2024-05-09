@@ -41,11 +41,12 @@ text-align: center;
 
 .radio-option {
   padding: 10px;
+  margin-right: -10px;
   border-radius: 5px;
   margin-bottom: 1px;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 60%;
   background-color: #AFBEA2;
   outline: 1px solid black;
@@ -78,6 +79,83 @@ text-align: center;
 .Default-box {
   position: relative;
 }
+.confetti {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  /*object-position: 200px -20px;*/
+}
+.confetti-two {
+  position: relative;
+  height: 80%;
+  width: 80%;
+  /*object-position: -100px -30px;*/
+  transform: scaleX(-1);
+  z-index: 10;
+}
+.Report-title {
+  position: relative;
+  /*height: 220px;*/
+  object-position: 300px -10px;
+  font-size: calc(30px + 1vmin);
+}
+.cowboy {
+  position: relative;
+  height: 250px;
+  width: 700px;
+}
+.row {
+  height: 280px;
+}
+.Previous-button {
+  padding: 8px;
+}
+/*.navigation-buttons {
+  padding: 30px;
+}*/
+.button-secondary {
+  margin-top: 15px;
+  padding: 8px;
+  width: 90px;
+  background-color: #008B8B;
+  border-color:#008B8B;
+  margin-right:10px;
+}
+.button-primary {
+  margin-top: 15px;
+  padding: 8px;
+  width: 90px;
+  background-color: #20B2AA;
+  border-color:#20B2AA;
+  margin-right:10px;
+}
+.button-info {
+  margin-top: 15px;
+  padding: 8px;
+  width: 90px;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+  color: #fff;
+}
+.button-submit {
+  margin-top: 15px;
+  width: 90px;
+  margin-right:10px;
+  padding: 8px;
+  margin-right:10px;
+  background-color:#198754;
+  border-color:#198754;
+}
+.btn-secondary {
+  background-color: #008B8B;
+  border-color:#008B8B;
+}
+.navlink {
+  background-color: #198754;
+  border-color: #198754;
+  margin-top:15px;
+  padding:8px;
+}
 .results {
 display: flex;
 flex-direction: column;
@@ -93,24 +171,34 @@ border-radius: 10px;
 font-size: medium;
 }
 
-.ReportHeader {
+/*.ReportHeader {
   position:sticky;
   margin: 0;
   padding: 0;
   height: 150px;
-}
+}*/
 
 .Result-button {
   padding: 0;
   border-radius: 5px;
   margin-bottom: 1px;
+  margin-top: 50px;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 8%;
-  height: 8%;
+  width: 50%;
+  height: 20%;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
+}
+.cJlmcG {
+  margin-top: 15px;
+  width: 60px;
+  margin-right:10px;
+  padding: 8px;
+  margin-right:10px;
+  background-color:#198754;
+  border-color:#198754;
 }
 
 .career-button {
