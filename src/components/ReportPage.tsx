@@ -120,7 +120,7 @@ export function Report(): JSX.Element {
             <Row>
                 <Col>
                 <div>
-                    <Image src={logo} className="cowboy" alt="career-picture" thumbnail></Image>
+                    <Image src={logo} className="career" alt="career-picture" thumbnail></Image>
                 </div>
                 </Col>
                 <Col>
