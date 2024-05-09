@@ -1,5 +1,5 @@
 import "./pages.css";
-import { Col, Container, Row, Image, Button} from 'react-bootstrap';
+import { Col, Row, Image, Button} from 'react-bootstrap';
 import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import celebration from "../logoandimages/Confetti Star (1).png"
@@ -89,17 +89,17 @@ async function generateCareer() {
 
 
 export function Report(): JSX.Element {
-    const resultCareer1 = localStorage.getItem("resultCareer1");
-    const resultDescription1 = localStorage.getItem("resultDescription1");
+    /*const resultCareer1 = localStorage.getItem("resultCareer1");*/
+    /*const resultDescription1 = localStorage.getItem("resultDescription1");*/
     const resultCareer2 = localStorage.getItem("resultCareer2");
     const resultDescription2 = localStorage.getItem("resultDescription2");
 
-    const [descrip1, setResult1Visible] = useState<boolean>(false);
+    /*const [descrip1, setResult1Visible] = useState<boolean>(false);*/
     const [descrip2, setResult2Visible] = useState<boolean>(false);
 
-    function flipDescrip1() {
+    /*function flipDescrip1() {
         setResult1Visible(!descrip1);
-    }
+    }*/
 
     function flipDescrip2() {
         setResult2Visible(!descrip2);
@@ -120,7 +120,7 @@ export function Report(): JSX.Element {
             <Row>
                 <Col>
                 <div>
-                    <Image src={logo} className="cowboy" alt="career-picture" thumbnail></Image>
+                    <Image src={logo} className="career" alt="career-picture" thumbnail></Image>
                 </div>
                 </Col>
                 <Col>
