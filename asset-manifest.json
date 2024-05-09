@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.c85f2aa5.css",
-    "main.js": "/starter_helpi/static/js/main.33d3196e.js",
+    "main.css": "/starter_helpi/static/css/main.70b19681.css",
+    "main.js": "/starter_helpi/static/js/main.f1c6024f.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/thecareerhelpilogo.png": "/starter_helpi/static/media/thecareerhelpilogo.8b60adac5092d4ce7f50.png",
+    "static/media/Career Image.jpeg": "/starter_helpi/static/media/Career Image.7e9fed28cfba66f92736.jpeg",
+    "static/media/Confetti Star (1).png": "/starter_helpi/static/media/Confetti Star (1).3f8f15870bcf89aa6c2c.png",
     "index.html": "/starter_helpi/index.html",
-    "main.c85f2aa5.css.map": "/starter_helpi/static/css/main.c85f2aa5.css.map",
-    "main.33d3196e.js.map": "/starter_helpi/static/js/main.33d3196e.js.map",
+    "main.70b19681.css.map": "/starter_helpi/static/css/main.70b19681.css.map",
+    "main.f1c6024f.js.map": "/starter_helpi/static/js/main.f1c6024f.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c85f2aa5.css",
-    "static/js/main.33d3196e.js"
+    "static/css/main.70b19681.css",
+    "static/js/main.f1c6024f.js"
   ]
 }
