@@ -11,6 +11,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+//import * as openai from 'openai';
 
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -41,14 +42,14 @@ export function App() {
         <Router>
               <Navbar />
               <Routes>
-                  <Route path="/" element={<HomePage key={key}/>} />
-                  <Route path="/home" element={<HomePage key={key}/>} />
-                  <Route path="/basic-Questions" element={<BasicQuestion key={key}/>} />
-                  <Route
-                      path="/detailed-Questions"
-                      element={<DetailedQuestions key={key}/>}
-                  />
-                  <Route path="/report" element={<Report key={key}/>} />
+                  <Route path="/" element={<HomePage/>} />
+                  <Route path="starter_helpi/" element={<HomePage/>} />
+                  <Route path="starter_helpi/home" element={<HomePage/>} />
+                  <Route path="starter_helpi/basic-Questions" element={<BasicQuestion/>} />
+                  <Route path="starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
+                  <Route path="starter_helpi/report" element={<Report/>} />
+                  <Route path="starter_helpi/home/starter_helpi/basic-Questions" element={<BasicQuestion/>} />
+                  <Route path="starter_helpi/home/starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
               </Routes>
           </Router>
       </header>
