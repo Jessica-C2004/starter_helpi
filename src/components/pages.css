@@ -8,6 +8,7 @@
   font-size: calc(10px + 2vmin);
 }
 
+
 .Description {
 display: flex;
 flex-direction: column;
@@ -68,9 +69,51 @@ text-align: center;
   text-align: center;
 }
 .Page-title {
-  height: 125px;
+  position:sticky;
+  margin: 0;
+  padding: 0;
+  height: 200px;
   font-size: calc(30px + 2vmin);
 }
 .Default-box {
   position: relative;
+}
+.results {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+margin: 5px;
+width: 90%;
+height: 80%;
+background-color: #AFBEA2;
+outline: 2px solid #8fa181;
+border-radius: 10px;
+font-size: medium;
+}
+
+.ReportHeader {
+  position:sticky;
+  margin: 0;
+  padding: 0;
+  height: 150px;
+}
+
+.Result-button {
+  padding: 0;
+  border-radius: 5px;
+  margin-bottom: 1px;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  width: 8%;
+  height: 8%;
+  background-color: #AFBEA2;
+  outline: 1px solid black;
+  border-radius: 10px;
+}
+
+.career-button {
+  background-color: #51624F;
+  margin: 5px;
 }
