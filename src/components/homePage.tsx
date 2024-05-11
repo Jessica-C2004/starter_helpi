@@ -10,9 +10,9 @@ export function HomePage(): JSX.Element {
 
     return <div className="Pages">
         <h3 className="Page-title">Welcome to The Career Helpi!</h3>
-            <Container className="Default-box">
+            <Container>
                 <Row>
-                    <Col>
+                    <Col className="Description-box">
                     <NavMenu>
                         <NavLink to='/starter_helpi/basic-Questions'>
                             Basic Questions
@@ -25,7 +25,7 @@ export function HomePage(): JSX.Element {
                     <Col>
                         <div> <img src={logo} className="App-logo" alt="thestarterHelpilogo" /></div>
                     </Col>
-                    <Col>
+                    <Col className="Description-box">
                     <NavMenu>
                         <NavLink to='/starter_helpi/detailed-Questions'>
                             Detailed Questions

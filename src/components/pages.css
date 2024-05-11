@@ -1,5 +1,4 @@
 .Pages {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -7,7 +6,6 @@
   text-align: center;
   font-size: calc(10px + 2vmin);
 }
-
 
 .Description {
 display: flex;
@@ -20,25 +18,15 @@ outline: 1px solid black;
 border-radius: 10px;
 }
 
-
 .Question-instructions {
 width: 40%;
 height: 60%;
 text-align: center;
 }
-
-/* pages.css */
-/*.radio-option {
-  padding: 8px;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}*/
-
 .radio-option.selected {
   background-color: white; /* Make the background white for selected options */
  
 }
-
 .radio-option {
   padding: 10px;
   margin-right: -10px;
@@ -70,32 +58,31 @@ text-align: center;
   text-align: center;
 }
 .Page-title {
-  position:sticky;
-  margin: 0;
+  position: sticky;
+  margin-top: 40px;
+  margin-bottom: 10px;
   padding: 0;
   height: 200px;
   font-size: calc(30px + 2vmin);
 }
-.Default-box {
-  position: relative;
+.Description-box {
+  width:fit-content;
+  height: fit-content
 }
 .confetti {
   position: relative;
   height: 80%;
   width: 80%;
-  /*object-position: 200px -20px;*/
 }
 .confetti-two {
   position: relative;
   height: 80%;
   width: 80%;
-  /*object-position: -100px -30px;*/
   transform: scaleX(-1);
   z-index: 10;
 }
 .Report-title {
   position: relative;
-  /*height: 220px;*/
   object-position: 300px -10px;
   font-size: calc(30px + 1vmin);
 }
@@ -110,9 +97,6 @@ text-align: center;
 .Previous-button {
   padding: 8px;
 }
-/*.navigation-buttons {
-  padding: 30px;
-}*/
 .button-secondary {
   margin-top: 15px;
   padding: 8px;
@@ -170,13 +154,6 @@ outline: 2px solid #8fa181;
 border-radius: 10px;
 font-size: medium;
 }
-
-/*.ReportHeader {
-  position:sticky;
-  margin: 0;
-  padding: 0;
-  height: 150px;
-}*/
 
 .Result-button {
   padding: 0;
