@@ -22,8 +22,8 @@ export function HomePage(): JSX.Element {
                         The basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz!
                     </div>
                     </Col>
-                    <Col>
-                        <div> <img src={logo} className="App-logo" alt="thestarterHelpilogo" /></div>
+                    <Col className="Description-box">
+                        <img src={logo} className="App-logo" alt="thestarterHelpilogo" />
                     </Col>
                     <Col className="Description-box">
                     <NavMenu>
@@ -44,7 +44,7 @@ export function HomePage(): JSX.Element {
 const NavLink = styled(Link)`
     background-color: #AFBEA2;
     color: #000000;
-    width: 350px;
+    width: inherit;
     height: 35px;
     text-align: center;
     outline: 1px solid black;
@@ -52,18 +52,12 @@ const NavLink = styled(Link)`
     margin-bottom: 10px;
     text-decoration: none;
     font-size: 1.6rem;
-
 `;
  
 const NavMenu = styled.div`
     display: flex;
+    width: 100%;
     align-items: center;
-    margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-white-space: nowrap; */
     @media screen and (max-width: 768px) {
         display: none;
     }
