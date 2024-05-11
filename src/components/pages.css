@@ -22,13 +22,11 @@ border-radius: 10px;
 }
 .radio-option {
   padding: 10px;
-  margin-right: -10px;
   border-radius: 5px;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 100%;
-  height: 60%;
+  width: 50%;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
@@ -66,9 +64,6 @@ border-radius: 10px;
   position: relative;
   height: 250px;
   width: 700px;
-}
-.row {
-  height: 280px;
 }
 .Previous-button {
   padding: 8px;
