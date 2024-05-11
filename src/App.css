@@ -12,14 +12,6 @@
   top: -40px;
 }
 
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    /*animation: App-logo-spin infinite 20s linear;
-  }
-}
-*/
-
 .App-header {
   background-color: #51624F;
   min-height: 10vh;
@@ -30,27 +22,29 @@
 
 .Pages-div {
   background-color: #9CB4AC;
-  height: 99vh;
+  height: fit-content;
 }
+
 .Page-buttons-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   height: 90vh;
   align-items: left;
-
 }
 
-.Button-color {
-  background-color: #9370db;
-  border-bottom: 5px;
+.Footer {
+  background-color: #51624F;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Gap {
+  padding-bottom: 65px;
+  margin: 0;
+  color: #9CB4AC;
+}
+
+.Api-Box {
+  margin:auto;
+  width: 50vw;
 }

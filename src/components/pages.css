@@ -8,12 +8,12 @@
 }
 
 .Description {
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #AFBEA2;
-outline: 1px solid black;
-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #AFBEA2;
+  outline: 1px solid black;
+  border-radius: 10px;
 }
 
 .radio-option-detailed.selected {
