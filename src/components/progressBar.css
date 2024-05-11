@@ -1,6 +1,7 @@
 .Bar {
-    width: 100vh;
-    height: 2vh;
+  margin: auto;
+  width: 50%;
+  height: 2vh;
   }
 
 .bg-Progress-Bar-Color {

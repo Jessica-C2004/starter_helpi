@@ -103,7 +103,7 @@ export function BasicQuestion(): JSX.Element {
         <div className="Pages">
             {/* start page */}
             {!showQuestions && (
-                <div>
+                <div className="Pre-question-page">
                     <h1>Welcome to the Career Questionnaire</h1>
                     <p>Click start to begin answering questions about your career preferences and goals.</p>
                     <Button variant="primary" onClick={handleStart}>Start</Button>
@@ -111,9 +111,11 @@ export function BasicQuestion(): JSX.Element {
             )}
             { /* questions part of page */ }
             {showQuestions && (
-                <div>
+                <div className="Questions-page">
                     <h1>Basic Career Questions</h1>
-                    <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
+                    <div>
+                        <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
+                    </div>
                     <div>
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>

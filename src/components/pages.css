@@ -16,11 +16,6 @@ outline: 1px solid black;
 border-radius: 10px;
 }
 
-.Question-instructions {
-width: 40%;
-height: 60%;
-text-align: center;
-}
 .radio-option.selected {
   background-color: white; /* Make the background white for selected options */
  
@@ -37,12 +32,6 @@ text-align: center;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
-}
-
-.Question-instructions {
-  width: 40%;
-  height: 60%;
-  text-align: center;
 }
 .Page-title {
   position: sticky;
@@ -128,18 +117,18 @@ text-align: center;
   padding:8px;
 }
 .results {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-margin: 5px;
-width: 90%;
-height: 80%;
-background-color: #AFBEA2;
-outline: 2px solid #8fa181;
-border-radius: 10px;
-font-size: medium;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  width: 90%;
+  height: 80%;
+  background-color: #AFBEA2;
+  outline: 2px solid #8fa181;
+  border-radius: 10px;
+  font-size: medium;
 }
 
 .Result-button {
@@ -155,15 +144,6 @@ font-size: medium;
   outline: 1px solid black;
   border-radius: 10px;
 }
-.cJlmcG {
-  margin-top: 15px;
-  width: 60px;
-  margin-right:10px;
-  padding: 8px;
-  margin-right:10px;
-  background-color:#198754;
-  border-color:#198754;
-}
 
 .career-button {
   background-color: #51624F;
@@ -174,4 +154,22 @@ font-size: medium;
   position:relative;
   left: -5px;
   width: 100%;
+}
+
+.Pre-question-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+  height: inherit;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Questions-page {
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
 }
