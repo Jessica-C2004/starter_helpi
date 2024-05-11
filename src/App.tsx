@@ -60,12 +60,13 @@ export function App() {
           <Form.Label>API Key:</Form.Label>
           <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
           <br></br>
-          <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+          <Button className="Submit-button" onClick={handleSubmit}>Submit</Button>
         </Form>
         <hr></hr>
         <p style={{margin:0}}>
           Created by: Melanie Heider, Patrick Sweet, Jessica Cunningham, Sydney Holland
         </p>
+        <br></br>
       </div>
     </div>
   );

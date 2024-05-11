@@ -48,3 +48,13 @@
   margin:auto;
   width: 50vw;
 }
+
+.Submit-button {
+  margin-top: 15px;
+  width: 90px;
+  margin-right:10px;
+  padding: 8px;
+  margin-right:10px;
+  background-color:#198754;
+  border-color:#198754;
+}

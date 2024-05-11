@@ -171,7 +171,7 @@ export function DetailedQuestions(): JSX.Element {
                 <div className="Pre-question-page">
                     <h1>Welcome to the Detailed Career Assessment</h1>
                     <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
-                    <Button variant="primary" onClick={handleStart}>Start</Button>
+                    <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
             )}
             { /* questions part of page */ }
@@ -213,22 +213,22 @@ export function DetailedQuestions(): JSX.Element {
                             </div>
                         </Container>
                         <div>
-                            <Button variant="secondary" className="button-secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
+                            <Button variant="secondary" className="Previous-button" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
                                 Previous
                             </Button>
                             {currentQuestionIndex < questions.length - 1 && (
-                                <Button variant="primary" className="button-primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))}>
+                                <Button variant="primary" className="Next-button" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))}>
                                     Next
                                 </Button>
                             )}
                             {currentQuestionIndex === questions.length - 1 && (
                                 <NavLink to='/starter_helpi/report'>
-                                    <Button type="submit" className="button-submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
+                                    <Button type="submit" className="Submit-button" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
                                         Submit
                                     </Button>
                                 </NavLink>
                             )}
-                            <Button variant="info" className="button-info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
+                            <Button variant="info" className="Restart-button" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
                         </div>
                     </Form>
                 </div>
