@@ -186,28 +186,30 @@ export function DetailedQuestions(): JSX.Element {
                             <div>
                                 <h2>Question {currentQuestionIndex + 1}</h2>
                                 <p>{questions[currentQuestionIndex].question}</p>
-                                {questions[currentQuestionIndex].options.map((option, index) => (
-                                    <div key={`${currentQuestionIndex}-${index}`}
-                                        className={`radio-option ${answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):")) ? 'selected' : ''}`}>
-                                        <Form.Check
-                                            type="radio"
-                                            name={`question${currentQuestionIndex}`}
-                                            label={option}
-                                            value={option}
-                                            id={`option${index}`}
-                                            checked={answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):"))}
-                                            onChange={handleOptionChange}
+                                <div className="Answers">
+                                    {questions[currentQuestionIndex].options.map((option, index) => (
+                                        <div key={`${currentQuestionIndex}-${index}`}
+                                            className={`radio-option-detailed ${answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):")) ? 'selected' : ''}`}>
+                                            <Form.Check
+                                                type="radio"
+                                                name={`question${currentQuestionIndex}`}
+                                                label={option}
+                                                value={option}
+                                                id={`option${index}`}
+                                                checked={answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):"))}
+                                                onChange={handleOptionChange}
+                                            />
+                                        </div>
+                                    ))}
+                                    {answers[currentQuestionIndex].startsWith("Other (please specify):") && (
+                                        <Form.Control
+                                            type="text"
+                                            value={otherText}
+                                            onChange={handleOtherTextChange}
+                                            placeholder="Please specify..."
                                         />
-                                    </div>
-                                ))}
-                                {answers[currentQuestionIndex].startsWith("Other (please specify):") && (
-                                    <Form.Control
-                                        type="text"
-                                        value={otherText}
-                                        onChange={handleOtherTextChange}
-                                        placeholder="Please specify..."
-                                    />
-                                )}
+                                    )}
+                                </div>
                             </div>
                         </Container>
                         <div>

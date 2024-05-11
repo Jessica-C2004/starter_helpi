@@ -120,21 +120,23 @@ export function BasicQuestion(): JSX.Element {
                         <h2>Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
                         { /* sets up the answer option buttons for each questions */ }
-                        {options.map((option, optionIndex) => (
-                            <div 
-                                className={`radio-option ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
-                                key={`${currentQuestionIndex}-${optionIndex}`}
-                            >
-                                <Form.Check
-                                    type="radio"
-                                    id={`question${currentQuestionIndex}-option${optionIndex}`}
-                                    name={`question${currentQuestionIndex}`}
-                                    label={option}
-                                    checked={answers[currentQuestionIndex] === optionIndex}
-                                    onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
-                                />
-                            </div>
-                        ))}
+                        <div className="Answers">
+                            {options.map((option, optionIndex) => (
+                                <div 
+                                    className={`radio-option-basic ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
+                                    key={`${currentQuestionIndex}-${optionIndex}`}
+                                >
+                                    <Form.Check
+                                        type="radio"
+                                        id={`question${currentQuestionIndex}-option${optionIndex}`}
+                                        name={`question${currentQuestionIndex}`}
+                                        label={option}
+                                        checked={answers[currentQuestionIndex] === optionIndex}
+                                        onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                     <div className="navigation-buttons">
                         { /* buttons to handle going to previous question, next question, restart, and to submit (only if at last question and every one is answered) */}
