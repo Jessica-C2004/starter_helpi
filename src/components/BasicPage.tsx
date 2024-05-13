@@ -91,6 +91,11 @@ export function BasicQuestion(): JSX.Element {
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions));
         localStorage.setItem("answers", JSON.stringify(answers.map(answer => options[answer])));
+        localStorage.removeItem("resultsCareer1");
+        localStorage.removeItem("resultsDescription1");
+
+        localStorage.removeItem("resultsCareer2");
+        localStorage.removeItem("resultsDescription2");
     }
 
     // Calculating the number of questions answered
