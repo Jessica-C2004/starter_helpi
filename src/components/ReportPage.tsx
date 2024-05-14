@@ -76,7 +76,7 @@ async function generateCareer() {
      localStorage.setItem("resultCareer2", results[3]);
      localStorage.setItem("resultDescription2", results[4]);
 
-     window.location.reload();
+     //window.location.reload();
 
      /*leaving rn for future debugging
      console.log(localStorage.getItem("resultCareer1") + " career1 title");
@@ -107,6 +107,8 @@ export function Report(): JSX.Element {
     
     function makeCareer() {
         generateCareer();
+        localStorage.removeItem("resultCareer2");
+        localStorage.removeItem("resultDescription2");
         setCareerGenerated(true);
     }
 
@@ -123,12 +125,10 @@ export function Report(): JSX.Element {
                     <Image src={logo} className="career-logo" alt="career-picture" thumbnail></Image>
                 </div>
                 </Col>
-                { careerGenerated &&
                 <Col>
                     <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
                 </Col>
-                }
                 <Col></Col>
             </Row>
     </div>;
