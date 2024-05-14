@@ -175,7 +175,7 @@ export function DetailedQuestions(): JSX.Element {
             {!showQuestions && (
                 <div className="Pre-question-page">
                     <h1>Welcome to the Detailed Career Assessment</h1>
-                    <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
+                    <p>Click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
                     <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
             )}

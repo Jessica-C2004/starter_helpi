@@ -3,7 +3,7 @@ import { Col, Row, Image, Button, Spinner} from 'react-bootstrap';
 import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
-import celebration from "../logoandimages/Confetti Star (1).png"
+import celebration from "../logoandimages/Confetti Star.png"
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
