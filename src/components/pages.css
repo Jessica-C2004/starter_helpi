@@ -62,24 +62,11 @@
   height: fit-content;
 }
 
-.confetti {
-  position: relative;
-  height: 80%;
-  width: 80%;
-}
-
-.confetti-two {
-  position: relative;
-  height: 80%;
-  width: 80%;
-  transform: scaleX(-1);
-  z-index: 10;
-}
-
 .Report-title {
   position: relative;
   object-position: 300px -10px;
   font-size: calc(30px + 1vmin);
+  padding-top: 2vh;
 }
 
 .career {
@@ -137,37 +124,34 @@
 }
 
 .results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 5px;
-  width: 90%;
-  height: 80%;
+  margin:auto;
+  width: 30vw;
+  height: 85%;
   background-color: #AFBEA2;
   outline: 2px solid #8fa181;
   border-radius: 10px;
-  font-size: medium;
+  font-size: calc(4px + 1vw);
+  margin-top: 2vh;
 }
 
 .Result-button {
   padding: 0;
   border-radius: 5px;
   margin-bottom: 1px;
-  margin-top: 50px;
+  margin-top: 5vh;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 50%;
-  height: 20%;
+  width: 100%;
+  height: fit-content;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
+  font-size: calc(4px + 2vmin);
 }
 
 .career-button {
   background-color: #51624F;
-  margin: 5px;
+  margin-top: 1vh;
 }
 
 .App-logo {
@@ -203,9 +187,8 @@
   text-align: center;
 }
 
-.career-logo {
-  position: relative;
-  width: 50%;
+.Career-Logo {
+  margin-top: 25%;
 }
 
 .Spinner {
@@ -213,4 +196,14 @@
   height: 5vw;
   margin-top: 2vh;
   color: #484848;
+}
+
+.Results-Col-Left {
+  display: flex;
+  justify-content: right;
+}
+
+.Results-Col-Right {
+  display: flex;
+  justify-content: left;
 }

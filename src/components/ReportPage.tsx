@@ -88,30 +88,31 @@ async function generateCareer() {
 
 
 export function Report(): JSX.Element {
-    /*const resultCareer1 = localStorage.getItem("resultCareer1");*/
-    /*const resultDescription1 = localStorage.getItem("resultDescription1");*/
+    const resultCareer1 = localStorage.getItem("resultCareer1");
+    const resultDescription1 = localStorage.getItem("resultDescription1");
     const resultCareer2 = localStorage.getItem("resultCareer2");
     const resultDescription2 = localStorage.getItem("resultDescription2");
 
-    /*const [descrip1, setResult1Visible] = useState<boolean>(false);*/
+    const [descrip1, setResult1Visible] = useState<boolean>(false);
     const [descrip2, setResult2Visible] = useState<boolean>(false);
     const [careerGenerated, setCareerGenerated] = useState<boolean>(false);
     const [displaySpinner, setdisplaySpinner] = useState<boolean>(false);
-    /*function flipDescrip1() {
+    
+    function flipDescrip1() {
         setResult1Visible(!descrip1);
-    }*/
+    }
 
     function flipDescrip2() {
         setResult2Visible(!descrip2);
     }
     
     function makeCareer() {
-        generateCareer();
-        localStorage.removeItem("resultCareer2");
-        localStorage.removeItem("resultDescription2");
-        setdisplaySpinner(true);
-        waitforcareer();
-        setCareerGenerated(true);
+        // generateCareer();
+        // localStorage.removeItem("resultCareer2");
+        // localStorage.removeItem("resultDescription2");
+        //setdisplaySpinner(true);
+        //waitforcareer();
+        setCareerGenerated(!careerGenerated);
     }
 
     const waitforcareer = () => {
@@ -123,26 +124,33 @@ export function Report(): JSX.Element {
 
     return <div className="Pages">
         <Row>
+            <Col></Col>
             <Col>
             <h3 className="Report-title">Your Suggested Career is...</h3>
             <Button className="Result-button" onClick={() => makeCareer()} /*disabled={careerGenerated}*/>Generate Report</Button>
+            {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
             </Col>
-            </Row>
-            <Row>
-                <Col>
+            <Col></Col>
+        </Row>
+        <Row>
+            <Col className="Results-Col-Left">
+                {careerGenerated &&  resultCareer2 !== null && 
                 <div>
-                    <Image src={logo} className="career-logo" alt="career-picture" thumbnail></Image>
-                </div>
-                </Col>
-                <Col>
-                    {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
-                    {careerGenerated &&  resultCareer2 !== null && 
-                    <div>
+                    <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
+                    {descrip1 && <div className="results">{resultDescription1}</div>}
+                </div>}
+            </Col>
+            <Col xs={3}>
+                <Image src={logo} className="Career-Logo" alt="career-picture" thumbnail fluid={true}></Image>
+            </Col>
+            <Col className="Results-Col-Right">
+                {careerGenerated &&  resultCareer2 !== null && 
+                <div>
                     <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
-                    </div>}
-                </Col>
-                <Col></Col>
-            </Row>
+                </div>
+                }
+            </Col>
+        </Row>
     </div>;
 }
