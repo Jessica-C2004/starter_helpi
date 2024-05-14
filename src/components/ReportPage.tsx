@@ -136,7 +136,8 @@ export function Report(): JSX.Element {
             <Col><img src={celebration} className="confetti" alt="Celebration confetti" /> </Col>
         </Row>
         <Row>
-            <Col md={5}>
+            <Col 
+                md={5}>
                 {careerGenerated &&  resultCareer1 !== null && 
                 <div>
                     <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
