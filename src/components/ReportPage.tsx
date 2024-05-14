@@ -107,11 +107,11 @@ export function Report(): JSX.Element {
     }
     
     function makeCareer() {
-        // generateCareer();
-        // localStorage.removeItem("resultCareer2");
-        // localStorage.removeItem("resultDescription2");
-        //setdisplaySpinner(true);
-        //waitforcareer();
+        generateCareer();
+        localStorage.removeItem("resultCareer2");
+        localStorage.removeItem("resultDescription2");
+        setdisplaySpinner(true);
+        waitforcareer();
         setCareerGenerated(!careerGenerated);
     }
 
@@ -127,16 +127,29 @@ export function Report(): JSX.Element {
             <Col></Col>
             <Col>
             <h3 className="Report-title">Your Suggested Career is...</h3>
-            <Button className="Result-button" onClick={() => makeCareer()} /*disabled={careerGenerated}*/>Generate Report</Button>
+            <Button className="Result-button" onClick={() => makeCareer()} disabled={careerGenerated}>Generate Report</Button>
             {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
             </Col>
             <Col></Col>
         </Row>
         <Row>
-            <Col className="Results-Col-Left">
-                {careerGenerated &&  resultCareer2 !== null && 
+            <Col md={5}>
+                {careerGenerated &&  resultCareer1 !== null && 
                 <div>
                     <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
+                </div>}
+            </Col>
+            <Col md={{span: 3, offset: 3}}>
+                {careerGenerated &&  resultCareer2 !== null && 
+                <div>
+                    <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
+                </div>}
+            </Col>
+        </Row>
+        <Row>
+            <Col className="Results-Col-Left">
+                {careerGenerated &&  resultCareer1 !== null && 
+                <div>
                     {descrip1 && <div className="results">{resultDescription1}</div>}
                 </div>}
             </Col>
@@ -146,10 +159,8 @@ export function Report(): JSX.Element {
             <Col className="Results-Col-Right">
                 {careerGenerated &&  resultCareer2 !== null && 
                 <div>
-                    <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
-                </div>
-                }
+                </div>}
             </Col>
         </Row>
     </div>;

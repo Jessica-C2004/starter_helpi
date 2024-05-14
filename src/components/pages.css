@@ -126,7 +126,7 @@
 .results {
   margin:auto;
   width: 30vw;
-  height: 85%;
+  height: 95%;
   background-color: #AFBEA2;
   outline: 2px solid #8fa181;
   border-radius: 10px;
@@ -152,6 +152,9 @@
 .career-button {
   background-color: #51624F;
   margin-top: 1vh;
+  margin: auto;
+  height:fit-content;
+  font-size: calc(10px + 1vmin);
 }
 
 .App-logo {
@@ -188,7 +191,7 @@
 }
 
 .Career-Logo {
-  margin-top: 25%;
+  margin-top: 5%;
 }
 
 .Spinner {
