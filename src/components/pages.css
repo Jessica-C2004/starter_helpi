@@ -1,5 +1,4 @@
 .Pages {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -8,128 +7,95 @@
   font-size: calc(10px + 2vmin);
 }
 
-
 .Description {
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 90%;
-height: 70%;
-background-color: #AFBEA2;
-outline: 1px solid black;
-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #AFBEA2;
+  outline: 1px solid black;
+  border-radius: 10px;
 }
 
-
-.Question-instructions {
-width: 40%;
-height: 60%;
-text-align: center;
+.radio-option-detailed.selected {
+  background-color: white; /* Make the background white for selected options */
 }
 
-/* pages.css */
-/*.radio-option {
-  padding: 8px;
+.radio-option-basic.selected {
+  background-color: white; /* Make the background white for selected options */
+}
+
+.radio-option-basic {
+  padding: 10px;
   border-radius: 5px;
   margin-bottom: 5px;
-}*/
-
-.radio-option.selected {
-  background-color: white; /* Make the background white for selected options */
- 
-}
-
-.radio-option {
-  padding: 10px;
-  margin-right: -10px;
-  border-radius: 5px;
-  margin-bottom: 1px;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 100%;
-  height: 60%;
+  width: 20%;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
 }
 
-.Description-header {
+.radio-option-detailed {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background-color 0.3s ease;
+  align-items: center;
+  width: 55%;
   background-color: #AFBEA2;
-  width: 350px;
-  height: 35px;
-  text-align: center;
   outline: 1px solid black;
   border-radius: 10px;
-  left: 10px;
-  position: relative;
 }
 
-.Question-instructions {
-  width: 40%;
-  height: 60%;
-  text-align: center;
-}
 .Page-title {
-  position:sticky;
-  margin: 0;
+  position: sticky;
+  margin-top: 40px;
+  margin-bottom: 40px;
   padding: 0;
-  height: 200px;
+  height: 20%;
   font-size: calc(30px + 2vmin);
 }
-.Default-box {
-  position: relative;
+
+.Description-box {
+  padding: 12px;
+  height: fit-content;
 }
-.confetti {
-  position: relative;
-  height: 80%;
-  width: 80%;
-  /*object-position: 200px -20px;*/
-}
-.confetti-two {
-  position: relative;
-  height: 80%;
-  width: 80%;
-  /*object-position: -100px -30px;*/
-  transform: scaleX(-1);
-  z-index: 10;
-}
+
 .Report-title {
   position: relative;
-  /*height: 220px;*/
   object-position: 300px -10px;
   font-size: calc(30px + 1vmin);
+  padding-top: 2vh;
 }
+
 .career {
   position: relative;
   height: 250px;
   width: 700px;
 }
-.row {
-  height: 280px;
-}
+
 .Previous-button {
-  padding: 8px;
-}
-/*.navigation-buttons {
-  padding: 30px;
-}*/
-.button-secondary {
   margin-top: 15px;
   padding: 8px;
   width: 90px;
   background-color: #008B8B;
   border-color:#008B8B;
-  margin-right:10px;
 }
-.button-primary {
+
+.Next-button {
   margin-top: 15px;
+  margin-right:10px;
+  margin-left:10px;
   padding: 8px;
+  margin-right:10px;
+  margin-left:10px;
   width: 90px;
   background-color: #20B2AA;
   border-color:#20B2AA;
-  margin-right:10px;
 }
-.button-info {
+
+.Restart-button {
   margin-top: 15px;
   padding: 8px;
   width: 90px;
@@ -137,71 +103,120 @@ text-align: center;
   border-color: #0dcaf0;
   color: #fff;
 }
-.button-submit {
+
+.Submit-button {
   margin-top: 15px;
   width: 90px;
   margin-right:10px;
+  margin-left:10px;
   padding: 8px;
   margin-right:10px;
+  margin-left:10px;
   background-color:#198754;
   border-color:#198754;
 }
-.btn-secondary {
-  background-color: #008B8B;
-  border-color:#008B8B;
-}
+
 .navlink {
   background-color: #198754;
   border-color: #198754;
   margin-top:15px;
   padding:8px;
 }
-.results {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-margin: 5px;
-width: 90%;
-height: 80%;
-background-color: #AFBEA2;
-outline: 2px solid #8fa181;
-border-radius: 10px;
-font-size: medium;
-}
 
-/*.ReportHeader {
-  position:sticky;
-  margin: 0;
-  padding: 0;
-  height: 150px;
-}*/
+.results {
+  margin:auto;
+  width: 30vw;
+  height: 95%;
+  background-color: #AFBEA2;
+  outline: 2px solid #8fa181;
+  border-radius: 10px;
+  font-size: calc(4px + 1vw);
+  margin-top: 2vh;
+}
 
 .Result-button {
   padding: 0;
   border-radius: 5px;
   margin-bottom: 1px;
-  margin-top: 50px;
+  margin-top: 5vh;
   transition: background-color 0.3s ease;
   align-items: center;
-  width: 50%;
-  height: 20%;
+  width: 100%;
+  height: fit-content;
   background-color: #AFBEA2;
   outline: 1px solid black;
   border-radius: 10px;
-}
-.cJlmcG {
-  margin-top: 15px;
-  width: 60px;
-  margin-right:10px;
-  padding: 8px;
-  margin-right:10px;
-  background-color:#198754;
-  border-color:#198754;
+  font-size: calc(4px + 2vmin);
 }
 
 .career-button {
   background-color: #51624F;
-  margin: 5px;
+  margin-top: 1vh;
+  margin: auto;
+  height:fit-content;
+  font-size: calc(10px + 1vmin);
+}
+
+.App-logo {
+  position:relative;
+  left: -5px;
+  width: 100%;
+}
+
+.Pre-question-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25vh;
+  padding-bottom: 25vh;
+  height: inherit;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Questions-page {
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.Answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  text-align: center;
+}
+
+.Career-Logo {
+  margin-top: 5%;
+}
+
+.Spinner {
+  width: 5vw;
+  height: 5vw;
+  margin-top: 2vh;
+  color: #484848;
+}
+
+.Results-Col-Left {
+  display: flex;
+  justify-content: right;
+}
+
+.Results-Col-Right {
+  display: flex;
+  justify-content: left;
+}
+
+.Question-title {
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+}
+
+.Question-number {
+  padding-top: 1vh;
 }

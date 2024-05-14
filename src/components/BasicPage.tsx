@@ -91,6 +91,11 @@ export function BasicQuestion(): JSX.Element {
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions));
         localStorage.setItem("answers", JSON.stringify(answers.map(answer => options[answer])));
+        localStorage.removeItem("resultsCareer1");
+        localStorage.removeItem("resultsDescription1");
+
+        localStorage.removeItem("resultsCareer2");
+        localStorage.removeItem("resultsDescription2");
     }
 
     // Calculating the number of questions answered
@@ -103,55 +108,59 @@ export function BasicQuestion(): JSX.Element {
         <div className="Pages">
             {/* start page */}
             {!showQuestions && (
-                <div>
+                <div className="Pre-question-page">
                     <h1>Welcome to the Career Questionnaire</h1>
                     <p>Click start to begin answering questions about your career preferences and goals.</p>
-                    <Button variant="primary" onClick={handleStart}>Start</Button>
+                    <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
             )}
             { /* questions part of page */ }
             {showQuestions && (
-                <div>
-                    <h1>Basic Career Questions</h1>
-                    <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
+                <div className="Questions-page">
+                    <h1 className="Question-title">Basic Career Questions</h1>
                     <div>
-                        <h2>Question {currentQuestionIndex + 1}</h2>
+                        <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
+                    </div>
+                    <div>
+                        <h2 className="Question-number">Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
                         { /* sets up the answer option buttons for each questions */ }
-                        {options.map((option, optionIndex) => (
-                            <div 
-                                className={`radio-option ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
-                                key={`${currentQuestionIndex}-${optionIndex}`}
-                            >
-                                <Form.Check
-                                    type="radio"
-                                    id={`question${currentQuestionIndex}-option${optionIndex}`}
-                                    name={`question${currentQuestionIndex}`}
-                                    label={option}
-                                    checked={answers[currentQuestionIndex] === optionIndex}
-                                    onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
-                                />
-                            </div>
-                        ))}
+                        <div className="Answers">
+                            {options.map((option, optionIndex) => (
+                                <div 
+                                    className={`radio-option-basic ${answers[currentQuestionIndex] === optionIndex ? "selected" : ""}`} 
+                                    key={`${currentQuestionIndex}-${optionIndex}`}
+                                >
+                                    <Form.Check
+                                        type="radio"
+                                        id={`question${currentQuestionIndex}-option${optionIndex}`}
+                                        name={`question${currentQuestionIndex}`}
+                                        label={option}
+                                        checked={answers[currentQuestionIndex] === optionIndex}
+                                        onChange={() => handleOptionChange(currentQuestionIndex, optionIndex)}
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                     <div className="navigation-buttons">
                         { /* buttons to handle going to previous question, next question, restart, and to submit (only if at last question and every one is answered) */}
-                        <Button variant="secondary" className= "button-secondary" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
+                        <Button variant="secondary" className= "Previous-button" onClick={handlePrevious} disabled={currentQuestionIndex === 0}>
                             Previous
                         </Button>
                         {currentQuestionIndex < questionsLength - 1 && (
-                            <Button variant="primary" className="button-primary" onClick={handleNext}>
+                            <Button variant="primary" className="Next-button" onClick={handleNext}>
                                 Next
                             </Button>
                         )}
                         {currentQuestionIndex === questionsLength - 1 && (
                             <NavLink to='/starter_helpi/report'>
-                                <Button variant="primary" className="button-submit" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
+                                <Button variant="primary" className="Submit-button" disabled={!allQuestionsAnswered} onClick={saveAnswers}>
                                     Submit
                                 </Button>
                             </NavLink>
                         )}
-                        <Button variant="info" className="button-info" onClick={handleRestart}>
+                        <Button variant="info" className="Restart-button" onClick={handleRestart}>
                             Restart
                         </Button>
                     </div>

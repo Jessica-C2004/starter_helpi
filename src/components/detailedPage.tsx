@@ -112,7 +112,7 @@ export function DetailedQuestions(): JSX.Element {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
-    const [hasStarted, setHasStarted] = useState(false);
+    const [showQuestions, setShowQuestions] = useState(false);
 
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];
@@ -123,9 +123,9 @@ export function DetailedQuestions(): JSX.Element {
         }
     }, [currentQuestionIndex, answers]);
 
-    const handleStart = () => setHasStarted(true);
+    const handleStart = () => setShowQuestions(true);
     const handleRestart = () => {
-        setHasStarted(false);
+        setShowQuestions(false);
         setCurrentQuestionIndex(0);
         setAnswers(Array(questions.length).fill(''));
         setOtherText('');
@@ -157,6 +157,11 @@ export function DetailedQuestions(): JSX.Element {
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions.map(question => question.question)));
         localStorage.setItem("answers", JSON.stringify(answers));
+        localStorage.removeItem("resultsCareer1");
+        localStorage.removeItem("resultsDescription1");
+
+        localStorage.removeItem("resultsCareer2");
+        localStorage.removeItem("resultsDescription2");
     };
 
 
@@ -164,66 +169,75 @@ export function DetailedQuestions(): JSX.Element {
 
     const canSubmit = answers.every(answer => answer.trim() !== '');
 
-    if (!hasStarted) {
-        return (
-            <div className="Pages">
-                <h1>Welcome to the Detailed Career Assessment</h1>
-                <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
-                <Button variant="primary" onClick={handleStart}>Start</Button>
-            </div>
-        );
-    }
-
     return (
         <div className="Pages">
-            <h1>Detailed Career Questions</h1>
-            <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
-            <Form>
-            <Container>
-                <div>
-                    <h2>Question {currentQuestionIndex + 1}</h2>
-                    <p>{questions[currentQuestionIndex].question}</p>
-                    {questions[currentQuestionIndex].options.map((option, index) => (
-                        <div key={`${currentQuestionIndex}-${index}`}
-                             className={`radio-option ${answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):")) ? 'selected' : ''}`}>
-                            <Form.Check
-                                type="radio"
-                                name={`question${currentQuestionIndex}`}
-                                label={option}
-                                value={option}
-                                id={`option${index}`}
-                                checked={answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):"))}
-                                onChange={handleOptionChange}
-                            />
-                        </div>
-                    ))}
-                    {answers[currentQuestionIndex].startsWith("Other (please specify):") && (
-                        <Form.Control
-                            type="text"
-                            value={otherText}
-                            onChange={handleOtherTextChange}
-                            placeholder="Please specify..."
-                        />
-                    )}
+            {/* start page */}
+            {!showQuestions && (
+                <div className="Pre-question-page">
+                    <h1>Welcome to the Detailed Career Assessment</h1>
+                    <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
+                    <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
-                </Container>
-                <div>
-                    <Button variant="secondary" className="button-secondary" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
-                        Previous
-                    </Button>
-                    <Button variant="primary" className="button-primary" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex === questions.length - 1}>
-                        Next
-                    </Button>
-                    {currentQuestionIndex === questions.length - 1 && (
-                        <NavLink to='/starter_helpi/report'>
-                            <Button type="submit" className="button-submit" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
-                                Submit
+            )}
+            { /* questions part of page */ }
+            {showQuestions && (
+                <div className="Questions-page">
+                    <h1 className="Question-title">Detailed Career Questions</h1>
+                    <div>
+                        <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
+                    </div>
+                    <Form>
+                        <Container>
+                            <div>
+                                <h2 className="Question-number">Question {currentQuestionIndex + 1}</h2>
+                                <p>{questions[currentQuestionIndex].question}</p>
+                                <div className="Answers">
+                                    {questions[currentQuestionIndex].options.map((option, index) => (
+                                        <div key={`${currentQuestionIndex}-${index}`}
+                                            className={`radio-option-detailed ${answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):")) ? 'selected' : ''}`}>
+                                            <Form.Check
+                                                type="radio"
+                                                name={`question${currentQuestionIndex}`}
+                                                label={option}
+                                                value={option}
+                                                id={`option${index}`}
+                                                checked={answers[currentQuestionIndex] === option || (option === "Other (please specify)" && answers[currentQuestionIndex].startsWith("Other (please specify):"))}
+                                                onChange={handleOptionChange}
+                                            />
+                                        </div>
+                                    ))}
+                                    {answers[currentQuestionIndex].startsWith("Other (please specify):") && (
+                                        <Form.Control
+                                            type="text"
+                                            value={otherText}
+                                            onChange={handleOtherTextChange}
+                                            placeholder="Please specify..."
+                                        />
+                                    )}
+                                </div>
+                            </div>
+                        </Container>
+                        <div>
+                            <Button variant="secondary" className="Previous-button" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
+                                Previous
                             </Button>
-                        </NavLink>
-                    )}
-                    <Button variant="info" className="button-info" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
+                            {currentQuestionIndex < questions.length - 1 && (
+                                <Button variant="primary" className="Next-button" onClick={() => setCurrentQuestionIndex(Math.min(currentQuestionIndex + 1, questions.length - 1))}>
+                                    Next
+                                </Button>
+                            )}
+                            {currentQuestionIndex === questions.length - 1 && (
+                                <NavLink to='/starter_helpi/report'>
+                                    <Button type="submit" className="Submit-button" variant="success" onClick={saveAnswers} disabled={!canSubmit}>
+                                        Submit
+                                    </Button>
+                                </NavLink>
+                            )}
+                            <Button variant="info" className="Restart-button" onClick={handleRestart}>Restart</Button>  {/* Restart Button */}
+                        </div>
+                    </Form>
                 </div>
-            </Form>
+            )}
         </div>
     );
 }

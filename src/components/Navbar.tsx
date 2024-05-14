@@ -40,13 +40,14 @@ const NavLink = styled(Link)`
         color: #4d4dff;
     }
     border-radius: 15px;
-    width: 150px;
+    width: calc(15vw - 10px);
     height: inherit - 6vh;
     text-align: center;
     margin-bottom: 3vh;
     margin-top: 3vh;
     margin-left: 10px;
     margin-right: 10px;
+    font-size: calc(2px + 2vmin);
 `;
  
 const NavMenu = styled.div`
