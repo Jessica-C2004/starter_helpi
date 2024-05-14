@@ -108,6 +108,8 @@ export function Report(): JSX.Element {
     
     function makeCareer() {
         generateCareer();
+        localStorage.removeItem("resultCareer1");
+        localStorage.removeItem("resultDescription1");
         localStorage.removeItem("resultCareer2");
         localStorage.removeItem("resultDescription2");
         setdisplaySpinner(true);
@@ -148,7 +150,7 @@ export function Report(): JSX.Element {
         </Row>
         <Row>
             <Col className="Results-Col-Left">
-                {careerGenerated &&  resultCareer1 !== null && 
+                {careerGenerated &&  resultCareer2 !== null && 
                 <div>
                     {descrip1 && <div className="results">{resultDescription1}</div>}
                 </div>}

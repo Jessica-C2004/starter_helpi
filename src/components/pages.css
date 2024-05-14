@@ -168,6 +168,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 25vh;
+  padding-bottom: 25vh;
   height: inherit;
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -209,4 +210,13 @@
 .Results-Col-Right {
   display: flex;
   justify-content: left;
+}
+
+.Question-title {
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+}
+
+.Question-number {
+  padding-top: 1vh;
 }

@@ -182,14 +182,14 @@ export function DetailedQuestions(): JSX.Element {
             { /* questions part of page */ }
             {showQuestions && (
                 <div className="Questions-page">
-                    <h1>Detailed Career Questions</h1>
+                    <h1 className="Question-title">Detailed Career Questions</h1>
                     <div>
                         <QuestionProgressBar totalQuestions={questions.length} completedQuestions={numberQuestionsAnswered} />
                     </div>
                     <Form>
                         <Container>
                             <div>
-                                <h2>Question {currentQuestionIndex + 1}</h2>
+                                <h2 className="Question-number">Question {currentQuestionIndex + 1}</h2>
                                 <p>{questions[currentQuestionIndex].question}</p>
                                 <div className="Answers">
                                     {questions[currentQuestionIndex].options.map((option, index) => (

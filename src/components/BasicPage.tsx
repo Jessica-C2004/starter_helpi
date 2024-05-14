@@ -117,12 +117,12 @@ export function BasicQuestion(): JSX.Element {
             { /* questions part of page */ }
             {showQuestions && (
                 <div className="Questions-page">
-                    <h1>Basic Career Questions</h1>
+                    <h1 className="Question-title">Basic Career Questions</h1>
                     <div>
                         <QuestionProgressBar totalQuestions={questionsLength} completedQuestions={numberQuestionsAnswered}/>
                     </div>
                     <div>
-                        <h2>Question {currentQuestionIndex + 1}</h2>
+                        <h2 className="Question-number">Question {currentQuestionIndex + 1}</h2>
                         <p>{questions[currentQuestionIndex]}</p>
                         { /* sets up the answer option buttons for each questions */ }
                         <div className="Answers">
