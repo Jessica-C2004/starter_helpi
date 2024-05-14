@@ -1,3 +1,4 @@
+
 .Pages {
   flex-direction: column;
   align-items: center;
@@ -158,17 +159,18 @@
 }
 
 .App-logo {
-  position:relative;
+  position:center;
+  margin-top: 5vh;
   left: -5px;
-  width: 100%;
+  width: 80%;
 }
 
 .Pre-question-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
+  padding-top: 10vh; /* Adjust this value to move the content up */
+  padding-bottom: 3vh;
   height: inherit;
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -220,15 +222,30 @@
 .Question-number {
   padding-top: 1vh;
 }
+
 .confetti {
   position: relative;
   height: 100%;
   width: 80%;
 }
+
 .confetti-two {
   position: relative;
   height: 100%;
   width: 80%;
   transform: scaleX(-1);
   z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures the container takes the full width of its parent */
+  height: 100%; /* Ensures the container takes the full height of its parent */
+}
+
+.small-logo {
+  max-width: 90%;
+  height: auto;
 }

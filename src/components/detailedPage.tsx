@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { QuestionProgressBar } from './progressBar';
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+import detialedVideo from "../videos/detailedvideo.mp4";
 
 
 export function DetailedQuestions(): JSX.Element {
@@ -173,8 +174,12 @@ export function DetailedQuestions(): JSX.Element {
         <div className="Pages">
             {/* start page */}
             {!showQuestions && (
-                <div className="Pre-question-page">
-                    <h1>Welcome to the Detailed Career Assessment</h1>
+                <div className="Pre-question-page" style={{ paddingTop: '5vh' }}>
+                <h1 style={{ marginTop: '0', paddingTop: '0', marginBottom: '20px' }}>Welcome to the Detailed Career Assessment</h1>
+                    <video width="860" height="515" controls autoPlay loop>
+                   <source src={detialedVideo} type="video/mp4" />
+                   Your browser does not support the video tag.
+               </video>
                     <p>Please click 'Start' to begin answering detailed questions that will help suggest a career path suitable for you.</p>
                     <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
