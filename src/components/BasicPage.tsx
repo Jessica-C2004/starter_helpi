@@ -110,7 +110,7 @@ export function BasicQuestion(): JSX.Element {
             {!showQuestions && (
                 <div className="Pre-question-page">
                     <h1>Welcome to the Career Questionnaire</h1>
-                    <p>Click start to begin answering questions about your career preferences and goals.</p>
+                    <p>Click 'Start' to begin answering questions about your career preferences and goals.</p>
                     <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
             )}

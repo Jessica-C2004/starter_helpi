@@ -66,7 +66,7 @@
   position: relative;
   object-position: 300px -10px;
   font-size: calc(30px + 1vmin);
-  padding-top: 2vh;
+  padding-top: 6vh;
 }
 
 .career {
@@ -138,7 +138,7 @@
   padding: 0;
   border-radius: 5px;
   margin-bottom: 1px;
-  margin-top: 5vh;
+  margin-top: 10vh;
   transition: background-color 0.3s ease;
   align-items: center;
   width: 100%;
@@ -219,4 +219,16 @@
 
 .Question-number {
   padding-top: 1vh;
+}
+.confetti {
+  position: relative;
+  height: 100%;
+  width: 80%;
+}
+.confetti-two {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  transform: scaleX(-1);
+  z-index: 10;
 }
