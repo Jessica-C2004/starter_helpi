@@ -220,3 +220,15 @@
 .Question-number {
   padding-top: 1vh;
 }
+.confetti {
+  position: relative;
+  height: 100%;
+  width: 80%;
+}
+.confetti-two {
+  position: relative;
+  height: 100%;
+  width: 80%;
+  transform: scaleX(-1);
+  z-index: 10;
+}

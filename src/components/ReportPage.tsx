@@ -3,6 +3,7 @@ import { Col, Row, Image, Button, Spinner} from 'react-bootstrap';
 import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
+import celebration from "../logoandimages/Confetti Star (1).png"
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
@@ -126,13 +127,13 @@ export function Report(): JSX.Element {
 
     return <div className="Pages">
         <Row>
-            <Col></Col>
+            <Col><img src={celebration} className="confetti-two" alt="Celebration confetti" /> </Col>
             <Col>
             <h3 className="Report-title">Your Suggested Career is...</h3>
             <Button className="Result-button" onClick={() => makeCareer()} disabled={careerGenerated}>Generate Report</Button>
             {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
             </Col>
-            <Col></Col>
+            <Col><img src={celebration} className="confetti" alt="Celebration confetti" /> </Col>
         </Row>
         <Row>
             <Col md={5}>
