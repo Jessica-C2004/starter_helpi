@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (60 ms)
+  ✕ renders learn react link (66 ms)
 
   ● renders learn react link
 
@@ -25,19 +25,19 @@ FAIL src/App.test.tsx
                 [33mclass[39m=[32m"sc-gLLuof ddEAXA"[39m
               [36m>[39m
                 [36m<a[39m
-                  [33mclass[39m=[32m"sc-jTQCzO jvHBuz"[39m
+                  [33mclass[39m=[32m"sc-jTQCzO hFoutV"[39m
                   [33mhref[39m=[32m"/starter_helpi/home"[39m
                 [36m>[39m
                   [0mHome[0m
                 [36m</a>[39m
                 [36m<a[39m
-                  [33mclass[39m=[32m"sc-jTQCzO jvHBuz"[39m
+                  [33mclass[39m=[32m"sc-jTQCzO hFoutV"[39m
                   [33mhref[39m=[32m"/starter_helpi/basic-Questions"[39m
                 [36m>[39m
                   [0mBasic Questions[0m
                 [36m</a>[39m
                 [36m<a[39m
-                  [33mclass[39m=[32m"sc-jTQCzO jvHBuz"[39m
+                  [33mclass[39m=[32m"sc-jTQCzO hFoutV"[39m
                   [33mhref[39m=[32m"/starter_helpi/detailed-Questions"[39m
                 [36m>[39m
                   [0mDetailed Questions[0m
@@ -53,19 +53,19 @@ FAIL src/App.test.tsx
                 [0mWelcome to The Career Helpi![0m
               [36m</h3>[39m
               [36m<div[39m
-                [33mclass[39m=[32m"Default-box container"[39m
+                [33mclass[39m=[32m"container"[39m
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"row"[39m
                 [36m>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"col"[39m
+                    [33mclass[39m=[32m"Description-box col"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"sc-guDLey fctYcR"[39m
+                      [33mclass[39m=[32m"sc-guDLey kVMCnv"[39m
                     [36m>[39m
                       [36m<a[39m
-                        [33mclass[39m=[32m"sc-beySPh eMtcgt"[39m
+                        [33mclass[39m=[32m"sc-beySPh htsbUs"[39m
                         [33mhref[39m=[32m"/starter_helpi/basic-Questions"[39m
                       [36m>[39m
                         [0mBasic Questions[0m
@@ -78,25 +78,22 @@ FAIL src/App.test.tsx
                     [36m</div>[39m
                   [36m</div>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"col"[39m
+                    [33mclass[39m=[32m"Description-box col"[39m
                   [36m>[39m
-                    [36m<div>[39m
-                      [0m [0m
-                      [36m<img[39m
-                        [33malt[39m=[32m"thestarterHelpilogo"[39m
-                        [33mclass[39m=[32m"App-logo"[39m
-                        [33msrc[39m=[32m"thecareerhelpilogo.png"[39m
-                      [36m/>[39m
-                    [36m</div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"thestarterHelpilogo"[39m
+                      [33mclass[39m=[32m"App-logo"[39m
+                      [33msrc[39m=[32m"thecareerhelpilogo.png"[39m
+                    [36m/>[39m
                   [36m</div>[39m
                   [36m<div[39m
-                    [33mclass[39m=[32m"col"[39m
+                    [33mclass[39m=[32m"Description-box col"[39m
                   [36m>[39m
                     [36m<div[39m
-                      [33mclass[39m=[32m"sc-guDLey fctYcR"[39m
+                      [33mclass[39m=[32m"sc-guDLey kVMCnv"[39m
                     [36m>[39m
                       [36m<a[39m
-                        [33mclass[39m=[32m"sc-beySPh eMtcgt"[39m
+                        [33mclass[39m=[32m"sc-beySPh htsbUs"[39m
                         [33mhref[39m=[32m"/starter_helpi/detailed-Questions"[39m
                       [36m>[39m
                         [0mDetailed Questions[0m
@@ -111,32 +108,43 @@ FAIL src/App.test.tsx
                 [36m</div>[39m
               [36m</div>[39m
             [36m</div>[39m
-          [36m</header>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m""[39m
-          [36m>[39m
-            [36m<label[39m
-              [33mclass[39m=[32m"form-label"[39m
-            [36m>[39m
-              [0mAPI Key:[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mclass[39m=[32m"form-control"[39m
-              [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-              [33mtype[39m=[32m"password"[39m
+            [36m<hr[39m
+              [33mclass[39m=[32m"Gap"[39m
             [36m/>[39m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Footer"[39m
+          [36m>[39m
             [36m<br />[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"Api-Box"[39m
             [36m>[39m
-              [0mSubmit[0m
-            [36m</button>[39m
-          [36m</form>[39m
-          [36m<hr />[39m
-          [36m<p>[39m
-            [0mCreated by: Melanie Heider, Patrick Sweet, Jessica Cunningham, Sydney Holland[0m
-          [36m</p>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-label"[39m
+              [36m>[39m
+                [0mAPI Key:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                [33mtype[39m=[32m"password"[39m
+              [36m/>[39m
+              [36m<br />[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"Submit-button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSubmit[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<hr />[39m
+            [36m<p[39m
+              [33mstyle[39m=[32m"margin: 0px;"[39m
+            [36m>[39m
+              [0mCreated by: Melanie Heider, Patrick Sweet, Jessica Cunningham, Sydney Holland[0m
+            [36m</p>[39m
+            [36m<br />[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -159,30 +167,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------|---------|----------|---------|---------|-------------------
-All files            |   10.73 |     2.17 |    7.69 |   11.26 |                   
- src                 |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx            |      60 |       50 |   33.33 |      60 | 22,30-36          
-  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    7.81 |        0 |    5.88 |    8.26 |                   
-  BasicPage.tsx      |    2.94 |        0 |       0 |    3.22 | 11-132            
-  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
-  ReportPage.tsx     |       0 |        0 |       0 |       0 | 9-114             
-  detailedPage.tsx   |    2.12 |        0 |       0 |    2.32 | 10-214            
-  homePage.tsx       |     100 |      100 |     100 |     100 |                   
-  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
- src/interfaces      |       0 |        0 |       0 |       0 |                   
-  PagesProps.tsx     |       0 |        0 |       0 |       0 |                   
-  Progress.tsx       |       0 |        0 |       0 |       0 |                   
----------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.363 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -195,3 +179,27 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |     9.3 |     1.51 |    6.97 |    9.69 |                   
+ src                 |   28.57 |    16.66 |      20 |   28.57 |                   
+  App.tsx            |      60 |       50 |   33.33 |      60 | 22,30-36          
+  index.tsx          |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
+ src/components      |    6.62 |        0 |    5.26 |    6.94 |                   
+  BasicPage.tsx      |    2.63 |        0 |       0 |    2.85 | 11-140            
+  Navbar.tsx         |     100 |      100 |     100 |     100 |                   
+  ReportPage.tsx     |       0 |        0 |       0 |       0 | 8-132             
+  detailedPage.tsx   |    2.04 |        0 |       0 |    2.22 | 10-225            
+  homePage.tsx       |     100 |      100 |     100 |     100 |                   
+  progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
+ src/interfaces      |       0 |        0 |       0 |       0 |                   
+  PagesProps.tsx     |       0 |        0 |       0 |       0 |                   
+  Progress.tsx       |       0 |        0 |       0 |       0 |                   
+---------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.419 s
+Ran all test suites.
