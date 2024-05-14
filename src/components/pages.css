@@ -138,7 +138,7 @@
   padding: 0;
   border-radius: 5px;
   margin-bottom: 1px;
-  margin-top: 10vh;
+  margin-top: 8vh;
   transition: background-color 0.3s ease;
   align-items: center;
   width: 100%;
@@ -222,13 +222,17 @@
 }
 .confetti {
   position: relative;
-  height: 100%;
-  width: 80%;
+  height: 80%;
+  width: 50%;
+  margin-top: 4vh;
+  margin-right: 14vh;
 }
 .confetti-two {
   position: relative;
-  height: 100%;
-  width: 80%;
+  height: 80%;
+  width: 50%;
+  margin-top: 4vh;
+  margin-left: 14vh;
   transform: scaleX(-1);
   z-index: 10;
 }
