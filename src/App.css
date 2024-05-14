@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-color: #51624F;
 }
 
 .App-logo {
@@ -12,14 +14,6 @@
   top: -40px;
 }
 
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    /*animation: App-logo-spin infinite 20s linear;
-  }
-}
-*/
-
 .App-header {
   background-color: #51624F;
   min-height: 10vh;
@@ -30,26 +24,39 @@
 
 .Pages-div {
   background-color: #9CB4AC;
-  height: 99vh;
+  height: fit-content;
 }
+
 .Page-buttons-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 10vh;
+  height: 90vh;
   align-items: left;
 }
 
-.Button-color {
-  background-color: #9370db;
-  border-bottom: 2px;
+.Footer {
+  background-color: #51624F;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Gap {
+  padding-bottom: 65px;
+  margin: 0;
+  color: #9CB4AC;
+}
+
+.Api-Box {
+  margin:auto;
+  width: 50vw;
+}
+
+.Submit-button {
+  margin-top: 15px;
+  width: 90px;
+  margin-right:10px;
+  padding: 8px;
+  margin-right:10px;
+  background-color:#198754;
+  border-color:#198754;
 }

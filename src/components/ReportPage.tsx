@@ -1,8 +1,9 @@
 import "./pages.css";
-import { Col, Container, Row, Image, Button} from 'react-bootstrap';
-import logo from "../logoandimages/cowboy.jpg";
+import { Col, Row, Image, Button, Spinner} from 'react-bootstrap';
+import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
+import celebration from "../logoandimages/Confetti Star (1).png"
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
@@ -76,7 +77,7 @@ async function generateCareer() {
      localStorage.setItem("resultCareer2", results[3]);
      localStorage.setItem("resultDescription2", results[4]);
 
-     window.location.reload();
+     //window.location.reload();
 
      /*leaving rn for future debugging
      console.log(localStorage.getItem("resultCareer1") + " career1 title");
@@ -95,7 +96,9 @@ export function Report(): JSX.Element {
 
     const [descrip1, setResult1Visible] = useState<boolean>(false);
     const [descrip2, setResult2Visible] = useState<boolean>(false);
-
+    const [careerGenerated, setCareerGenerated] = useState<boolean>(false);
+    const [displaySpinner, setdisplaySpinner] = useState<boolean>(false);
+    
     function flipDescrip1() {
         setResult1Visible(!descrip1);
     }
@@ -104,20 +107,65 @@ export function Report(): JSX.Element {
         setResult2Visible(!descrip2);
     }
     
+    function makeCareer() {
+        generateCareer();
+        localStorage.removeItem("resultCareer1");
+        localStorage.removeItem("resultDescription1");
+        localStorage.removeItem("resultCareer2");
+        localStorage.removeItem("resultDescription2");
+        setdisplaySpinner(true);
+        waitforcareer();
+        setCareerGenerated(!careerGenerated);
+    }
+
+    const waitforcareer = () => {
+        setTimeout(() => {
+            setCareerGenerated(true);
+            setdisplaySpinner(false);
+        }, 15000);
+    };
+
     return <div className="Pages">
-        <h1 className="ReportHeader">Your Suggested Career is...</h1>
-        <Button className="Result-button" onClick={() => generateCareer()}>Generate Report</Button>
-        <Container>
-            <Row>
-                <Col>
-                <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
-                {descrip1 && <div className="results">{resultDescription1}</div>}
-                </Col>
-                <Col>
+        <Row>
+            <Col><img src={celebration} className="confetti-two" alt="Celebration confetti" /> </Col>
+            <Col>
+            <h3 className="Report-title">Your Suggested Career is...</h3>
+            <Button className="Result-button" onClick={() => makeCareer()} disabled={careerGenerated}>Generate Report</Button>
+            {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
+            </Col>
+            <Col><img src={celebration} className="confetti" alt="Celebration confetti" /> </Col>
+        </Row>
+        <Row>
+            <Col 
+                md={5}>
+                {careerGenerated &&  resultCareer1 !== null && 
+                <div>
+                    <Button className="career-button" onClick={flipDescrip1}>{resultCareer1}</Button>
+                </div>}
+            </Col>
+            <Col md={{span: 3, offset: 3}}>
+                {careerGenerated &&  resultCareer2 !== null && 
+                <div>
                     <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
+                </div>}
+            </Col>
+        </Row>
+        <Row>
+            <Col className="Results-Col-Left">
+                {careerGenerated &&  resultCareer2 !== null && 
+                <div>
+                    {descrip1 && <div className="results">{resultDescription1}</div>}
+                </div>}
+            </Col>
+            <Col xs={3}>
+                <Image src={logo} className="Career-Logo" alt="career-picture" thumbnail fluid={true}></Image>
+            </Col>
+            <Col className="Results-Col-Right">
+                {careerGenerated &&  resultCareer2 !== null && 
+                <div>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
-                </Col>
-            </Row>
-        </Container>
+                </div>}
+            </Col>
+        </Row>
     </div>;
 }

@@ -40,7 +40,7 @@ export function App() {
     <div className="App">
       <header className="Pages-div">
         <Router>
-              <Navbar />
+              <Navbar/>
               <Routes>
                   <Route path="/" element={<HomePage/>} />
                   <Route path="starter_helpi/" element={<HomePage/>} />
@@ -52,17 +52,22 @@ export function App() {
                   <Route path="starter_helpi/home/starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
               </Routes>
           </Router>
+          <hr className="Gap"/>
       </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+      <div className="Footer">
         <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
-      <hr></hr>
-      <p>
-        Created by: Melanie Heider, Patrick Sweet, Jessica Cunningham, Sydney Holland
-      </p>
+        <Form className="Api-Box">
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br></br>
+          <Button className="Submit-button" onClick={handleSubmit}>Submit</Button>
+        </Form>
+        <hr></hr>
+        <p style={{margin:0}}>
+          Created by: Melanie Heider, Patrick Sweet, Jessica Cunningham, Sydney Holland
+        </p>
+        <br></br>
+      </div>
     </div>
   );
 }
