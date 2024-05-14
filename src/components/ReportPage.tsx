@@ -1,5 +1,5 @@
 import "./pages.css";
-import { Col, Row, Image, Button} from 'react-bootstrap';
+import { Col, Row, Image, Button, Spinner} from 'react-bootstrap';
 import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
@@ -96,7 +96,7 @@ export function Report(): JSX.Element {
     /*const [descrip1, setResult1Visible] = useState<boolean>(false);*/
     const [descrip2, setResult2Visible] = useState<boolean>(false);
     const [careerGenerated, setCareerGenerated] = useState<boolean>(false);
-
+    const [displaySpinner, setdisplaySpinner] = useState<boolean>(false);
     /*function flipDescrip1() {
         setResult1Visible(!descrip1);
     }*/
@@ -109,14 +109,23 @@ export function Report(): JSX.Element {
         generateCareer();
         localStorage.removeItem("resultCareer2");
         localStorage.removeItem("resultDescription2");
+        setdisplaySpinner(true);
+        waitforcareer();
         setCareerGenerated(true);
     }
+
+    const waitforcareer = () => {
+        setTimeout(() => {
+            setCareerGenerated(true);
+            setdisplaySpinner(false);
+        }, 15000);
+    };
 
     return <div className="Pages">
         <Row>
             <Col>
             <h3 className="Report-title">Your Suggested Career is...</h3>
-            <Button className="Result-button" onClick={() => makeCareer()} disabled={careerGenerated}>Generate Report</Button>
+            <Button className="Result-button" onClick={() => makeCareer()} /*disabled={careerGenerated}*/>Generate Report</Button>
             </Col>
             </Row>
             <Row>
@@ -126,8 +135,12 @@ export function Report(): JSX.Element {
                 </div>
                 </Col>
                 <Col>
+                    {displaySpinner && <Spinner animation="border" role="status" className="Spinner"/>}
+                    {careerGenerated &&  resultCareer2 !== null && 
+                    <div>
                     <Button className="career-button" onClick={flipDescrip2}>{resultCareer2}</Button>
                     {descrip2 && <div className="results">{resultDescription2}</div>}
+                    </div>}
                 </Col>
                 <Col></Col>
             </Row>

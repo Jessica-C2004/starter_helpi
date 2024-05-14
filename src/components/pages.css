@@ -207,3 +207,10 @@
   position: relative;
   width: 50%;
 }
+
+.Spinner {
+  width: 5vw;
+  height: 5vw;
+  margin-top: 2vh;
+  color: #484848;
+}
