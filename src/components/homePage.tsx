@@ -3,11 +3,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import logo from "../logoandimages/thecareerhelpilogo.png";
-import Homevideo from "../videos/homevideoanifinished.mp4"; // Import the video file
-import { useState } from 'react'; // Import useState
+import Homevideo from "../videos/homevideoanifinished.mp4";
+import { useState } from 'react';
 
 export function HomePage(): JSX.Element {
-    const [videoEnded, setVideoEnded] = useState(false); // State to track if the video has ended
+    const [videoEnded, setVideoEnded] = useState(false);
 
     const handleVideoError = () => {
         console.error("Error loading video. Please check the video file path and format.");
@@ -18,33 +18,29 @@ export function HomePage(): JSX.Element {
             <h3 className="Page-title">Welcome to The Career Helpi!</h3>
             <Container>
                 <Row>
-                    <Col md={12} className="Description-box">
+                    <Col className="Description-box">
                         <NavMenu>
-                            <NavLink to='/starter_helpi/basic-Questions'>
-                                Basic Questions
-                            </NavLink>
+                            <NavLink to='/starter_helpi/basic-Questions'>Basic Questions</NavLink>
                         </NavMenu>
                         <div className="Description">
                             The basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz!
                         </div>
                     </Col>
-                </Row>
-                <Row className="d-flex justify-content-center align-items-center">
-                    <Col md={8} className="video-container">
+                    <Col md={6} className="d-flex justify-content-center align-items-center">
                         {!videoEnded ? (
-                            <video width="100%" controls autoPlay onEnded={() => setVideoEnded(true)} onError={handleVideoError}>
-                                <source src={Homevideo} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
+                            <div className="video-container">
+                                <video width="600" height="415" controls autoPlay onEnded={() => setVideoEnded(true)} onError={handleVideoError}>
+                                    <source src={Homevideo} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         ) : (
                             <div className="logo-container">
                                 <img src={logo} className="App-logo small-logo" alt="The Career Helpi logo" />
                             </div>
                         )}
                     </Col>
-                </Row>
-                <Row>
-                    <Col md={12} className="Description-box">
+                    <Col className="Description-box">
                         <NavMenu>
                             <NavLink to='/starter_helpi/detailed-Questions'>Detailed Questions</NavLink>
                         </NavMenu>
@@ -76,8 +72,6 @@ const NavMenu = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
     @media screen and (max-width: 768px) {
         display: none;
     }
