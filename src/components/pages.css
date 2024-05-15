@@ -1,4 +1,3 @@
-
 .Pages {
   flex-direction: column;
   align-items: center;
@@ -159,17 +158,16 @@
 }
 
 .App-logo {
-  position:center;
-  margin-top: 5vh;
+  position:relative;
   left: -5px;
-  width: 80%;
+  width: 100%;
 }
 
 .Pre-question-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10vh; /* Adjust this value to move the content up */
+  padding-top: 25vh;
   padding-bottom: 3vh;
   height: inherit;
   text-align: center;
@@ -222,13 +220,11 @@
 .Question-number {
   padding-top: 1vh;
 }
-
 .confetti {
   position: relative;
   height: 100%;
   width: 80%;
 }
-
 .confetti-two {
   position: relative;
   height: 100%;

@@ -18,7 +18,7 @@ export function HomePage(): JSX.Element {
             <h3 className="Page-title">Welcome to The Career Helpi!</h3>
             <Container>
                 <Row>
-                    <Col md={3} className="Description-box">
+                    <Col md={12} className="Description-box">
                         <NavMenu>
                             <NavLink to='/starter_helpi/basic-Questions'>
                                 Basic Questions
@@ -28,21 +28,23 @@ export function HomePage(): JSX.Element {
                             The basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz!
                         </div>
                     </Col>
-                    <Col md={6} className="d-flex justify-content-center align-items-center">
+                </Row>
+                <Row className="d-flex justify-content-center align-items-center">
+                    <Col md={8} className="video-container">
                         {!videoEnded ? (
-                            <div className="video-container">
-                                <video width="100%" controls autoPlay onEnded={() => setVideoEnded(true)} onError={handleVideoError}>
-                                    <source src={Homevideo} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
+                            <video width="100%" controls autoPlay onEnded={() => setVideoEnded(true)} onError={handleVideoError}>
+                                <source src={Homevideo} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         ) : (
                             <div className="logo-container">
                                 <img src={logo} className="App-logo small-logo" alt="The Career Helpi logo" />
                             </div>
                         )}
                     </Col>
-                    <Col md={3} className="Description-box">
+                </Row>
+                <Row>
+                    <Col md={12} className="Description-box">
                         <NavMenu>
                             <NavLink to='/starter_helpi/detailed-Questions'>Detailed Questions</NavLink>
                         </NavMenu>
@@ -74,6 +76,8 @@ const NavMenu = styled.div`
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
     @media screen and (max-width: 768px) {
         display: none;
     }
