@@ -7,8 +7,15 @@ import Homevideo from "../videos/homevideoanifinished.mp4";
 import { useState } from 'react';
 
 export function HomePage(): JSX.Element {
+    /*
+        videoEnded - boolean, tracks if the guide video is completed
+        setVideoEnded - used to update videoEnded on whether or not the video has ended
+    */
     const [videoEnded, setVideoEnded] = useState(false);
 
+    /*
+        @description - if video fails to load or play, sends error message to console
+    */
     const handleVideoError = () => {
         console.error("Error loading video. Please check the video file path and format.");
     };
@@ -18,6 +25,7 @@ export function HomePage(): JSX.Element {
             <h3 className="Page-title">Welcome to The Career Helpi!</h3>
             <Container>
                 <Row>
+                    {/*Basic Questions Quiz description and Button to the quiz*/}
                     <Col className="Description-box">
                         <NavMenu>
                             <NavLink to='/starter_helpi/basic-Questions'>Basic Questions</NavLink>
@@ -26,6 +34,7 @@ export function HomePage(): JSX.Element {
                             The basic questions will ask you more simple, easier questions that will give you a quick idea about your potential ideal career path. For a brief recommendation for careers, take this quiz!
                         </div>
                     </Col>
+                    {/*column containing the guide video, and deals with changing it to the logo once the video is completed*/}
                     <Col md={6} className="d-flex justify-content-center align-items-center">
                         {!videoEnded ? (
                             <div className="video-container">
@@ -40,6 +49,7 @@ export function HomePage(): JSX.Element {
                             </div>
                         )}
                     </Col>
+                    {/*Detailed Questions Quiz description and Button to the quiz*/}
                     <Col className="Description-box">
                         <NavMenu>
                             <NavLink to='/starter_helpi/detailed-Questions'>Detailed Questions</NavLink>
@@ -54,7 +64,7 @@ export function HomePage(): JSX.Element {
     );
 }
 
-// Handles the styling of the NavLinks to Basic Page and Description Page
+// Handles the styling of the NavLinks to Basic Page and Description Page (seen at top of website in header)
 const NavLink = styled(Link)`
     background-color: #AFBEA2;
     color: #000000;
