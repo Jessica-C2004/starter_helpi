@@ -8,6 +8,7 @@ import detialedVideo from "../videos/detailedvideo.mp4";
 
 
 export function DetailedQuestions(): JSX.Element {
+    //questions for the detailed quiz, each with their own options matching the question context
     const questions = [
         {
             question: "What type of work environment do you thrive in?",
@@ -110,11 +111,29 @@ export function DetailedQuestions(): JSX.Element {
         }
 
     ];
+
+    /*
+        currentQuestionIndex - tracks which question user is on, initialized at 0 to start at first question
+        setCurrentQuestionIndex - used to update which question user is on
+        
+        answers - tracks answer user chooses for the question asked, initialized null and updated when user clicks options button
+        setAnswers - used to update array containing answers to contain which option user chose
+
+        showQuestions - tracks questions visibility, initialized at false and updated when user clicks "start" button
+        setShowQuestions - used to toggle question visibility between false (invisible) and true (visible)
+
+        otherText - stores the text put into the other option if the user uses it
+        setOtherText - updates otherText to be storing the input of the user
+
+    */
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(''));
     const [otherText, setOtherText] = useState('');
     const [showQuestions, setShowQuestions] = useState(false);
 
+    /*
+        checks if the user selected the other option from the choices, and then set otherText to what they input to the textbox to save it
+    */
     useEffect(() => {
         const currentAnswer = answers[currentQuestionIndex];
         if (currentAnswer.startsWith("Other (please specify): ")) {
@@ -124,7 +143,14 @@ export function DetailedQuestions(): JSX.Element {
         }
     }, [currentQuestionIndex, answers]);
 
+    /*
+        @description - once start button is hit makes questions visible
+    */
     const handleStart = () => setShowQuestions(true);
+
+    /*
+        @description - resets the answer array to be empty, sets question back to first one, goes back to start page with video
+    */
     const handleRestart = () => {
         setShowQuestions(false);
         setCurrentQuestionIndex(0);
@@ -132,6 +158,11 @@ export function DetailedQuestions(): JSX.Element {
         setOtherText('');
     };
 
+     /*
+        @description - updates the answers list if user chooses new option after the first one they chose, if user chooses other option, then it stores their input in otherText
+        @param
+            event: used to get the actual input of the target - the textbox that appears when the other option is chosen
+    */
     const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setAnswers(prevAnswers => {
@@ -145,6 +176,11 @@ export function DetailedQuestions(): JSX.Element {
         });
     };
 
+    /*
+        @description - handles updating the input to the textbox and storing it in the answer array
+        @param
+            event: used to get the input of the textbox where the users custom answer is inputted
+    */
     const handleOtherTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newOtherText = event.target.value;
         setOtherText(newOtherText);
@@ -155,6 +191,10 @@ export function DetailedQuestions(): JSX.Element {
         });
     };
 
+    /*
+        @description - when user hits submit, the questions and answers are saved as JSON files that are later used in Report Page to give info to openAI
+                       also clears the JSONs that store the career names and descriptions in case there is anything already in there from previous attempts
+    */
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions.map(question => question.question)));
         localStorage.setItem("answers", JSON.stringify(answers));
@@ -165,9 +205,10 @@ export function DetailedQuestions(): JSX.Element {
         localStorage.removeItem("resultsDescription2");
     };
 
-
+    // Calculating the number of questions answered, makes sure not to count the other choices empty string as an answer
     const numberQuestionsAnswered = answers.filter(answer => answer.trim() !== '').length;
 
+    // Checking if all questions are answered, doesnt count empty string other as answer
     const canSubmit = answers.every(answer => answer.trim() !== '');
 
     return (
@@ -211,6 +252,7 @@ export function DetailedQuestions(): JSX.Element {
                                             />
                                         </div>
                                     ))}
+                                    {/*handles the other option and having a textbox to input own response*/}
                                     {answers[currentQuestionIndex].startsWith("Other (please specify):") && (
                                         <Form.Control
                                             type="text"
@@ -222,6 +264,7 @@ export function DetailedQuestions(): JSX.Element {
                                 </div>
                             </div>
                         </Container>
+                        {/*butttons to switch between questions, restart the quiz, or submit once on the last question and all are answered*/}
                         <div>
                             <Button variant="secondary" className="Previous-button" onClick={() => setCurrentQuestionIndex(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
                                 Previous
