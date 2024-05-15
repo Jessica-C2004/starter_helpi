@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.83a56439.css",
-    "main.js": "/starter_helpi/static/js/main.90fdd97c.js",
+    "main.css": "/starter_helpi/static/css/main.46b924ab.css",
+    "main.js": "/starter_helpi/static/js/main.ed362fd3.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
+    "static/media/detailedvideo.mp4": "/starter_helpi/static/media/detailedvideo.69b4469055144e08cfe0.mp4",
+    "static/media/homevideoanifinished.mp4": "/starter_helpi/static/media/homevideoanifinished.6a9655cdac6c0620b29f.mp4",
+    "static/media/basicpagefinished.mp4": "/starter_helpi/static/media/basicpagefinished.13a0d061543cdc286693.mp4",
     "static/media/thecareerhelpilogo.png": "/starter_helpi/static/media/thecareerhelpilogo.8b60adac5092d4ce7f50.png",
     "static/media/Career Image.jpeg": "/starter_helpi/static/media/Career Image.7e9fed28cfba66f92736.jpeg",
     "static/media/Confetti Star (1).png": "/starter_helpi/static/media/Confetti Star (1).542c301c7d38da271cdd.png",
     "index.html": "/starter_helpi/index.html",
-    "main.83a56439.css.map": "/starter_helpi/static/css/main.83a56439.css.map",
-    "main.90fdd97c.js.map": "/starter_helpi/static/js/main.90fdd97c.js.map",
+    "main.46b924ab.css.map": "/starter_helpi/static/css/main.46b924ab.css.map",
+    "main.ed362fd3.js.map": "/starter_helpi/static/js/main.ed362fd3.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83a56439.css",
-    "static/js/main.90fdd97c.js"
+    "static/css/main.46b924ab.css",
+    "static/js/main.ed362fd3.js"
   ]
 }
