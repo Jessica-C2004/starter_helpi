@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
@@ -23,6 +22,7 @@ export const Navbar = () => {
     );
 };
 
+//handles the styling of the nav bar seen at the top of the website
 const Nav = styled.nav`
     background: #51624F;
     min-height: 10vh;

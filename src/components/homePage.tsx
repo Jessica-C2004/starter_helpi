@@ -64,7 +64,7 @@ export function HomePage(): JSX.Element {
     );
 }
 
-// Handles the styling of the NavLinks to Basic Page and Description Page (seen at top of website in header)
+// Handles the styling of the NavLinks to Basic Page and Description Page (seen at as the names of the quizzes that can be clicked to go to quiz)
 const NavLink = styled(Link)`
     background-color: #AFBEA2;
     color: #000000;

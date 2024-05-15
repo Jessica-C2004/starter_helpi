@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import "./pages.css";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import BasicVideo from "../videos/basicpagefinished.mp4";
+import { useState } from "react";
 
 
 export function BasicQuestion(): JSX.Element {
