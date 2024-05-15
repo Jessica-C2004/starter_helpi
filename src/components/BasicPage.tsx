@@ -4,6 +4,7 @@ import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
+import BasicVideo from "../videos/basicpagefinished.mp4";
 
 
 export function BasicQuestion(): JSX.Element {
@@ -108,9 +109,13 @@ export function BasicQuestion(): JSX.Element {
         <div className="Pages">
             {/* start page */}
             {!showQuestions && (
-                <div className="Pre-question-page">
-                    <h1>Welcome to the Career Questionnaire</h1>
-                    <p>Click 'Start' to begin answering questions about your career preferences and goals.</p>
+               <div className="Pre-question-page" style={{ paddingTop: '5vh' }}>
+               <h1 style={{ marginTop: '0', paddingTop: '0', marginBottom: '20px' }}>Welcome to the Basic Career Questionnaire</h1>
+               <video width="860" height="515" controls autoPlay loop>
+                   <source src={BasicVideo} type="video/mp4" />
+                   Your browser does not support the video tag.
+               </video>
+               <p className="large-font">Click start to begin answering questions about your career preferences and goals.</p>
                     <Button variant="primary" onClick={handleStart} className="Submit-button">Start</Button>
                 </div>
             )}
