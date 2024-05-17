@@ -6,6 +6,7 @@ import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import { Report } from './components/ReportPage';
 import {Navbar} from "./components/Navbar";
+import {AboutUs} from "./components/AboutUs"
 import {
   BrowserRouter as Router,
   Routes,
