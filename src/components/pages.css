@@ -168,7 +168,7 @@
   flex-direction: column;
   align-items: center;
   padding-top: 25vh;
-  padding-bottom: 25vh;
+  padding-bottom: 3vh;
   height: inherit;
   text-align: center;
   font-size: calc(10px + 2vmin);
@@ -236,6 +236,22 @@
   transform: scaleX(-1);
   z-index: 10;
 }
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensures the container takes the full width of its parent */
+  height: 100%; /* Ensures the container takes the full height of its parent */
+}
+
+.small-logo {
+  margin-top: 50px;
+  max-width: 80%;
+  height: 450px;
+}
+
+
 .person-name {
   position: relative;
   padding: 4px;
