@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./pages.css";
-import styled from "styled-components";
-import { NavLink as Link } from "react-router-dom";
 import { Col, Row} from 'react-bootstrap';
 
 /*export function AboutUs(): JSX.Element {
@@ -71,5 +69,3 @@ export function AboutUs(): JSX.Element {
         </div>
     );
             }
-
-const NavLink = styled(Link)``;
