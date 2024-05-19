@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starter_helpi/static/css/main.ffbe4761.css",
-    "main.js": "/starter_helpi/static/js/main.8d4bdac5.js",
+    "main.css": "/starter_helpi/static/css/main.61b4b4bc.css",
+    "main.js": "/starter_helpi/static/js/main.abe94856.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/detailedvideo.mp4": "/starter_helpi/static/media/detailedvideo.69b4469055144e08cfe0.mp4",
     "static/media/homevideoanifinished.mp4": "/starter_helpi/static/media/homevideoanifinished.6a9655cdac6c0620b29f.mp4",
@@ -10,12 +10,12 @@
     "static/media/Career Image.jpeg": "/starter_helpi/static/media/Career Image.7e9fed28cfba66f92736.jpeg",
     "static/media/Confetti Star.png": "/starter_helpi/static/media/Confetti Star.bd14f4ed65c7787affe7.png",
     "index.html": "/starter_helpi/index.html",
-    "main.ffbe4761.css.map": "/starter_helpi/static/css/main.ffbe4761.css.map",
-    "main.8d4bdac5.js.map": "/starter_helpi/static/js/main.8d4bdac5.js.map",
+    "main.61b4b4bc.css.map": "/starter_helpi/static/css/main.61b4b4bc.css.map",
+    "main.abe94856.js.map": "/starter_helpi/static/js/main.abe94856.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ffbe4761.css",
-    "static/js/main.8d4bdac5.js"
+    "static/css/main.61b4b4bc.css",
+    "static/js/main.abe94856.js"
   ]
 }

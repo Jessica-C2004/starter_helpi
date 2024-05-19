@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (70 ms)
+  ✕ renders learn react link (64 ms)
 
   ● renders learn react link
 
@@ -41,6 +41,12 @@ FAIL src/App.test.tsx
                   [33mhref[39m=[32m"/starter_helpi/detailed-Questions"[39m
                 [36m>[39m
                   [0mDetailed Questions[0m
+                [36m</a>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"sc-jTQCzO hFoutV"[39m
+                  [33mhref[39m=[32m"/starter_helpi/about-us"[39m
+                [36m>[39m
+                  [0mAbout the Team[0m
                 [36m</a>[39m
               [36m</div>[39m
             [36m</nav>[39m
@@ -193,15 +199,16 @@ go away.[0m
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   10.22 |     2.94 |    6.66 |   10.65 |                   
+All files            |   10.11 |     2.94 |    6.52 |   10.52 |                   
  src                 |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx            |      60 |       50 |   33.33 |      60 | 22,30-36          
+  App.tsx            |      60 |       50 |   33.33 |      60 | 23,31-37          
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
- src/components      |    7.74 |     1.61 |       5 |     8.1 |                   
+ src/components      |    7.64 |     1.61 |    4.87 |       8 |                   
+  AboutUs.tsx        |       0 |      100 |       0 |       0 | 25                
   BasicPage.tsx      |    2.63 |        0 |       0 |    2.85 | 12-145            
   Navbar.tsx         |     100 |      100 |     100 |     100 |                   
-  ReportPage.tsx     |       0 |        0 |       0 |       0 | 9-133             
+  ReportPage.tsx     |       0 |        0 |       0 |       0 | 9-134             
   detailedPage.tsx   |    2.04 |        0 |       0 |    2.22 | 11-230            
   homePage.tsx       |   71.42 |       50 |   33.33 |   71.42 | 13,32             
   progressBar.tsx    |       0 |      100 |       0 |       0 | 6-7               
@@ -212,5 +219,5 @@ All files            |   10.22 |     2.94 |    6.66 |   10.65 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.623 s
+Time:        5.53 s
 Ran all test suites.
