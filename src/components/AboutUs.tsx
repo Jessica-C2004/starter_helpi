@@ -1,6 +1,7 @@
 import React from 'react';
 import "./pages.css";
 import { Col, Row} from 'react-bootstrap';
+import melaniepicture from "../logoandimages/headshotpicturemelanie.jpg"; 
 
 /*export function AboutUs(): JSX.Element {
     return (
@@ -50,6 +51,9 @@ export function AboutUs(): JSX.Element {
                         <div className="person-name">
                             Melanie Heider
                             </div>
+                            <div className="person-picture">
+                        <img src={melaniepicture} alt="Melanie Heider" className="person-image" />
+                    </div>
                             <div className="person-email">
                                 Email: msheider@udel.edu
                                 </div>
