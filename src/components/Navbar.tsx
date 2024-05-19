@@ -17,6 +17,9 @@ export const Navbar = () => {
                     <NavLink to="starter_helpi/detailed-Questions">
                         Detailed Questions
                     </NavLink>
+                    <NavLink to= "starter_helpi/about-us" >
+                        About the Team
+                    </NavLink>
                 </NavMenu>
             </Nav>
         </>

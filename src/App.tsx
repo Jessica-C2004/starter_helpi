@@ -6,7 +6,7 @@ import { BasicQuestion } from './components/BasicPage';
 import { DetailedQuestions } from './components/detailedPage';
 import { Report } from './components/ReportPage';
 import {Navbar} from "./components/Navbar";
-import {AboutUs} from "./components/AboutUs"
+import {AboutUs} from "./components/AboutUs";
 import {
   BrowserRouter as Router,
   Routes,
@@ -46,6 +46,7 @@ export function App() {
                   <Route path="/" element={<HomePage/>} />
                   <Route path="starter_helpi/" element={<HomePage/>} />
                   <Route path="starter_helpi/home" element={<HomePage/>} />
+                  <Route path="starter_helpi/about-us" element= {< AboutUs/>} />
                   <Route path="starter_helpi/basic-Questions" element={<BasicQuestion/>} />
                   <Route path="starter_helpi/detailed-Questions" element={<DetailedQuestions/>} />
                   <Route path="starter_helpi/report" element={<Report/>} />
