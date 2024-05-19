@@ -3,7 +3,7 @@ import { Col, Row, Image, Button, Spinner} from 'react-bootstrap';
 import logo from "../logoandimages/Career Image.jpeg";
 import { OpenAI } from 'openai';
 import { useState } from "react";
-import celebration from "../logoandimages/Confetti Star.png"
+import celebration from "../logoandimages/Confetti Star.png";
 
 async function generateCareer() {
     const key = localStorage.getItem("MYKEY")?.replace(/['"]+/g, '');
@@ -13,6 +13,7 @@ async function generateCareer() {
         localStorage.setItem("resultDescription1", "No API Key found");
         localStorage.setItem("resultCareer2", "No API Key found");
         localStorage.setItem("resultDescription2", "No API Key found");
+        alert('No API Key Found!');
         return;
     } else {
         console.log("Key found: ", key);

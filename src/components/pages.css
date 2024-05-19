@@ -251,3 +251,17 @@
   height: 450px;
 }
 
+
+.person-name {
+  position: relative;
+  padding: 4px;
+  font-size: calc(12px + 2vmin);
+}
+.person-email {
+  position: relative;
+  font-size: calc(8px + 2vmin);
+}
+.person-github {
+  position: relative;
+  font-size: calc(8px + 2vmin);
+}
