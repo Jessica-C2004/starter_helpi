@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
 import "./pages.css";
 import {Button, Form} from 'react-bootstrap';
 import { QuestionProgressBar } from './progressBar';
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import BasicVideo from "../videos/basicpagefinished.mp4";
+import { useState } from "react";
 
 
 export function BasicQuestion(): JSX.Element {
@@ -82,13 +82,19 @@ export function BasicQuestion(): JSX.Element {
     const handleStart = () => {
         setShowQuestions(true);
     };
-    
+    /*
+        @description - resets the answer array to be empty, sets question back to first one, goes back to start page with video
+    */
     const handleRestart = () => {
         setAnswers(Array(questions.length).fill(null));
         setCurrentQuestionIndex(0);
         setShowQuestions(false);
     };
 
+    /*
+        @description - when user hits submit, the questions and answers are saved as JSON files that are later used in Report Page to give info to openAI
+                       also clears the JSONs that store the career names and descriptions in case there is anything already in there from previous attempts
+    */
     const saveAnswers = () => {
         localStorage.setItem("questions", JSON.stringify(questions));
         localStorage.setItem("answers", JSON.stringify(answers.map(answer => options[answer])));
