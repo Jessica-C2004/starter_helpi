@@ -53,7 +53,7 @@ export function AboutUs(): JSX.Element {
                             <div className="person-name">
                             Sydney Holland</div>
                             <div className="person-picture">
-                                <img src={SydneyPhoto} alt="Sydney Holland" className="sydney-photo" />
+                                <img src={SydneyPhoto} alt="Sydney Holland" className="person-image" />
                             </div>
                             <div className="person-email">
                                 Email: sydneymh@udel.edu
