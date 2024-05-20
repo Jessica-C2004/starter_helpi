@@ -2,6 +2,7 @@ import React from 'react';
 import "./pages.css";
 import { Col, Row} from 'react-bootstrap';
 import melaniepicture from "../logoandimages/headshotpicturemelanie.jpg"; 
+import SydneyPhoto from "../logoandimages/SydneyPhoto.jpg";
 import patrickpicture from "../logoandimages/patrickpicture.jpg";
 
 export function AboutUs(): JSX.Element {
@@ -51,6 +52,9 @@ export function AboutUs(): JSX.Element {
                         </div>
                             <div className="person-name">
                             Sydney Holland</div>
+                            <div className="person-picture">
+                                <img src={SydneyPhoto} alt="Sydney Holland" className="sydney-photo" />
+                            </div>
                             <div className="person-email">
                                 Email: sydneymh@udel.edu
                                 </div>
