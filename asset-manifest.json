@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/starter_helpi/static/css/main.818cbc0f.css",
-    "main.js": "/starter_helpi/static/js/main.b196a740.js",
+    "main.js": "/starter_helpi/static/js/main.6280ae7e.js",
     "static/js/453.bad6c33a.chunk.js": "/starter_helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/detailedvideo.mp4": "/starter_helpi/static/media/detailedvideo.69b4469055144e08cfe0.mp4",
     "static/media/homevideoanifinished.mp4": "/starter_helpi/static/media/homevideoanifinished.6a9655cdac6c0620b29f.mp4",
     "static/media/basicpagefinished.mp4": "/starter_helpi/static/media/basicpagefinished.13a0d061543cdc286693.mp4",
     "static/media/thecareerhelpilogo.png": "/starter_helpi/static/media/thecareerhelpilogo.8b60adac5092d4ce7f50.png",
+    "static/media/aboutmepicture-jessica.jpeg": "/starter_helpi/static/media/aboutmepicture-jessica.f863b798791becfc32cd.jpeg",
     "static/media/patrickpicture.jpg": "/starter_helpi/static/media/patrickpicture.1bab84fc5ccb2d307b01.jpg",
     "static/media/headshotpicturemelanie.jpg": "/starter_helpi/static/media/headshotpicturemelanie.183f029519a7403b01f9.jpg",
     "static/media/Career Image.jpeg": "/starter_helpi/static/media/Career Image.7e9fed28cfba66f92736.jpeg",
@@ -14,11 +15,11 @@
     "static/media/Confetti Star.png": "/starter_helpi/static/media/Confetti Star.bd14f4ed65c7787affe7.png",
     "index.html": "/starter_helpi/index.html",
     "main.818cbc0f.css.map": "/starter_helpi/static/css/main.818cbc0f.css.map",
-    "main.b196a740.js.map": "/starter_helpi/static/js/main.b196a740.js.map",
+    "main.6280ae7e.js.map": "/starter_helpi/static/js/main.6280ae7e.js.map",
     "453.bad6c33a.chunk.js.map": "/starter_helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.818cbc0f.css",
-    "static/js/main.b196a740.js"
+    "static/js/main.6280ae7e.js"
   ]
 }
