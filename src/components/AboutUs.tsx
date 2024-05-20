@@ -3,6 +3,7 @@ import "./pages.css";
 import { Col, Row} from 'react-bootstrap';
 import melaniepicture from "../logoandimages/headshotpicturemelanie.jpg"; 
 import patrickpicture from "../logoandimages/patrickpicture.jpg";
+import jesspicture from "../logoandimages/aboutmepicture-jessica.jpeg";
 
 export function AboutUs(): JSX.Element {
     return (
@@ -16,6 +17,9 @@ export function AboutUs(): JSX.Element {
                         <Col> 
                             <div className="person-name">
                                 Jessica Cunningham
+                            </div>
+                            <div className="person-picture">
+                                <img src={jesspicture} alt="Jessica Cunningham" className="person-image"></img>
                             </div>
                             <div className="person-email">
                                 Email: jacunnin@udel.edu
