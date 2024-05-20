@@ -265,9 +265,16 @@
 .person-github {
   position: relative;
   font-size: calc(8px + 2vmin);
+  padding: 4px;
 }
 
 .person-image {
+  max-width: 45%;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+.sydney-photo {
   max-width: 45%;
   height: auto;
   border-radius: 50%;
