@@ -205,7 +205,7 @@ All files            |   10.11 |     2.94 |    6.52 |   10.52 |
   index.tsx          |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts |       0 |        0 |       0 |       0 | 3-10              
  src/components      |    7.64 |     1.61 |    4.87 |       8 |                   
-  AboutUs.tsx        |       0 |      100 |       0 |       0 | 26                
+  AboutUs.tsx        |       0 |      100 |       0 |       0 | 8                 
   BasicPage.tsx      |    2.63 |        0 |       0 |    2.85 | 12-145            
   Navbar.tsx         |     100 |      100 |     100 |     100 |                   
   ReportPage.tsx     |       0 |        0 |       0 |       0 | 9-134             
@@ -219,5 +219,5 @@ All files            |   10.11 |     2.94 |    6.52 |   10.52 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.568 s
+Time:        5.569 s
 Ran all test suites.
